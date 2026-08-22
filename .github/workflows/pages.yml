@@ -1,0 +1,41 @@
+# GitHub Pages yayını — ŞİMDİLİK KAPALI.
+# Bu iş akışı kendiliğinden çalışmaz; yalnızca Actions sekmesinden elle
+# başlatılabilir (workflow_dispatch). Yayına hazır olduğunuzda:
+#   1) Depoyu public yapın (Settings → General → Change visibility)
+#   2) Settings → Pages → Source: GitHub Actions
+#   3) Aşağıdaki "push" bloğunun başındaki # işaretlerini kaldırın
+#
+# Publishing to GitHub Pages is OFF for now. This workflow only runs when
+# started by hand from the Actions tab. To publish later, make the repo public,
+# set Pages source to GitHub Actions, and uncomment the "push" trigger below.
+
+name: Deploy to GitHub Pages
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
