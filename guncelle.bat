@@ -7,7 +7,7 @@ echo   Bilginin Tasinma Yolculugu - GitHub guncelle
 echo ================================================
 echo.
 
-git rev-parse --is-inside-work-tree >/dev/null 2>&1
+git rev-parse --is-inside-work-tree >nul 2>&1
 if errorlevel 1 (
   echo HATA: Bu klasor bir git deposu degil.
   echo Bu dosyayi, depoyu klonladiginiz klasorun icine koyun.

@@ -63,7 +63,7 @@ gelebilir. Çalışma bu iddiayı **altı halkalı bir aktarım zinciri** üzeri
 | Genel Bakış | Overview | Tez, aktarım zinciri, vaka önizlemeleri |
 | Model Laboratuvarı | Model Lab | Kuşak simülasyonu, tarihsel ön ayarlar, eğri dondurup karşılaştırma |
 | 100.000 Yıl | 100,000 Years | 36 tarihli kanıt kaydı, model endeksleri, kanıt şeritleri, eğrinin kendi sınırı |
-| Kayıp Vakaları | Loss Cases | 7 kayıp vakası, 6 efsane düzeltmesi, dijital karanlık çağ, yapay zekâ |
+| Kayıp Vakaları | Loss Cases | 12 kayıp vakası, 7 efsane düzeltmesi, dijital karanlık çağ, yapay zekâ |
 | Zincir Haritaları | Chain Maps | **30 nesnenin zincir haritası** (modern dünya · Osmanlı · Roma), 30×6 model sınavı, Zincir Sondası |
 | Yöntem ve Sınırlar | Method & Limits | Sözlük, formüller, kayıp taksonomisi, **Öncüller ve konum**, düzeltme günlüğü |
 | Kaynakça | Sources | **70 kaynak, 7 grup**; haritaların içinde ayrıca 150 tarihli kaynak kaydı |
