@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Sürüm-v4.6-315cf4" alt="Sürüm v4.6" />
+  <img src="https://img.shields.io/badge/Sürüm-v5.0-315cf4" alt="Sürüm v5.0" />
   <img src="https://img.shields.io/badge/Durum-yayınlanmadı-cc8d22" alt="Durum: yayınlanmadı" />
   <img src="https://img.shields.io/badge/Kurulum-gerekmez-1c1f25" alt="Kurulum gerekmez" />
   <img src="https://img.shields.io/badge/Lisans-MIT-a2542e" alt="Lisans: MIT" />
@@ -27,6 +27,16 @@
 </p>
 
 ---
+
+## Bu çalışma nedir? / What is this?
+
+**Bir keşif değil, bir sentezdir.** Buradaki fikirlerin çoğu altı ayrı literatürde —
+örtük bilgi (Polanyi, Collins), kültürel evrim modelleri (Henrich, Mesoudi), dijital
+koruma (OAIS/ISO 14721), altyapı ve bakım çalışmaları (Latour, Star), sıkıştırma
+deneyleri (Kirby) ve 10.000 yıl mühendisliği (WIPP, Rosetta, GitHub Tech Tree) — daha
+önce söylendi. Bu çalışmanın işi, **birbirini okumayan bu altı alanı tek bir
+çalıştırılabilir zincirde birleştirmek**tir. Kimin neyi önce söylediği, çalışmanın
+içindeki **Yöntem → Öncüller** bölümünde tek tek adlandırılır.
 
 ## Tez / The argument
 
@@ -55,8 +65,8 @@ gelebilir. Çalışma bu iddiayı **altı halkalı bir aktarım zinciri** üzeri
 | 100.000 Yıl | 100,000 Years | 36 tarihli kanıt kaydı, model endeksleri, kanıt şeritleri, eğrinin kendi sınırı |
 | Kayıp Vakaları | Loss Cases | 7 kayıp vakası, 6 efsane düzeltmesi, dijital karanlık çağ, yapay zekâ |
 | Zincir Haritaları | Chain Maps | **30 nesnenin zincir haritası** (modern dünya · Osmanlı · Roma), 30×6 model sınavı, Zincir Sondası |
-| Yöntem ve Sınırlar | Method & Limits | Sözlük, formüller, kayıp taksonomisi, düzeltme günlüğü |
-| Kaynakça | Sources | 35 birincil kaynak; haritaların içinde ayrıca 150 tarihli kaynak kaydı |
+| Yöntem ve Sınırlar | Method & Limits | Sözlük, formüller, kayıp taksonomisi, **Öncüller ve konum**, düzeltme günlüğü |
+| Kaynakça | Sources | **70 kaynak, 7 grup**; haritaların içinde ayrıca 150 tarihli kaynak kaydı |
 
 **239 tarihli olay, 150 kaynak kaydı, 36 kanıt kaydı.** Her kanıt kaydı ve her vaka kartı,
 *ne gösterdiği* kadar *ne göstermediğini* de açıkça yazar.
@@ -71,29 +81,28 @@ gelebilir. Çalışma bu iddiayı **altı halkalı bir aktarım zinciri** üzeri
    yalıtabildiğini sayar. Sonuç modelin aleyhine: 10 tam, 14 kısmî, 6 hiç.
 4. **Zincir Sondası internete çıkmaz.** On iki soruyu kullanıcı araştırır; motor yalnız
    cevapları profile çevirir ve "bilinmiyor"u asla "zayıf" saymaz.
-5. **Eğriye vaka uydurulmaz.** v4.6'da 13 yeni tanık kanıt şeritlerine işlendi;
+5. **Eğriye vaka uydurulmaz.** 13 Osmanlı/Roma tanığı kanıt şeritlerine işlendi;
    P/C/R eğrisindeki **hiçbir sayı değiştirilmedi.**
+6. **Öncüller adlandırılır.** Her parçanın yayınlanmış sahibi, karşı kaynaklar dahil,
+   çalışmanın içinde okuyucuya söylenir. Kapanış cümlesi: *"Buradaki hiçbir fikir ilk kez
+   söylenmiyor; bu sayfanın işi, ilk kez yan yana söylemek."*
 
-## v4.6 · Üç dünyanın sınavı
+## v5.0 · Öncüller ve yeniden konumlanma
 
-Altı halka modeli modern sanayi nesnelerinden çıkarıldı. "Yalnız moderniteyi tarif ediyor"
-itirazını sınamak için Osmanlı ve Roma dünyalarından 13 nesne eklendi:
+Altı ayrı literatür bağımsız tarandı (bkz. [`docs/05`](docs/05-onculler-ve-oncelik.md)).
+Sonuç: iddiaların çoğu daha önce, daha dar ve daha kanıtlı biçimde söylenmiş —
+simülasyonun her parametresinin yayınlanmış bir sahibi var, altı halkanın beşi OAIS/ISO
+14721'de tanımlı, ilk kayıp taksonomisi 1912 tarihli (Rivers). v5.0 buna dürüst cevabı
+verir: **Yöntem sekmesine "Öncüller ve konum" bölümü** eklendi — altı literatür
+sahipleriyle, kavram eşleme tablosu, simülasyonun soy kütüğü (Henrich ve Enquist
+denklemleriyle), yedi karşı kaynak ve 10.000 yıl mühendisliği hattı. Read'in kalemi ve
+Thwaites'in tost makinesi kartlarına yazarların **kendi** tezleri geri verildi; paket
+imgesi Reddy'nin "boru hattı metaforu" şerhiyle sınırlandı; İngilizce adın Bartlett
+paradigmasıyla akrabalığı görünür kılındı.
 
-**Osmanlı** — İznik çinisi · Hat sanatı ve icâzet · Ebru · Süleymaniye ve Sinan'ın yapı
-bilgisi · Osmanlı Türkçesi ve 1928 Harf İnkılâbı · Vakıf sistemi · İbrahim Müteferrika
-Matbaası
-
-**Roma** — Roma hukuku ve *Corpus Iuris Civilis* · Su kemerleri ve Frontinus'un bakım
-kılavuzu · Latin alfabesi · Cam üfleme · Kodeks · Hipokaust
-
-Model dağılmadı: her nesnede en ince halka altı halkadan biri çıktı ve yalıtılabilen vaka
-oranı %29'dan %33'e çıktı. Değişen şey vurgu oldu — tarihsel nesnelerin dördünde en ince
-halka **bakım**.
-
-Ve çalışma kendi eğrisinin sınırını da bastı: **1928 harf devrimi** bir bölgede çözücü
-halkasını bir kuşakta koparır, ama küresel endeks tam o noktada yükselmektedir.
-*Kayıp yereldir, endeks küreseldir.* Tek bir dünya endeksi, tanımı gereği bölgesel bir
-kopuşu gösteremez.
+Özgün kalan dört şey de orada açıkça sınırlanır: altı halkanın tek sistem olarak
+birleştirilmesi · alanlar arası köprü · Osmanlı/Roma sınavı · modelin kendi aleyhine
+tanıklığı.
 
 ## Teknik / Technical
 
@@ -103,17 +112,14 @@ kopuşu gösteremez.
 - Karanlık/açık tema, `prefers-color-scheme` ve `prefers-reduced-motion` desteği, yazdırma düzeni.
 - Hash yönlendirme (`#/görünüm`), `<iframe sandbox>` içinde de çalışır.
 - Tek dış istek: Google Fonts (Inter). Kaldırırsanız sistem yazı tipine düşer, başka hiçbir şey değişmez.
-- Dosya boyutu: ~692 KB.
+- Dosya boyutu: ~710 KB.
 
 ### Yerelde çalıştırma
 
 ```bash
 git clone https://github.com/ahmet3ddd/bilginin-tasinma-yolculugu
 cd bilginin-tasinma-yolculugu
-# dosyayı doğrudan tarayıcıda açın:
-xdg-open index.html      # macOS: open index.html
-# ya da küçük bir sunucu:
-python3 -m http.server 8000
+python3 -m http.server 8000   # ya da index.html'i doğrudan tarayıcıda açın
 ```
 
 ## Yayına alma / Publishing
@@ -136,10 +142,10 @@ Yayınlandığında adres: `https://ahmet3ddd.github.io/bilginin-tasinma-yolculu
 | [`docs/02-inceleme-paketi.md`](docs/02-inceleme-paketi.md) | İncelemecilere verilen tam paket: iddialar, formüller, kaynaklar |
 | [`docs/03-revizyon-gunlugu.md`](docs/03-revizyon-gunlugu.md) | Sürüm sürüm ne değişti, neden değişti |
 | [`docs/04-revizyon-felsefesi.md`](docs/04-revizyon-felsefesi.md) | Düzeltme kararlarının arkasındaki ölçüt |
+| [`docs/05-onculler-ve-oncelik.md`](docs/05-onculler-ve-oncelik.md) | **Öncüller taraması:** altı literatür, zorunlu atıf listesi, özgünlük haritası |
 
 Sürüm geçmişinin özeti çalışmanın kendi içinde de vardır: **Yöntem ve Sınırlar → Düzeltme
-günlüğü.** Orada her sürüm için "neydi / ne oldu" ikilisi yazılıdır — bir düzeltme
-günlüğünü gizlemek, bu çalışmanın tam olarak eleştirdiği şeydir.
+günlüğü.** Bir düzeltme günlüğünü gizlemek, bu çalışmanın tam olarak eleştirdiği şeydir.
 
 ## Lisans / License
 
