@@ -10,8 +10,14 @@
 </p>
 
 <p align="center">
+  <a href="https://ahmet3ddd.github.io/bilginin-tasinma-yolculugu/">
+    <img src="https://img.shields.io/badge/▶%20Çalışmayı%20aç-315cf4?style=for-the-badge" alt="Çalışmayı aç" />
+  </a>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Sürüm-v5.2-315cf4" alt="Sürüm v5.2" />
-  <img src="https://img.shields.io/badge/Durum-yayınlanmadı-cc8d22" alt="Durum: yayınlanmadı" />
+  <img src="https://img.shields.io/badge/Durum-yayında-1a7f4f" alt="Durum: yayında" />
   <img src="https://img.shields.io/badge/Kurulum-gerekmez-1c1f25" alt="Kurulum gerekmez" />
   <img src="https://img.shields.io/badge/Lisans-MIT-a2542e" alt="Lisans: MIT" />
 </p>
