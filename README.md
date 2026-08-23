@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Sürüm-v5.0-315cf4" alt="Sürüm v5.0" />
+  <img src="https://img.shields.io/badge/Sürüm-v5.1-315cf4" alt="Sürüm v5.1" />
   <img src="https://img.shields.io/badge/Durum-yayınlanmadı-cc8d22" alt="Durum: yayınlanmadı" />
   <img src="https://img.shields.io/badge/Kurulum-gerekmez-1c1f25" alt="Kurulum gerekmez" />
   <img src="https://img.shields.io/badge/Lisans-MIT-a2542e" alt="Lisans: MIT" />
@@ -30,13 +30,14 @@
 
 ## Bu çalışma nedir? / What is this?
 
-**Bir keşif değil, bir sentezdir.** Buradaki fikirlerin çoğu altı ayrı literatürde —
+**Bir keşif değil, bir sentezdir.** Buradaki fikirlerin çoğu yedi ayrı literatürde —
 örtük bilgi (Polanyi, Collins), kültürel evrim modelleri (Henrich, Mesoudi), dijital
 koruma (OAIS/ISO 14721), altyapı ve bakım çalışmaları (Latour, Star), sıkıştırma
-deneyleri (Kirby) ve 10.000 yıl mühendisliği (WIPP, Rosetta, GitHub Tech Tree) — daha
-önce söylendi. Bu çalışmanın işi, **birbirini okumayan bu altı alanı tek bir
-çalıştırılabilir zincirde birleştirmek**tir. Kimin neyi önce söylediği, çalışmanın
-içindeki **Yöntem → Öncüller** bölümünde tek tek adlandırılır.
+deneyleri (Kirby), 10.000 yıl mühendisliği (WIPP, Rosetta, GitHub Tech Tree) ve yazı
+sistemlerinin ölümü ile dil tehlikesi (Houston/Baines/Cooper, Krauss, UNESCO) — daha önce
+söylendi. Bu çalışmanın işi, **birbirini okumayan bu yedi alanı tek bir çalıştırılabilir
+zincirde birleştirmek**tir. Kimin neyi önce söylediği, **Yöntem → Öncüller** bölümünde tek
+tek adlandırılır.
 
 ## Tez / The argument
 
@@ -62,57 +63,60 @@ gelebilir. Çalışma bu iddiayı **altı halkalı bir aktarım zinciri** üzeri
 |---|---|---|
 | Genel Bakış | Overview | Tez, aktarım zinciri, vaka önizlemeleri |
 | Model Laboratuvarı | Model Lab | Kuşak simülasyonu, tarihsel ön ayarlar, eğri dondurup karşılaştırma |
-| 100.000 Yıl | 100,000 Years | 36 tarihli kanıt kaydı, model endeksleri, kanıt şeritleri, eğrinin kendi sınırı |
-| Kayıp Vakaları | Loss Cases | 12 kayıp vakası, 7 efsane düzeltmesi, dijital karanlık çağ, yapay zekâ |
-| Zincir Haritaları | Chain Maps | **30 nesnenin zincir haritası** (modern dünya · Osmanlı · Roma), 30×6 model sınavı, Zincir Sondası |
+| 100.000 Yıl | 100,000 Years | 37 tarihli kanıt kaydı, model endeksleri, kanıt şeritleri, eğrinin kendi sınırı |
+| Kayıp Vakaları | Loss Cases | 7 kayıp vakası, 6 efsane düzeltmesi, dijital karanlık çağ, yapay zekâ |
+| Zincir Haritaları | Chain Maps | **31 nesnenin zincir haritası** (modern dünya · Osmanlı · Roma), 31×6 model sınavı, Zincir Sondası |
 | Yöntem ve Sınırlar | Method & Limits | Sözlük, formüller, kayıp taksonomisi, **Öncüller ve konum**, düzeltme günlüğü |
-| Kaynakça | Sources | **70 kaynak, 7 grup**; haritaların içinde ayrıca 150 tarihli kaynak kaydı |
+| Kaynakça | Sources | **75 kaynak, 7 grup**; haritaların içinde ayrıca 160+ tarihli kaynak kaydı |
 
-**239 tarihli olay, 150 kaynak kaydı, 36 kanıt kaydı.** Her kanıt kaydı ve her vaka kartı,
-*ne gösterdiği* kadar *ne göstermediğini* de açıkça yazar.
+Her kanıt kaydı ve her vaka kartı, *ne gösterdiği* kadar *ne göstermediğini* de açıkça
+yazar.
 
 ## Bu çalışmanın kendine koyduğu kurallar
 
-1. **Uydurma sayı yok.** Model parametreleri (q<sub>c</sub>, q<sub>d</sub>, yarı ömür…)
-   kanıttan ölçülmez, *varsayılır* — ve bu her ekranda yazılıdır.
-2. **Vaka merceği tek sabit kuralla çalışır.** Zincir haritasından laboratuvara geçerken
-   kaydırıcılar ayarlanır, ama her nesne için **aynı** kuralla; nesneye özel ayar yoktur.
-3. **Model kendi sınavına girer.** 30×6'lık matris, modelin kaç vakada kırılgan halkayı
-   yalıtabildiğini sayar. Sonuç modelin aleyhine: 10 tam, 14 kısmî, 6 hiç.
-4. **Zincir Sondası internete çıkmaz.** On iki soruyu kullanıcı araştırır; motor yalnız
-   cevapları profile çevirir ve "bilinmiyor"u asla "zayıf" saymaz.
-5. **Eğriye vaka uydurulmaz.** 13 Osmanlı/Roma tanığı kanıt şeritlerine işlendi;
-   P/C/R eğrisindeki **hiçbir sayı değiştirilmedi.**
+1. **Uydurma sayı yok.** Model parametreleri kanıttan ölçülmez, *varsayılır* — ve bu her
+   ekranda yazılıdır.
+2. **Vaka merceği tek sabit kuralla çalışır.** Her nesne için **aynı** kural; nesneye özel
+   ayar yoktur.
+3. **Model kendi sınavına girer.** 31×6'lık matris, modelin kaç vakada kırılgan halkayı
+   yalıtabildiğini sayar. Sonuç modelin aleyhine: 10 tam, 15 kısmî, 6 hiç.
+4. **Zincir Sondası internete çıkmaz.** Motor yalnız kullanıcının cevaplarını profile
+   çevirir ve "bilinmiyor"u asla "zayıf" saymaz.
+5. **Eğriye vaka uydurulmaz.** Osmanlı, Roma ve Ubıhça tanıkları kanıt şeritlerine
+   işlendi; P/C/R eğrisindeki **hiçbir sayı değiştirilmedi.**
 6. **Öncüller adlandırılır.** Her parçanın yayınlanmış sahibi, karşı kaynaklar dahil,
-   çalışmanın içinde okuyucuya söylenir. Kapanış cümlesi: *"Buradaki hiçbir fikir ilk kez
-   söylenmiyor; bu sayfanın işi, ilk kez yan yana söylemek."*
+   çalışmanın içinde okuyucuya söylenir: *"Buradaki hiçbir fikir ilk kez söylenmiyor; bu
+   sayfanın işi, ilk kez yan yana söylemek."*
+7. **Hiçbir nesne ayrıcalıklı değil.** Bir dil de, bir su kemeri de, bir kurşun kalem de
+   aynı altı halkayla ve aynı kuralla ölçülür.
 
-## v5.0 · Öncüller ve yeniden konumlanma
+## v5.1 · Ubıhça ve yedinci literatür
 
-Altı ayrı literatür bağımsız tarandı (bkz. [`docs/05`](docs/05-onculler-ve-oncelik.md)).
-Sonuç: iddiaların çoğu daha önce, daha dar ve daha kanıtlı biçimde söylenmiş —
-simülasyonun her parametresinin yayınlanmış bir sahibi var, altı halkanın beşi OAIS/ISO
-14721'de tanımlı, ilk kayıp taksonomisi 1912 tarihli (Rivers). v5.0 buna dürüst cevabı
-verir: **Yöntem sekmesine "Öncüller ve konum" bölümü** eklendi — altı literatür
-sahipleriyle, kavram eşleme tablosu, simülasyonun soy kütüğü (Henrich ve Enquist
-denklemleriyle), yedi karşı kaynak ve 10.000 yıl mühendisliği hattı. Read'in kalemi ve
-Thwaites'in tost makinesi kartlarına yazarların **kendi** tezleri geri verildi; paket
-imgesi Reddy'nin "boru hattı metaforu" şerhiyle sınırlandı; İngilizce adın Bartlett
-paradigmasıyla akrabalığı görünür kılındı.
+Öncüller taraması yedinci bir alan buldu: **yazı sistemlerinin ölümü** (2003'ten beri
+"script obsolescence") ve **dil tehlikesi** (Krauss 1992, Himmelmann 1998, UNESCO 2003).
+Bu, paket/çözücü ayrımının en iyi belgelendiği alan — ve UNESCO'nun 2003 ölçeği belgeleme
+ile kuşaklar arası aktarımı ayrı eksenlerde derecelendirip toplanmalarını açıkça
+yasaklıyor: *"Diller sayılar toplanarak değerlendirilemez."*
 
-Özgün kalan dört şey de orada açıkça sınırlanır: altı halkanın tek sistem olarak
-birleştirilmesi · alanlar arası köprü · Osmanlı/Roma sınavı · modelin kendi aleyhine
-tanıklığı.
+**Ubıhça otuz birinci nesne olarak eklendi** — ayrı bir "dil" kategorisine değil, mevcut
+*Bilgi taşıyıcıları* grubuna, radyo ve internetin yanına; aynı tahmin oyunu, aynı altı
+halka tablosu, aynı sabit kural. Tevfik Esenç 7 Ekim 1992'de Balıkesir Manyas'ta öldü;
+84 ünsüzlü dilin tam grameri **on dokuz yıl sonra** yayımlandı.
+
+Sonuç modelin lehine ve konu için belirleyici: **Ubıhçanın en ince halkası *bakım* çıktı —
+Roma su kemerleriyle ve kodeksle aynı halka.** Nesne değişiyor, kırılma noktası
+değişmiyor. Alanın "dil özeldir" tezi ise karşı kaynaklara girdi, çünkü bu çalışmanın
+evrensellik iddiasına yöneltilmiş gerçek bir itirazdır.
 
 ## Teknik / Technical
 
 - **Tek dosya.** `index.html` kendi kendine yeter: CSS, JavaScript, favicon ve bütün veri gömülüdür.
 - **Bağımlılık ve derleme adımı yok.** Framework yok, npm yok, build yok.
-- Grafikler elle üretilen SVG'dir; fare/dokunma ipucu, erişilebilir veri tablosu ve SVG/PNG indirme destekler.
+- Grafikler elle üretilen SVG'dir; ipucu, erişilebilir veri tablosu ve SVG/PNG indirme destekler.
 - Karanlık/açık tema, `prefers-color-scheme` ve `prefers-reduced-motion` desteği, yazdırma düzeni.
 - Hash yönlendirme (`#/görünüm`), `<iframe sandbox>` içinde de çalışır.
-- Tek dış istek: Google Fonts (Inter). Kaldırırsanız sistem yazı tipine düşer, başka hiçbir şey değişmez.
-- Dosya boyutu: ~710 KB.
+- Tek dış istek: Google Fonts (Inter). Kaldırırsanız sistem yazı tipine düşer.
+- Dosya boyutu: ~736 KB.
 
 ### Yerelde çalıştırma
 
@@ -129,8 +133,7 @@ Bu depo **şimdilik yayınlanmamıştır.** `.github/workflows/pages.yml` kendil
 
 1. **Settings → General → Change visibility** → Public
 2. **Settings → Pages → Source** → GitHub Actions
-3. `pages.yml` içindeki `push:` bloğunun yorumunu kaldırın (ya da Actions sekmesinden
-   iş akışını elle çalıştırın)
+3. `pages.yml` içindeki `push:` bloğunun yorumunu kaldırın
 
 Yayınlandığında adres: `https://ahmet3ddd.github.io/bilginin-tasinma-yolculugu/`
 
@@ -138,18 +141,15 @@ Yayınlandığında adres: `https://ahmet3ddd.github.io/bilginin-tasinma-yolculu
 
 | Dosya | İçerik |
 |---|---|
-| [`docs/01-uzman-incelemesi-karar.md`](docs/01-uzman-incelemesi-karar.md) | Altı uzman incelemesinin kararı: yayınlanabilir mi, hangi şartla |
-| [`docs/02-inceleme-paketi.md`](docs/02-inceleme-paketi.md) | İncelemecilere verilen tam paket: iddialar, formüller, kaynaklar |
-| [`docs/03-revizyon-gunlugu.md`](docs/03-revizyon-gunlugu.md) | Sürüm sürüm ne değişti, neden değişti |
-| [`docs/04-revizyon-felsefesi.md`](docs/04-revizyon-felsefesi.md) | Düzeltme kararlarının arkasındaki ölçüt |
-| [`docs/05-onculler-ve-oncelik.md`](docs/05-onculler-ve-oncelik.md) | **Öncüller taraması:** altı literatür, zorunlu atıf listesi, özgünlük haritası |
-
-Sürüm geçmişinin özeti çalışmanın kendi içinde de vardır: **Yöntem ve Sınırlar → Düzeltme
-günlüğü.** Bir düzeltme günlüğünü gizlemek, bu çalışmanın tam olarak eleştirdiği şeydir.
+| [`docs/01-uzman-incelemesi-karar.md`](docs/01-uzman-incelemesi-karar.md) | Altı uzman incelemesinin kararı |
+| [`docs/02-inceleme-paketi.md`](docs/02-inceleme-paketi.md) | İncelemecilere verilen tam paket |
+| [`docs/03-revizyon-gunlugu.md`](docs/03-revizyon-gunlugu.md) | Sürüm sürüm ne değişti |
+| [`docs/04-revizyon-felsefesi.md`](docs/04-revizyon-felsefesi.md) | Düzeltme kararlarının ölçütü |
+| [`docs/05-onculler-ve-oncelik.md`](docs/05-onculler-ve-oncelik.md) | **Öncüller taraması:** yedi literatür, zorunlu atıf listesi, özgünlük haritası |
 
 ## Lisans / License
 
 MIT — bkz. [LICENSE](LICENSE).
 
-Metin ve veri de aynı lisansla paylaşılır; ancak alıntılanan birincil kaynaklar kendi
-haklarına tabidir ve çalışma içindeki bağlantılardan doğrudan erişilebilir.
+Metin ve veri de aynı lisansla paylaşılır; alıntılanan birincil kaynaklar kendi haklarına
+tabidir ve çalışma içindeki bağlantılardan doğrudan erişilebilir.
