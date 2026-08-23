@@ -1,5 +1,5 @@
 # Öncüller ve Öncelik — Prior Art Raporu
-## "Aktarım Zinciri / The Transmission Chain" · v5.1 için güncellendi, 23 Ağustos 2026
+## "Aktarım Zinciri / The Transmission Chain" · v5.2 için güncellendi, 23 Ağustos 2026
 
 Yedi ayrı literatür bağımsız olarak tarandı: örtük bilgi ve bilim sosyolojisi · kültürel
 evrim ve teknoloji kaybı · dijital koruma ve arşiv bilimi · STS, altyapı ve bakım
@@ -270,7 +270,7 @@ işi. → *v5.0: iki karta yazarların kendi okumaları eklendi.*
    dil tarafında da bu boşluk açık (bkz. 2.7).
 4. **Etkileşimli anlatım kanonunda bu konu hiç yok** — explorabl.es'te tarih kategorisi
    bile yok. Argüman yeni değil; **argümanın çalıştırılabilir hâli yok.**
-5. Osmanlı/Roma vaka seti, Ubıhça haritası ve modelin kendi aleyhine 30×6 → 31×6 sınavı.
+5. Osmanlı/Roma vaka seti, Ubıhça haritası ve modelin kendi aleyhine 30×6 → 32×6 sınavı.
 
 ---
 

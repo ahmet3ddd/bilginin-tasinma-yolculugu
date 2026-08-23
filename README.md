@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Sürüm-v5.1-315cf4" alt="Sürüm v5.1" />
+  <img src="https://img.shields.io/badge/Sürüm-v5.2-315cf4" alt="Sürüm v5.2" />
   <img src="https://img.shields.io/badge/Durum-yayınlanmadı-cc8d22" alt="Durum: yayınlanmadı" />
   <img src="https://img.shields.io/badge/Kurulum-gerekmez-1c1f25" alt="Kurulum gerekmez" />
   <img src="https://img.shields.io/badge/Lisans-MIT-a2542e" alt="Lisans: MIT" />
@@ -39,6 +39,11 @@ söylendi. Bu çalışmanın işi, **birbirini okumayan bu yedi alanı tek bir �
 zincirde birleştirmek**tir. Kimin neyi önce söylediği, **Yöntem → Öncüller** bölümünde tek
 tek adlandırılır.
 
+**Künye ve yöntem beyanı** çalışmanın içindedir (Yöntem → Künye): yazar bu alanların
+hiçbirinde akademik uzman değildir, "uzman incelemesi" denen süreç **yapay zekâ modelleri
+tarafından** yürütülmüştür ve insan hakemlik değildir, ve yapay zekâ katkısının kapsamı
+açıkça yazılıdır.
+
 ## Tez / The argument
 
 İnsan geçmişin tamamını değil, semboller ve prosedürler içinde sıkıştırılmış paketlerini
@@ -63,10 +68,10 @@ gelebilir. Çalışma bu iddiayı **altı halkalı bir aktarım zinciri** üzeri
 |---|---|---|
 | Genel Bakış | Overview | Tez, aktarım zinciri, vaka önizlemeleri |
 | Model Laboratuvarı | Model Lab | Kuşak simülasyonu, tarihsel ön ayarlar, eğri dondurup karşılaştırma |
-| 100.000 Yıl | 100,000 Years | 37 tarihli kanıt kaydı, model endeksleri, kanıt şeritleri, eğrinin kendi sınırı |
+| 100.000 Yıl | 100,000 Years | 38 tarihli kanıt kaydı, model endeksleri, kanıt şeritleri, eğrinin kendi sınırı |
 | Kayıp Vakaları | Loss Cases | 7 kayıp vakası, 6 efsane düzeltmesi, dijital karanlık çağ, yapay zekâ |
-| Zincir Haritaları | Chain Maps | **31 nesnenin zincir haritası** (modern dünya · Osmanlı · Roma), 31×6 model sınavı, Zincir Sondası |
-| Yöntem ve Sınırlar | Method & Limits | Sözlük, formüller, kayıp taksonomisi, **Öncüller ve konum**, düzeltme günlüğü |
+| Zincir Haritaları | Chain Maps | **32 nesnenin zincir haritası** (modern dünya · Osmanlı · Roma), 32×6 model sınavı, Zincir Sondası |
+| Yöntem ve Sınırlar | Method & Limits | Sözlük, formüller, kayıp taksonomisi, **Künye**, **Öncüller**, düzeltme günlüğü |
 | Kaynakça | Sources | **75 kaynak, 7 grup**; haritaların içinde ayrıca 160+ tarihli kaynak kaydı |
 
 Her kanıt kaydı ve her vaka kartı, *ne gösterdiği* kadar *ne göstermediğini* de açıkça
@@ -78,35 +83,40 @@ yazar.
    ekranda yazılıdır.
 2. **Vaka merceği tek sabit kuralla çalışır.** Her nesne için **aynı** kural; nesneye özel
    ayar yoktur.
-3. **Model kendi sınavına girer.** 31×6'lık matris, modelin kaç vakada kırılgan halkayı
-   yalıtabildiğini sayar. Sonuç modelin aleyhine: 10 tam, 15 kısmî, 6 hiç.
+3. **Model kendi sınavına girer.** 32×6'lık matris, modelin kaç vakada kırılgan halkayı
+   yalıtabildiğini sayar. Sonuç modelin aleyhine: 10 tam, 16 kısmî, 6 hiç.
 4. **Zincir Sondası internete çıkmaz.** Motor yalnız kullanıcının cevaplarını profile
    çevirir ve "bilinmiyor"u asla "zayıf" saymaz.
-5. **Eğriye vaka uydurulmaz.** Osmanlı, Roma ve Ubıhça tanıkları kanıt şeritlerine
-   işlendi; P/C/R eğrisindeki **hiçbir sayı değiştirilmedi.**
+5. **Eğriye vaka uydurulmaz.** Bütün tanıklar kanıt şeritlerine işlendi; P/C/R eğrisindeki
+   **hiçbir sayı değiştirilmedi.**
 6. **Öncüller adlandırılır.** Her parçanın yayınlanmış sahibi, karşı kaynaklar dahil,
    çalışmanın içinde okuyucuya söylenir: *"Buradaki hiçbir fikir ilk kez söylenmiyor; bu
    sayfanın işi, ilk kez yan yana söylemek."*
 7. **Hiçbir nesne ayrıcalıklı değil.** Bir dil de, bir su kemeri de, bir kurşun kalem de
    aynı altı halkayla ve aynı kuralla ölçülür.
+8. **Nasıl yapıldığı gizlenmez.** Yazar adı, uzmanlık beyanı ve yapay zekâ katkısının
+   kapsamı künyede açıkça yazılıdır.
 
-## v5.1 · Ubıhça ve yedinci literatür
+## v5.2 · Kilogram ve künye
 
-Öncüller taraması yedinci bir alan buldu: **yazı sistemlerinin ölümü** (2003'ten beri
-"script obsolescence") ve **dil tehlikesi** (Krauss 1992, Himmelmann 1998, UNESCO 2003).
-Bu, paket/çözücü ayrımının en iyi belgelendiği alan — ve UNESCO'nun 2003 ölçeği belgeleme
-ile kuşaklar arası aktarımı ayrı eksenlerde derecelendirip toplanmalarını açıkça
-yasaklıyor: *"Diller sayılar toplanarak değerlendirilemez."*
+Otuz bir vakanın hepsi ya kendiliğinden tutmuş ya kopmuştu; hiçbiri **bilerek onarılmış**
+bir zincir değildi. Otuz ikinci nesne bu boşluğu dolduruyor.
 
-**Ubıhça otuz birinci nesne olarak eklendi** — ayrı bir "dil" kategorisine değil, mevcut
-*Bilgi taşıyıcıları* grubuna, radyo ve internetin yanına; aynı tahmin oyunu, aynı altı
-halka tablosu, aynı sabit kural. Tevfik Esenç 7 Ekim 1992'de Balıkesir Manyas'ta öldü;
-84 ünsüzlü dilin tam grameri **on dokuz yıl sonra** yayımlandı.
+1889'dan 2019'a kadar bir kilogram, Saint-Cloud'da **üç ayrı anahtarla** açılan bir
+kasadaki tek bir platin-iridyum silindirdi. Tarih boyunca yalnız üç kez doğrulanabildi
+(1889, 1948, 1989) ve üçüncüsünde kopyalarından **~50 mikrogram** ayrışmış çıktı — ve
+burada kapana kısılırsınız, çünkü **standardı kendisiyle kalibre edemezsiniz.**
+20 Mayıs 2019'da paket bir eşyadan bir sabite taşındı: *h* = 6,62607015 × 10⁻³⁴ J·s.
 
-Sonuç modelin lehine ve konu için belirleyici: **Ubıhçanın en ince halkası *bakım* çıktı —
-Roma su kemerleriyle ve kodeksle aynı halka.** Nesne değişiyor, kırılma noktası
-değişmiyor. Alanın "dil özeldir" tezi ise karşı kaynaklara girdi, çünkü bu çalışmanın
-evrensellik iddiasına yöneltilmiş gerçek bir itirazdır.
+Sonuç dürüst ve rahatsız edici: **onarım kırılganlığı yok etmedi, taşıdı.** Kilogramın
+bugünkü en ince halkası *aparat* — gerçekleme bir Kibble terazisi istiyor ve bu aletler
+hâlâ büyük ölçüde tek nüshalık. 2019 öncesi risk "tek kasada tek nesne"ydi; sonrası
+"birkaç laboratuvarda tek tür alet". Bir zincirin bilerek onarılması işte böyle görünüyor:
+zayıflığın yok edilmesi değil, seçtiğiniz bir yere taşınması.
+
+Ve bir sınır: bu yöntem işe yaradı çünkü kütle bir doğa sabitine bağlanabiliyordu.
+İznik'in sırını Planck sabiti cinsinden tanımlayamazsınız, Ubıhçanın seksen dört ünsüzünü
+de.
 
 ## Teknik / Technical
 
@@ -116,7 +126,7 @@ evrensellik iddiasına yöneltilmiş gerçek bir itirazdır.
 - Karanlık/açık tema, `prefers-color-scheme` ve `prefers-reduced-motion` desteği, yazdırma düzeni.
 - Hash yönlendirme (`#/görünüm`), `<iframe sandbox>` içinde de çalışır.
 - Tek dış istek: Google Fonts (Inter). Kaldırırsanız sistem yazı tipine düşer.
-- Dosya boyutu: ~736 KB.
+- Dosya boyutu: ~788 KB.
 
 ### Yerelde çalıştırma
 
