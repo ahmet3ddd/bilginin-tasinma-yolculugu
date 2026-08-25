@@ -1,4 +1,4 @@
-object_id,link,is_thinnest_link,n_events_coded_to_link,model_represents_link,model_slider
+﻿object_id,link,is_thinnest_link,n_events_coded_to_link,model_represents_link,model_slider
 pencil,packet,0,2,partial,gain
 pencil,decoder,0,1,full,qd
 pencil,context,0,1,full,qc

@@ -37,7 +37,11 @@ düzyazısı bu veri kümesine **dâhil değildir** ve kullanmak için gerekmez.
 | `sources.csv` | 275 | benzersiz bir kaynak adresi ve kullanım sayısı |
 | `corpus.json` | — | kayıpsız dışa aktarım: özgün iki dilli alanlar, satır içi işaretlemesiyle, artı model parametreleri |
 
-CSV dosyaları UTF-8, virgülle ayrılmış, RFC 4180 tırnaklama, başlık satırlı. CSV'deki metin
+CSV dosyaları **BOM'lu** UTF-8, virgülle ayrılmış, RFC 4180 tırnaklama, başlık satırlı.
+BOM bilinçlidir: onsuz Excel ve WPS Office dosyayı sistem kod sayfasıyla açar ve ASCII
+dışındaki her karakter bozulur — iki dilli bir Türkçe veri kümesinde bu, metnin çoğu
+demektir. Python'da `encoding='utf-8-sig'` ile okuyun; `pandas`, R ve çoğu araç BOM'u
+kendisi ayıklar. `corpus.json` BOM taşımaz, RFC 8259 böyle gerektirir. CSV'deki metin
 alanlarından satır içi HTML temizlendi ve boşluklar sadeleştirildi; `corpus.json` özgün
 dizgileri **değiştirmeden** saklar. Bütün iki dilli alanlar `_tr` ve `_en` ekiyle iki kez
 görünür; ikisi birbirinin çevirisidir, **bağımsız gözlem değildir.**

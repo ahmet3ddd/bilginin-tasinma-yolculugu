@@ -35,7 +35,12 @@ simulation and its prose are **not** part of this dataset and are not needed to 
 | `sources.csv` | 275 | one unique cited URL, with usage count |
 | `corpus.json` | — | lossless export: original bilingual fields with their inline markup, plus model parameters |
 
-CSV files are UTF-8, comma-separated, RFC 4180 quoting, with a header row. Text fields in
+CSV files are UTF-8 **with a byte-order mark**, comma-separated, RFC 4180 quoting, with a
+header row. The BOM is deliberate: without it, Excel and WPS Office open the file in the
+system code page and every non-ASCII character is mangled, which for a bilingual Turkish
+dataset means most of the text. Read them with `encoding='utf-8-sig'` in Python; `pandas`,
+R and most other tools strip the BOM themselves. `corpus.json` carries no BOM, as RFC 8259
+requires. Text fields in
 CSV have had inline HTML stripped and whitespace collapsed; `corpus.json` preserves the
 original strings unmodified. All bilingual fields appear twice, suffixed `_tr` and `_en`;
 the two are translations of one another, not independent records.

@@ -28,7 +28,8 @@ def kappa(a, b):
     return k, po, pe
 
 def read_key(path, col):
-    with open(path, newline='', encoding='utf-8') as f:
+    # utf-8-sig: dosyalar elektronik tablo uygulamaları doğru açsın diye BOM ile yazılır
+    with open(path, newline='', encoding='utf-8-sig') as f:
         return [r[col] for r in csv.DictReader(f)]
 
 def yorum(k):
