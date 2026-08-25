@@ -1,45 +1,55 @@
-# Depoyu kurma / Setting the repository up
+# Depoyu güncelleme / Updating the site
 
-Bu klasör **eksiksizdir** — `index.html` dahil. Tek yapmanız gereken depoyu açıp itmek.
+Depo **yayındadır**: <https://ahmet3ddd.github.io/bilginin-tasinma-yolculugu/>
 
-## 1. GitHub'da boş bir depo açın
+## Bir değişikliği yayına almak
 
-- Ad: `bilginin-tasinma-yolculugu`
-- Görünürlük: **Private** (şimdilik yayınlamıyoruz)
-- README, .gitignore, lisans **eklemeyin** — hepsi bu klasörde zaten var
+1. Değişen dosyaları depoya yükleyin (GitHub arayüzünden sürükle-bırak da olur).
+2. **Actions → Deploy to Pages → Run workflow.**
+   `.github/workflows/pages.yml` kendiliğinden çalışmaz; elle tetiklenir.
+3. Bir iki dakika sonra canlı adresi **sert yenileme** ile açıp kontrol edin
+   (Ctrl+F5 / Cmd+Shift+R) — tarayıcı eski dosyayı önbellekte tutuyor olabilir.
 
-## 2. İtin / Push
+Otomatikleştirmek isterseniz `pages.yml` içindeki `push:` bloğunun yorumunu kaldırın;
+o zaman her yükleme kendiliğinden yayınlanır.
 
-Bu klasörün içinde:
+## Sürüm çıkarırken
 
-```bash
-git init -b main
-git add .
-git commit -m "Aktarım Zinciri v4.6 — ilk yükleme"
-git remote add origin https://github.com/ahmet3ddd/bilginin-tasinma-yolculugu.git
-git push -u origin main
+`index.html` içinde sürüm numarası **üç yerde** geçer ve üçü birden güncellenmelidir:
+
+| Yer | Ne yazar |
+|---|---|
+| JSON-LD | `"version":"5.3"` ve `"dateModified"` |
+| Künye (`mCreditBody`) | `Sürüm: v5.3` / `Version: v5.3` |
+| Yöntem rozeti (`mBadgeNote`) ve alt bilgi (`footerLeft`) | `Sürüm 5.3` / `Model v5.3` |
+
+Ayrıca `CITATION.cff` içindeki `version` ve `date-released`, ve düzeltme günlüğüne
+(`var changes`) yeni bir kayıt. Bu çalışmanın kendi tezi gereği: **ne değiştiğini
+yazmadan sürüm çıkarılmaz.**
+
+## Zenodo bağlıysa
+
+Zenodo'ya bağlandıktan sonra her **GitHub Release**, yeni bir sürüm DOI'si üretir.
+Sürüm çıkarma sırası: dosyaları yükle → Actions ile yayınla → **Releases → Draft a new
+release** → etiket `v5.3` → Publish. DOI birkaç dakika içinde Zenodo'da görünür ve
+`CITATION.cff` ile `README` içindeki DOI satırına yazılır.
+
+## Depodaki dosyalar
+
 ```
-
-## 3. Kontrol
-
-Push'tan sonra depoda şunlar olmalı:
-
-```
-index.html                     ~692 KB, tek dosya, Model v4.6
-README.md                      kapak görseli + tez + sürüm notu
-LICENSE                        MIT
+index.html                     tek dosya, ~880 KB, dış istek yok
+README.md                      künye, tez, veri, lisans
+LICENSE                        iki lisans: metin/veri CC BY 4.0, kod MIT
+LICENSE-CC-BY-4.0.txt          CC BY 4.0 tam metni
+LICENSE-Inter-OFL.txt          Inter yazı tipi, SIL OFL 1.1
+CITATION.cff                   makine okunur atıf künyesi
 .nojekyll                      Pages'in dosyaları olduğu gibi sunması için
-.gitignore
-.github/workflows/pages.yml    KAPALI — kendiliğinden çalışmaz
+.github/workflows/pages.yml    elle tetiklenir
 assets/og.png                  sosyal medya kartı (1200×630)
-docs/01…04                     uzman incelemesi ve revizyon belgeleri
+data/                          halka-kodlu korpus (CSV + JSON) ve kod kitapçığı
+docs/01…05                     çekişmeli eleştiri ve revizyon belgeleri
 ```
 
-## 4. Bundan sonra
-
-Depo hazır ama **yayında değil**. Yayına almak istediğinizde README'deki
-"Yayına alma" bölümünü izleyin — üç adım.
-
-`index.html` içindeki `canonical`, `og:url`, `og:image` ve kaynak kodu bağlantısı
-bu depoya göre ayarlandı: `https://ahmet3ddd.github.io/bilginin-tasinma-yolculugu/`
+`index.html` içindeki `canonical`, `og:url`, `og:image` ve kaynak kodu bağlantısı bu
+depoya göre ayarlanmıştır: `https://ahmet3ddd.github.io/bilginin-tasinma-yolculugu/`
 Depoyu başka bir adla açarsanız bu dört yeri güncellemek gerekir.

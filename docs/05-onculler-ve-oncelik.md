@@ -1,3 +1,27 @@
+> **Bu belge hakkında / About this document**
+>
+> Bu dosya **Aktarım Zinciri / The Transmission Chain** çalışmasının çalışma
+> belgelerinden biridir (yazar: Ahmet Çandöken · `ahmetoff`).
+> İçindeki inceleme, **insan hakemliği değildir.** Altı ayrı uzmanlık çerçevesinden
+> (arkeoloji · bilim ve teknoloji tarihi · nicel modelleme · dijital koruma ·
+> bilim felsefesi · yayın bütünlüğü) **yapay zekâ modelleri tarafından yürütülen
+> çekişmeli eleştiridir** ve hakemliğin yerine geçmez. Belgede birinci tekil şahıs
+> kullanılması, insan bir incelemeci olduğu anlamına gelmez. Bulguların bir bölümü
+> yorum değil aritmetiktir: eleştiri sitenin kendi kodunu çalıştırıp basılan
+> formüllerle karşılaştırmıştır. Sorumluluk her hâlde yazara aittir.
+>
+> This file is one of the working documents of **The Transmission Chain**
+> (author: Ahmet Çandöken · `ahmetoff`). The review it contains is **not human peer
+> review.** It is **adversarial critique carried out by AI models** from six
+> specialist framings (archaeology · history of science and technology ·
+> quantitative modelling · digital preservation · philosophy of science ·
+> publication integrity), and it is not a substitute for peer review. The use of the
+> first person in this document does not indicate a human reviewer. Part of what it
+> found is arithmetic rather than interpretation: the critique ran the site's own
+> code against its printed formulas. Responsibility rests in every case with the author.
+>
+> Metin ve veri **CC BY 4.0** · kod **MIT** — bkz. `LICENSE`.
+
 # Öncüller ve Öncelik — Prior Art Raporu
 ## "Aktarım Zinciri / The Transmission Chain" · v5.2 için güncellendi, 23 Ağustos 2026
 

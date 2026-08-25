@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+title: "Aktarım Zinciri / The Transmission Chain"
+message: "If you use this work or its data, please cite it as below."
+type: software
+authors:
+  - family-names: "Çandöken"
+    given-names: "Ahmet"
+    alias: "ahmetoff"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add after registering at orcid.org
+version: "5.3"
+date-released: "2026-08-25"
+license:
+  - CC-BY-4.0
+  - MIT
+license-url: "https://github.com/ahmet3ddd/bilginin-tasinma-yolculugu/blob/main/LICENSE"
+repository-code: "https://github.com/ahmet3ddd/bilginin-tasinma-yolculugu"
+url: "https://ahmet3ddd.github.io/bilginin-tasinma-yolculugu/"
+# doi: "10.5281/zenodo.XXXXXXX"                        # add after depositing on Zenodo
+abstract: >-
+  An interactive bilingual (Turkish/English) study of how knowledge is transmitted
+  between generations, built on a six-link transmission chain — packet, decoder,
+  context, tacit knowledge, apparatus, maintenance — and tested against 32 real
+  objects drawn from the modern-industrial, Ottoman and Roman worlds, with 255 dated
+  and individually sourced events. The repository also contains the link-coded corpus
+  as CSV and JSON with a codebook. The study is a synthesis and a teaching instrument,
+  not a research contribution: it has not been through human peer review and was
+  produced with AI assistance, and both facts are stated in the work itself.
+keywords:
+  - knowledge transmission
+  - cultural evolution
+  - digital preservation
+  - tacit knowledge
+  - OAIS
+  - maintenance studies
+  - language endangerment
+  - interactive explanation

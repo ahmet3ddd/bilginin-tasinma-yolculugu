@@ -1,6 +1,44 @@
-MIT License
+Aktarım Zinciri / The Transmission Chain
+Copyright (c) 2026 Ahmet Çandöken (github.com/ahmet3ddd)
 
-Copyright (c) 2026 ahmet3ddd
+This repository is released under two licences, because it contains two
+different kinds of work.
+
+  TEXT AND DATA  — Creative Commons Attribution 4.0 International (CC BY 4.0)
+    Covers the prose of the study, the evidence records, the chain maps, the
+    32-object corpus in `data/`, the codebook, and the documents in `docs/`.
+    Full legal code: LICENSE-CC-BY-4.0.txt
+    Summary: https://creativecommons.org/licenses/by/4.0/
+    CC BY 4.0 is used rather than a software licence because it covers sui
+    generis database rights, which a software licence does not, and because it
+    states an attribution obligation in terms a reuser of prose and data can act on.
+
+  SOFTWARE  — MIT (full text below)
+    Covers the JavaScript, CSS and build/deployment scripts in this repository.
+
+  THIRD-PARTY MATERIAL — not covered by either of the above
+    * The Inter typeface embedded in `index.html` is Copyright (c) 2016 The Inter
+      Project Authors and is licensed under the SIL Open Font License 1.1.
+      Full text: LICENSE-Inter-OFL.txt
+    * Every primary and secondary source cited in the study remains subject to
+      its own rights holder. Citations link directly to the source; no third-party
+      text is redistributed here beyond short quotation.
+
+Attribution, when reusing the text or data, should name the author, the version,
+and link to the work — for example:
+
+  Çandöken, Ahmet (2026). Aktarım Zinciri / The Transmission Chain, v5.3.
+  https://ahmet3ddd.github.io/bilginin-tasinma-yolculugu/  — CC BY 4.0
+
+See CITATION.cff for machine-readable citation metadata, and the "Terms of use,
+disclaimer and privacy" section inside the study for the conditions that go with
+reuse — in particular that the work has not been through human peer review and
+was produced with AI assistance, and that both facts should travel with it.
+
+-----------------------------------------------------------------------------
+MIT License (software only)
+
+Copyright (c) 2026 Ahmet Çandöken
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -1,6 +1,30 @@
+> **Bu belge hakkında / About this document**
+>
+> Bu dosya **Aktarım Zinciri / The Transmission Chain** çalışmasının çalışma
+> belgelerinden biridir (yazar: Ahmet Çandöken · `ahmetoff`).
+> İçindeki inceleme, **insan hakemliği değildir.** Altı ayrı uzmanlık çerçevesinden
+> (arkeoloji · bilim ve teknoloji tarihi · nicel modelleme · dijital koruma ·
+> bilim felsefesi · yayın bütünlüğü) **yapay zekâ modelleri tarafından yürütülen
+> çekişmeli eleştiridir** ve hakemliğin yerine geçmez. Belgede birinci tekil şahıs
+> kullanılması, insan bir incelemeci olduğu anlamına gelmez. Bulguların bir bölümü
+> yorum değil aritmetiktir: eleştiri sitenin kendi kodunu çalıştırıp basılan
+> formüllerle karşılaştırmıştır. Sorumluluk her hâlde yazara aittir.
+>
+> This file is one of the working documents of **The Transmission Chain**
+> (author: Ahmet Çandöken · `ahmetoff`). The review it contains is **not human peer
+> review.** It is **adversarial critique carried out by AI models** from six
+> specialist framings (archaeology · history of science and technology ·
+> quantitative modelling · digital preservation · philosophy of science ·
+> publication integrity), and it is not a substitute for peer review. The use of the
+> first person in this document does not indicate a human reviewer. Part of what it
+> found is arithmetic rather than interpretation: the critique ran the site's own
+> code against its printed formulas. Responsibility rests in every case with the author.
+>
+> Metin ve veri **CC BY 4.0** · kod **MIT** — bkz. `LICENSE`.
+
 # Hostile Review: *Aktarım Zinciri / The Transmission Chain* v4.0
 
-**Reviewer's note on method.** I did not only read the packet. I extracted `simulate()` from `/home/claude/work/index.html` and ran it under the stated default parameters and all four presets, and I read the chart-rendering and CSS code. Several of the findings below are not interpretive disagreements — they are arithmetic. Where I make a numerical claim, I ran it.
+**Reviewer's note on method.** I did not only read the packet. I extracted `simulate()` from the study's `index.html` and ran it under the stated default parameters and all four presets, and I read the chart-rendering and CSS code. Several of the findings below are not interpretive disagreements — they are arithmetic. Where I make a numerical claim, I ran it.
 
 **Answer to your question up front: yes. There are at least nine contradictions, four of which I classify as blocking. Three of them are not contradictions between two sentences — they are contradictions between the essay's prose and its own executable code.**
 
@@ -587,7 +611,4 @@ The hostile philosopher's closing move writes itself. This is a study about how 
 
 ---
 
-**Files examined:** `/home/claude/work/REVIEW-PACKET.md`, `/home/claude/work/index.html` (source of the CSS and chart-rendering findings), `/home/claude/work/README.md`. Simulation re-runs were performed on `simulate()` as extracted verbatim from the packet and cross-checked against `index.html`.agentId: ab2eb3eebf7ae016d (use SendMessage with to: 'ab2eb3eebf7ae016d', summary: '<5-10 word recap>' to continue this agent)
-<usage>subagent_tokens: 83724
-tool_uses: 17
-duration_ms: 522027</usage>
+**Files examined:** `docs/02-inceleme-paketi.md`, the study's `index.html` (source of the CSS and chart-rendering findings), the repository `README.md`. Simulation re-runs were performed on `simulate()` as extracted verbatim from the packet and cross-checked against `index.html`.
