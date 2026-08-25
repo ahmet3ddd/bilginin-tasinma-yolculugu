@@ -2,7 +2,7 @@
 
 **Veri kümesi sürümü** 1.0.0 · **Türetildiği kaynak** `index.html` v5.2, veri kesim
 tarihi 23 Ağustos 2026
-**Yazar** Ahmet Çandöken · ORCID [ORCID] · **Lisans** CC BY 4.0 (veri ve metin)
+**Yazar** Ahmet Çandöken · ORCID https://orcid.org/0009-0001-5197-7888 · **Lisans** CC BY 4.0 (veri ve metin)
 
 Bu kitapçık, bu klasördeki dosyaların işletim tarifidir. Çalışmayı hiç görmemiş bir
 kodlayıcının bir kodlama kararını yeniden üretebilmesi ve **belirli bir yerde itiraz

@@ -37,7 +37,7 @@
 
 ## Künye / Credits
 
-**Yazar:** Ahmet Çandöken (`ahmetoff` · [github.com/ahmet3ddd](https://github.com/ahmet3ddd))
+**Yazar:** Ahmet Çandöken · ORCID [0009-0001-5197-7888](https://orcid.org/0009-0001-5197-7888) (`ahmetoff` · [github.com/ahmet3ddd](https://github.com/ahmet3ddd))
 **Sürüm:** v5.3 · **Veri kesim tarihi:** 23 Ağustos 2026
 **Lisans:** metin ve veri [CC BY 4.0](LICENSE-CC-BY-4.0.txt) · kod [MIT](LICENSE)
 

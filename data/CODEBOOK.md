@@ -1,7 +1,7 @@
 # Codebook — The Transmission Chain link-coded corpus
 
 **Dataset version** 1.0.0 · **Derived from** `index.html` v5.2, data cut-off 23 August 2026
-**Author** Ahmet Çandöken · ORCID [ORCID] · **Licence** CC BY 4.0 (data and text)
+**Author** Ahmet Çandöken · ORCID https://orcid.org/0009-0001-5197-7888 · **Licence** CC BY 4.0 (data and text)
 
 This codebook is the operational specification for the files in this directory. It is
 written so that a coder who has never seen the study can reproduce a coding decision and

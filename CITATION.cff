@@ -6,7 +6,7 @@ authors:
   - family-names: "Çandöken"
     given-names: "Ahmet"
     alias: "ahmetoff"
-    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add after registering at orcid.org
+    orcid: "https://orcid.org/0009-0001-5197-7888"
 version: "5.3"
 date-released: "2026-08-25"
 license:
