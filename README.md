@@ -118,6 +118,24 @@ Kullanmadan önce **`data/CODEBOOK.md`** (İngilizce) ya da **`data/KOD-KITAPCIG
 İki sınır özellikle önemlidir — kodlama **tek ve körlenmemiş bir kodlayıcıya** aittir ve
 nesne seçimi **iki ayrı yönde yanlıdır**; bu yüzden korpustan taban oran hesaplanamaz.
 
+## Aranıyor: ikinci kodlayıcı
+
+Bu korpustaki 255 olayın halka kodlamasını ve 32 nesnenin "bugün en ince halkası"
+yargısını **tek bir kişi** yaptı — ve o kişi, bu yargıların desteklediği tezi savunan
+kişiyle aynı. Korpusun bilinen en büyük sınırı budur ve kod kitapçığının §6.1'inde
+açıkça yazılıdır.
+
+**Bir kişinin bir saatlik emeği bu sınırı kaldırır.** Yapılacak iş, açılır listelerle
+dolu bir tabloyu doldurmak: 79 olay + 10 nesne. Uzmanlık gerekmiyor; kod kitapçığındaki
+altı karar sorusunu okuyup uygulamak yeterli.
+
+→ **[`ikinci-kodlayici/`](ikinci-kodlayici/)** klasöründe: form, yönerge ve sonucu
+hesaplayan betik.
+
+Sonuç ne çıkarsa çıksın yayımlanacaktır. Uyum düşük çıkarsa bulgu şu olur: *altı halkalı
+şema, tek bir kodlayıcının dışında güvenilir biçimde uygulanamıyor.* Bu da bir sonuçtur ve
+bu çalışmanın 8. kuralına göre saklanamaz.
+
 ## Bu çalışmanın kendine koyduğu kurallar
 
 1. **Uydurma sayı yok.** Model parametreleri kanıttan ölçülmez, *varsayılır* — ve bu her
