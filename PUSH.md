@@ -41,7 +41,7 @@ index.html                     tek dosya, ~880 KB, dış istek yok
 README.md                      künye, tez, veri, lisans
 LICENSE                        iki lisans: metin/veri CC BY 4.0, kod MIT
 LICENSE-CC-BY-4.0.txt          CC BY 4.0 tam metni
-LICENSE-Inter-OFL.txt          Inter yazı tipi, SIL OFL 1.1
+third-party/                   Inter yazı tipi, SIL OFL 1.1 (üçüncü taraf lisansı)
 CITATION.cff                   makine okunur atıf künyesi
 .nojekyll                      Pages'in dosyaları olduğu gibi sunması için
 .github/workflows/pages.yml    elle tetiklenir

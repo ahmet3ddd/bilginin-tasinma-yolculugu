@@ -211,6 +211,6 @@ Aşağıdaki belgelerin tamamı **yapay zekâ modelleriyle yürütülen çekişm
 
 - **Metin ve veri:** [CC BY 4.0](LICENSE-CC-BY-4.0.txt)
 - **Kod:** MIT
-- **Inter yazı tipi:** © 2016 The Inter Project Authors, [SIL OFL 1.1](LICENSE-Inter-OFL.txt)
+- **Inter yazı tipi:** © 2016 The Inter Project Authors, [SIL OFL 1.1](third-party/Inter-OFL-1.1.txt)
 - **Alıntılanan birincil kaynaklar** kendi hak sahiplerine tabidir ve çalışma içindeki
   bağlantılardan doğrudan erişilir.
