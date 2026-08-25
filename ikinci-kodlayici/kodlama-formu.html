@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aktarım Zinciri — bağımsız kodlama formu</title>
+<style>
+:root{
+  --bg:#f5f6f8; --surface:#fff; --ink:#17191d; --muted:#696f79; --line:#dfe2e7;
+  --blue:#315cf4; --blue-soft:#e8edff; --green:#26856f; --amber:#cc8d22;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161a; --surface:#1c1f25; --ink:#eceef2; --muted:#9aa1ad; --line:#2c313a;
+  --blue:#7b9bff; --blue-soft:#20293f; --green:#4fbfa3; --amber:#e0aa4a;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:24px 18px 120px}
+h1{font-size:1.5rem;margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:18px}
+.intro li{margin:6px 0}
+.intro b{color:var(--blue)}
+button{font:inherit;cursor:pointer;border-radius:9px;border:1px solid var(--line);
+  background:var(--surface);color:var(--ink);padding:10px 16px}
+button:hover{border-color:var(--blue)}
+.primary{background:var(--blue);color:#fff;border-color:var(--blue);font-weight:600}
+.primary:hover{filter:brightness(1.08)}
+#bar{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line);
+  display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.prog{flex:1;min-width:160px;height:9px;background:var(--line);border-radius:9px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--green);width:0;transition:width .25s}
+.count{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.92rem}
+.meta{color:var(--muted);font-size:.9rem;margin-bottom:6px}
+.obj{font-weight:600;color:var(--blue)}
+.claim{font-size:1.12rem;margin:10px 0 14px}
+.src{font-size:.86rem;word-break:break-all}
+.src a{color:var(--muted)}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:10px;margin-top:18px}
+.opt{text-align:left;padding:12px 14px;line-height:1.35}
+.opt b{display:block;font-size:1rem}
+.opt span{color:var(--muted);font-size:.82rem}
+.opt.sel{background:var(--blue-soft);border-color:var(--blue)}
+.opt kbd{float:right;color:var(--muted);font-size:.78rem;border:1px solid var(--line);border-radius:4px;padding:0 5px}
+.nav{display:flex;gap:10px;margin-top:18px;align-items:center;flex-wrap:wrap}
+textarea{width:100%;margin-top:14px;padding:10px;border:1px solid var(--line);border-radius:9px;
+  background:var(--bg);color:var(--ink);font:inherit;min-height:62px;resize:vertical}
+.warn{background:#fff6e0;border:1px solid var(--amber);color:#6b4a05;padding:12px 14px;border-radius:9px}
+@media (prefers-color-scheme:dark){.warn{background:#2b2410;color:#f0d9a8}}
+.done{text-align:center;padding:34px 20px}
+.done h2{color:var(--green)}
+.hide{display:none!important}
+.mini{font-size:.86rem;color:var(--muted)}
+ol.rules{padding-left:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div id="intro">
+  <h1>Aktarım Zinciri — bağımsız kodlama</h1>
+  <p class="sub">Yaklaşık bir saat · 79 olay + 10 nesne · kurulum gerekmez</p>
+
+  <div class="card intro">
+    <p><b>Ne yapacaksınız.</b> Size 79 tarihsel olay tek tek gösterilecek. Her biri için
+    tek bir soru: <i>bu olay altı halkadan hangisiyle ilgili?</i> Altı düğmeden birine
+    basıyorsunuz, sıradaki olaya geçiyor. Yazı yazmanız gerekmiyor.</p>
+
+    <p><b>Neden.</b> Bu çalışmadaki bütün kodlamayı tek bir kişi yaptı ve o kişi, kodlamanın
+    desteklediği tezi savunan kişiyle aynı. Sizin cevaplarınız, o kuralların gerçekten
+    uygulanabilir olup olmadığını gösterecek. Sonuç ne çıkarsa çıksın yayımlanacak.</p>
+
+    <ol class="rules">
+      <li>Her olay <b>tam bir</b> halkaya kodlanır. Birden fazlasına dokunuyorsa, olayın
+          <b>kanıtı olduğu</b> halkayı seçin — sonuç doğurduğu halkayı değil.</li>
+      <li>Emin değilseniz yine de seçin ve nedenini not kutusuna yazın. O notlar sonucun
+          kendisi kadar değerli.</li>
+      <li><b>Çalışmanın kendisine bakmayın.</b> Ölçümün bütün değeri, cevaplarınızın
+          oradaki cevaplardan bağımsız olmasından geliyor.</li>
+    </ol>
+
+    <p class="mini"><b>Bilinen zorluk, bilerek yazıyoruz:</b> kurumsal olaylar (yasak, bütçe,
+    sürgün, vakıf) çoğu zaman birden fazla halkaya dokunur. Orası bu setin en tartışmalı
+    yeri; anlaşmazlık çıkması beklenen bir sonuç, hata değil.</p>
+  </div>
+
+  <div class="card">
+    <p style="margin-top:0"><b>Altı halka</b></p>
+    <div id="glossary"></div>
+  </div>
+
+  <div class="card warn">
+    <b>Önemli:</b> cevaplarınız yalnız bu sayfanın belleğinde tutulur ve hiçbir yere
+    gönderilmez. <b>Bitirmeden sekmeyi kapatmayın.</b> Ara vermeniz gerekirse
+    “Ara kayıt indir” düğmesini kullanın; dönünce o dosyayı geri yükleyebilirsiniz.
+  </div>
+
+  <p><button class="primary" onclick="start()">Başla</button>
+     <button onclick="document.getElementById('load').click()">Yarım kalan dosyayı yükle</button>
+     <input id="load" type="file" accept=".json" class="hide" onchange="restore(this)"></p>
+</div>
+
+<div id="app" class="hide">
+  <div id="bar">
+    <span class="count" id="cnt"></span>
+    <span class="prog"><i id="pi"></i></span>
+    <button onclick="save()">Ara kayıt indir</button>
+  </div>
+
+  <div class="card" id="qcard">
+    <div class="meta"><span class="obj" id="qobj"></span> · <span id="qyear"></span></div>
+    <div class="claim" id="qtext"></div>
+    <div class="src" id="qsrc"></div>
+    <div class="opts" id="opts"></div>
+    <textarea id="note" placeholder="Not (isteğe bağlı) — bu satır neden zordu?"></textarea>
+    <div class="nav">
+      <button onclick="go(-1)" id="prev">← Önceki</button>
+      <button onclick="go(1)" id="next">Sonraki →</button>
+      <span class="mini">Klavye: <b>1–6</b> seç · <b>←</b> <b>→</b> gezin</span>
+    </div>
+  </div>
+</div>
+
+<div id="end" class="hide">
+  <div class="card done">
+    <h2>Bitti — teşekkürler</h2>
+    <p id="endsum"></p>
+    <p><button class="primary" onclick="save(true)">Sonucu indir</button></p>
+    <p class="mini">İnen dosyayı çalışmanın yazarına gönderin. Başka bir şey yapmanız gerekmiyor.</p>
+    <p><button onclick="back()">Cevaplarıma geri dön</button></p>
+  </div>
+</div>
+
+</div>
+<script>
+const DATA = {"events":[{"i":1,"o":"Su kemerleri ve Frontinus’un bakım kılavuzu","y":"MÖ 19","t":"Agrippa’nın Aqua Virgo’su tamamlandı: 20,5 kilometrenin son 1.800 metresi dışında tamamı yer altında — hayatta kalmasının asıl sebebi bu.","u":"https://en.wikipedia.org/wiki/Aqua_Virgo"},{"i":2,"o":"Su kemerleri ve Frontinus’un bakım kılavuzu","y":"97","t":"Nerva, Frontinus’u curator aquarum olarak atadı; işletme sorumluluğu Britannia eski valisi bir devlet adamına verildi.","u":"https://www.britannica.com/biography/Sextus-Julius-Frontinus"},{"i":3,"o":"Su kemerleri ve Frontinus’un bakım kılavuzu","y":"98","t":"De aquaeductu yazıldı: Frontinus onu commentarius pro formula administrationis, yani başvurulacak bir idarî elkitabı olarak tanımlar.","u":"https://assets.cambridge.org/97805218/32519/excerpt/9780521832519_excerpt.htm"},{"i":4,"o":"Su kemerleri ve Frontinus’un bakım kılavuzu","y":"373","t":"Konstantinopolis’te Valens Kemeri tamamlandı; hat, Trakya’da 120 kilometre öteye uzanan 250 kilometreyi aşkın bir kanal ağının parçasıydı.","u":"https://www.thebyzantinelegacy.com/valens-aqueduct"},{"i":5,"o":"Su kemerleri ve Frontinus’un bakım kılavuzu","y":"537","t":"Gotlar Roma’yı kuşatırken Vitiges su kemerlerini kesti; Belisarius Tiber üzerinde yüzer değirmenler kurdu. Ortaçağa yalnız Virgo ulaştı.","u":"http://www.romanaqueducts.info/aquasite/romaaftermath/index.html"},{"i":6,"o":"Su kemerleri ve Frontinus’un bakım kılavuzu","y":"1429","t":"Poggio Bracciolini, De aquaeductu’nun bilinen tek yazmasını Monte Cassino’da buldu; sonraki bütün nüshalar onun kopyalarından türer.","u":"https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Frontinus/manuscripts*.html"},{"i":7,"o":"Su kemerleri ve Frontinus’un bakım kılavuzu","y":"1453","t":"Fetihten hemen sonra II. Mehmed Valens hattının onarımını emretti; aynı yıl Roma’da V. Nicolaus Aqua Virgo’nun kanalını onarttı.","u":"https://www.thebyzantinelegacy.com/valens-aqueduct"},{"i":8,"o":"Su kemerleri ve Frontinus’un bakım kılavuzu","y":"1563","t":"Sinan, Süleyman için Kırkçeşme sistemini tamamladı: yaklaşık 55 kilometre kanal, 33 kemer, 300’ü aşkın çeşme, kısmen Roma hatları üzerinde.","u":"https://islamicart.museumwnf.org/database_item.php?id=monument%3BISL%3Btr%3BMon01%3B34%3Ben"},{"i":9,"o":"Entegre Devre","y":"1958","t":"12 Eylül 1958: Jack Kilby, TI laboratuvarında ilk çalışan entegre devreyi gösterir — germanyum bir parça, elle bağlanmış altın teller. Patent Şubat 1959'da başvurulur.","u":"https://www.ti.com/about-ti/newsroom/company-blog/from-idea-to-invention-the-origin-story-of-the-tiny-chip-that-changed-the-world.html"},{"i":10,"o":"Entegre Devre","y":"1959","t":"Hoerni'nin düzlemsel süreci: fikir Aralık 1957 defterinde, cihaz Mart 1959'da, patent 1 Mayıs 1959'da. Oksit yerinde bırakılır; zanaat tekrarlanabilir sürece dönüşür.","u":"https://www.computerhistory.org/siliconengine/invention-of-the-planar-manufacturing-process/"},{"i":11,"o":"Entegre Devre","y":"1959","t":"23 Ocak 1959: Noyce'un defter kaydı; 30 Temmuz'da patent başvurusu (US 2.981.877). Oksit üstüne buharlaştırılan alüminyum bağlantı, üretilebilir tek parça mimariyi verir.","u":"https://www.computerhistory.org/siliconengine/practical-monolithic-integrated-circuit-concept-patented/"},{"i":12,"o":"Entegre Devre","y":"1960","t":"Mayıs 1960: Fairchild ilk çalışan tek parça düzlemsel devreleri üretir (4 transistör, 5 direnç). Mart 1961'de Micrologic adıyla duyurulur; artık satın alınabilir.","u":"https://computerhistory.org/blog/who-invented-the-ic/"},{"i":13,"o":"Entegre Devre","y":"1965","t":"19 Nisan 1965: Moore'un 'Cramming more components onto integrated circuits' yazısı Electronics'te çıkar (38/8, s. 114). Sanayi neyi hedefleyeceğini yazılı olarak öğrenir.","u":"https://www.computerhistory.org/siliconengine/moores-law-predicts-the-future-of-integrated-circuits/"},{"i":14,"o":"Entegre Devre","y":"2013","t":"ASML ilk üretim EUV makinesini sevk eder — ilk prototipinden yedi, EUV LLC'nin kurulmasından on altı yıl sonra. Nikon ve Canon bu teknolojiyi hiç piyasaya sokamaz.","u":"https://www.construction-physics.com/p/how-asml-got-euv"},{"i":15,"o":"Entegre Devre","y":"2026","t":"2026'nın ilk çeyreğinde TSMC saf döküm pazarının %73'ünü elinde tutuyor (Samsung %7, SMIC %5). İleri mantık üretimi üç firmada yoğunlaşmış durumda.","u":"https://counterpointresearch.com/en/insights/global-semiconductor-foundry-market-share"},{"i":16,"o":"İznik çinisi","y":"1480","t":"İznik'te kuvars esaslı beyaz hamur ve sıraltı kobalt tekniği yerleşir; desen sarayın nakkaşhânesinden gelir, pişirim taşrada yapılır.","u":"https://en.wikipedia.org/wiki/Iznik_pottery"},{"i":17,"o":"İznik çinisi","y":"1557","t":"Süleymaniye için yapılan kandil: bol kırmızısının tarihlenebilen ilk İznik örneği. Kırmızı burada hâlâ ince ve düzensiz sürülmüştür.","u":"https://collections.vam.ac.uk/item/O9232/lamp-unknown"},{"i":18,"o":"İznik çinisi","y":"1560","t":"Kabartma bol kırmızısı olgunlaşır, sıraltı paleti tamamlanır; İznik'in zirvesi sayılan kırk yıl başlar. Çini ölçüsü 25 cm'de standartlaşır.","u":"https://islamicceramics.ashmolean.org/Iznik/peak.htm"},{"i":19,"o":"İznik çinisi","y":"1617","t":"Sultan Ahmed Camii tamamlanır: yirmi binden fazla çini. Ustaların bu iş sürerken başkasına çalışması yasaklanır, sabit fiyat enflasyonu emer.","u":"https://islamicceramics.ashmolean.org/Iznik/c17th.htm"},{"i":20,"o":"İznik çinisi","y":"1648","t":"Evliya Çelebi İznik'te dokuz atölye sayar; elli yıl önce üç yüzden fazla olduğunu söyler. Rakam abartılı olabilir, yön tartışmasızdır.","u":"https://islamicceramics.ashmolean.org/Iznik/c17th.htm"},{"i":21,"o":"İznik çinisi","y":"1963","t":"Oktay Aslanapa İznik çini fırınları kazısını başlatır; ikinci dönem 1981'den beri sürer. Üretim yerinin İznik olduğu ilk kez arkeolojik olarak kanıtlanır.","u":"https://turkiyeturizmansiklopedisi.com/iznik-cini-firinlari-kazilari"},{"i":22,"o":"İznik çinisi","y":"1993","t":"İznik Vakfı kurulur. İTÜ, MIT ve Princeton'la yürütülen yaklaşık iki yıllık deneme-yanılma sonunda kuvars hamuru yeniden tutturulur.","u":"https://malaymail.com/news/life/2025/11/20/iznik-reborn-how-turkiye-cracked-the-lost-secret-of-ottoman-tilemaking/198972"},{"i":23,"o":"İznik çinisi","y":"2004","t":"Paynter, Okyar, Wolf ve Tite hamuru ölçer: ağırlıkça %65–75 kuvars, %15–18 soda-kireç fritti, %8–13 kil. Tarif ilk kez sayıya döner.","u":"https://doi.org/10.1111/j.1475-4754.2004.00166.x"},{"i":24,"o":"Kilogram ve 2019 yeniden tanımı","y":"1799","t":"Kilogramme des Archives Fransız arşivlerine konur: platin bir silindir. Kütle birimi, ilk kez tek bir fiziksel nesneye bağlanır. Paket artık bir tarif değil, bir eşyadır.","u":"https://en.wikipedia.org/wiki/Kilogram"},{"i":25,"o":"Kilogram ve 2019 yeniden tanımı","y":"1889","t":"1. CGPM, Uluslararası Kilogram Prototipi'ni (IPK) onaylar: platin-iridyum alaşımı bir silindir. Saint-Cloud'daki Pavillon de Breteuil'ün bodrumunda, açılması birbirinden bağımsız üç anahtar gerektiren bir kasada saklanır; kopyaları uluslara dağıtılır.","u":"https://en.wikipedia.org/wiki/International_Prototype_of_the_Kilogram"},{"i":26,"o":"Kilogram ve 2019 yeniden tanımı","y":"1948","t":"İkinci dönemsel doğrulama. Kopyalar Sèvres'e getirilir, öngörülen yöntemle yıkanır ve prototiple karşılaştırılır. Tarih boyunca bu iş yalnızca üç kez yapıldı: 1889, 1948, 1989.","u":"https://en.wikipedia.org/wiki/International_Prototype_of_the_Kilogram"},{"i":27,"o":"Kilogram ve 2019 yeniden tanımı","y":"1989","t":"Üçüncü ve son doğrulama: IPK, on dokuzuncu yüzyıl sonundaki üretiminden bu yana kopyalarından yaklaşık 50 mikrogram ayrılmıştır. Referansın kendisi kaymaktadır ve bunu anlamanın tek yolu, kendisi de kayan kopyalarla karşılaştırmaktır.","u":"https://en.wikipedia.org/wiki/Kilogram"},{"i":28,"o":"Kilogram ve 2019 yeniden tanımı","y":"2016","t":"Haziran: metrologlar, watt terazisinin adını Kibble terazisi olarak değiştirir — mucidi Bryan Kibble'ın ölümünden iki ay sonra. Aleti kuran el becerisi ile aletin kendisinin ayrılamadığının sessiz bir kabulü.","u":"https://en.wikipedia.org/wiki/Kibble_balance"},{"i":29,"o":"Kilogram ve 2019 yeniden tanımı","y":"2018","t":"16 Kasım: 26. CGPM yeniden tanımı oylar. Kilogram artık bir nesneden değil, Planck sabitinin sabitlenmiş sayısal değerinden türeyecektir.","u":"https://en.wikipedia.org/wiki/Kilogram"},{"i":30,"o":"Kilogram ve 2019 yeniden tanımı","y":"2019","t":"20 Mayıs: yeni SI yürürlüğe girer. h, tam olarak 6,62607015 × 10⁻³⁴ J·s'dir. Birimi gerçeklemek için artık Sèvres'e gitmek gerekmiyor — doğru donanıma sahip herhangi bir laboratuvar kendisi yapabilir. Çözücü, bir kasanın anahtarlarından evrensel bir sabite geçti.","u":"https://www.bipm.org/en/si-base-units/kilogram"},{"i":31,"o":"Kilogram ve 2019 yeniden tanımı","y":"2026","t":"Ama gerçekleme hâlâ bir Kibble terazisi ister ve bu aletler büyük ölçüde tek nüshalık, pahalı ve hassas kalmaya devam ediyor; adı geçen laboratuvarlar bir avuç: NRC, NIST, METAS, BIPM, LNE. Her metroloji laboratuvarının kurabileceği standart cihazlar üretme çalışması sürüyor.","u":"https://en.wikipedia.org/wiki/Kibble_balance"},{"i":32,"o":"Latin alfabesi","y":"MÖ 700","t":"Latinler alfabeyi Etrüsklerden aldı; Etrüsklerin yirmi altı işaretinden Latince için yalnız yirmi biri tutuldu, üç Yunan nefesli harfi atıldı.","u":"https://www.britannica.com/topic/alphabet-writing/Later-development-of-the-Latin-alphabet"},{"i":33,"o":"Latin alfabesi","y":"MÖ 560","t":"Roma Forumu’ndaki Lapis Niger cippusu: bilinen en eski Latince yazıtlardan biri, boustrophedon dizilmiş, MÖ 570–550 dolayına tarihleniyor.","u":"https://en.wikipedia.org/wiki/Lapis_Niger"},{"i":34,"o":"Latin alfabesi","y":"MÖ 250","t":"C’den türetilen G eklendi ve düşen zeta’nın yeri dolduruldu; alfabe artık ödünç alınmış değil, Latinceye ayarlanmış bir çözücüydü.","u":"https://www.britannica.com/topic/alphabet-writing/Later-development-of-the-Latin-alphabet"},{"i":35,"o":"Latin alfabesi","y":"MÖ 50","t":"Yunanca alıntıları yazmak için Y ve Z alındı; klasik alfabe yirmi üç harfe ulaştı. J, U ve W ancak ortaçağda ayrı harfler oldu.","u":"https://www.britannica.com/topic/alphabet-writing/Later-development-of-the-Latin-alphabet"},{"i":36,"o":"Latin alfabesi","y":"800","t":"Karolenj minüskülü: Corbie ve Tours’da geliştirilen, kelime aralığı ve noktalama getiren tek tip okunaklı yazı bölgesel elleri tasfiye etti.","u":"https://www.britannica.com/art/Carolingian-minuscule"},{"i":37,"o":"Latin alfabesi","y":"1450","t":"İtalyan hümanistleri Karolenj yazmalarını antik Roma işi sandı ve taklit etti; bu yanlış, bugünkü roman harf karakterlerinin doğrudan atası oldu.","u":"https://en.wikipedia.org/wiki/Carolingian_minuscule"},{"i":38,"o":"Latin alfabesi","y":"1928","t":"1 Kasım 1928 tarihli 1353 sayılı kanunla Türkiye yirmi dokuz harfli Latin alfabesine geçti; okuryazar bir kuşak bir gecede yeniden öğrenci oldu.","u":"https://en.wikipedia.org/wiki/Turkish_alphabet_reform"},{"i":39,"o":"Latin alfabesi","y":"1989","t":"ISO/IEC 8859-9 (Latin-5) yayımlandı: ğ, İ, ı ve ş, İzlandaca harflerin boşalttığı yerlere yerleşerek sayısal alfabeye girdi.","u":"https://en.wikipedia.org/wiki/ISO/IEC_8859-9"},{"i":40,"o":"Süleymaniye ve Sinan'ın yapı bilgisi","y":"1550","t":"Temel atılır. Muhasebe defterleri işçiyi, malzemeyi ve akçeyi gün gün kaydeder; yöntemi hiç kaydetmez.","u":"https://yedikita.com.tr/mimarlik-tarihimizin-en-buyuk-insa-organizasyonlarindan-suleymaniye/"},{"i":41,"o":"Süleymaniye ve Sinan'ın yapı bilgisi","y":"1557","t":"Cami ibadete açılır; kitâbe 1550 ve 1557 tarihlerini verir, külliye 1559'a kadar sürer. Ana kubbe 26,5 m çapında ve 53 m yüksekliğindedir.","u":"https://en.wikipedia.org/wiki/S%C3%BCleymaniye_Mosque"},{"i":42,"o":"Süleymaniye ve Sinan'ın yapı bilgisi","y":"1588","t":"Sinan ölür. Sâî Mustafa Çelebi'nin tezkireleri hayatını ve yapılarının listesini bırakır: ne yapıldığını yazar, nasıl hesaplandığını yazmaz.","u":"https://islamansiklopedisi.org.tr/sai-mustafa-celebi"},{"i":43,"o":"Süleymaniye ve Sinan'ın yapı bilgisi","y":"1660","t":"Büyük yangında cami zarar görür ve IV. Mehmed tarafından onartılır; onarımlar Sinan'ın özgün iç bezemesinin çoğunu ortadan kaldırır.","u":"https://en.wikipedia.org/wiki/S%C3%BCleymaniye_Mosque"},{"i":44,"o":"Süleymaniye ve Sinan'ın yapı bilgisi","y":"1766","t":"22 Mayıs depremi (M≈7,1): Süleymaniye'nin kubbesinin bir bölümü çöker. Aynı sarsıntı Sinan'ın Edirnekapı Mihrimah'ının ana kubbesini ve minaresini tamamen yıkar.","u":"https://en.wikipedia.org/wiki/1766_Istanbul_earthquake"},{"i":45,"o":"Süleymaniye ve Sinan'ın yapı bilgisi","y":"1965","t":"Rıfkı Melûl Meriç Tezkiretü'l-Ebniye'yi ilk kez yayımlar; Barkan 1970'lerde inşaat defterlerini basar. Paket dört yüzyıl sonra okunabilir hâle gelir.","u":"https://islamansiklopedisi.org.tr/sai-mustafa-celebi"},{"i":46,"o":"Süleymaniye ve Sinan'ın yapı bilgisi","y":"2010","t":"2007–2010 restorasyonu: ana kubbedeki çatlaklar enjeksiyonla sağlamlaştırılır, korozyona uğramış demir kenetler paslanmaz çelikle değiştirilir, çimento ekleri sökülür.","u":"https://en.wikipedia.org/wiki/S%C3%BCleymaniye_Mosque"},{"i":47,"o":"Süleymaniye ve Sinan'ın yapı bilgisi","y":"2019","t":"Zühre Sü Gül ölçüm ve simülasyonu yayımlar: defterdeki 255 küpe karşılık restorasyonda 256 küp bulunmuştur; 63–250 Hz'de Helmholtz rezonatörü gibi davranırlar.","u":"https://www.mdpi.com/2624-599x/1/3/28"},{"i":48,"o":"Süpermarket","y":"1916","t":"Clarence Saunders Eylül 1916'da Memphis'te ilk Piggly Wiggly'yi açar: tek girişli, tek çıkışlı, tek yönlü koridor; müşteri kendi topluyor.","u":"https://invention.si.edu/invention-stories/one-way-supermarket-aisles"},{"i":49,"o":"Süpermarket","y":"1917","t":"“Self-Serving Store” patenti 9 Ekim 1917'de verilir (US 1.242.872): mağaza düzeni artık yazıya dökülmüş, kopyalanabilir bir prosedür.","u":"https://patents.google.com/patent/US1242872A/en"},{"i":50,"o":"Süpermarket","y":"1930","t":"Birds Eye'ın hızlı dondurulmuş ürünleri Springfield, Massachusetts'te perakendeye girer: soğuk zincir rafın altına kurulur.","u":"https://www.invent.org/inductees/clarence-birdseye"},{"i":51,"o":"Süpermarket","y":"1930","t":"4 Ağustos'ta King Kullen açılır; Smithsonian bunu modern süpermarketin beş ölçütünü birden karşılayan ilk mağaza olarak kabul eder.","u":"https://kingkullen.com/about-us/"},{"i":52,"o":"Süpermarket","y":"1937","t":"4 Haziran'da Sylvan Goldman alışveriş arabasını tanıtır; kimse itmek istemeyince mağazaya kiralık modeller koyup davranışı öğretir.","u":"https://www.britannica.com/today-in-history/June-4-1937-Debut-of-the-Shopping-Cart"},{"i":53,"o":"Süpermarket","y":"1956","t":"26 Nisan'da Ideal X, Newark'tan 58 konteynerle kalkar; yükleme sekiz saatten kısa sürer, oysa parça yük günler alıyordu.","u":"https://porthouston.com/ideal-x/"},{"i":54,"o":"Süpermarket","y":"1973","t":"1 Nisan'da UPC sembolü standart olarak kabul edilir; tasarımı IBM'den George Laurer'e ait. Ürün artık makinece okunabilir bir isme sahip.","u":"https://www.ibm.com/mx-es/history/upc"},{"i":55,"o":"Süpermarket","y":"1974","t":"26 Haziran'da Troy, Ohio'daki Marsh süpermarketinde 67 sentlik Wrigley's Juicy Fruit taranır: dünyanın ilk UPC okuması.","u":"https://www.smithsonianmag.com/smithsonian-institution/supermarket-scanner-changed-way-we-buy-groceries-forever-180984293/"},{"i":56,"o":"Televizyon","y":"1884","t":"Nipkow, 6 Ocak 1884'te 'Elektrikli Teleskop'u (DE30105) başvurur; patent 15 Ocak 1885'te verilir. Onu hiç inşa etmez: paketi okuyacak aygıt yoktur.","u":"https://patents.google.com/patent/DE30105C/en"},{"i":57,"o":"Televizyon","y":"1926","t":"26 Ocak 1926: Baird, 22 Frith Street'teki atölyesinde Royal Institution üyelerine dünyanın ilk canlı televizyon gösterimini yapar. Paket 42 yıl beklemiştir.","u":"https://ethw.org/Milestones:First_Public_Demonstration_of_Television,_1926"},{"i":58,"o":"Televizyon","y":"1927","t":"7 Eylül 1927: 21 yaşındaki Farnsworth, San Francisco'da Green Street 202'de tümüyle elektronik ilk televizyon görüntüsünü iletir. Mekanik disk doğmadan eskir.","u":"https://ohp.parks.ca.gov/ListedResources/Detail/941"},{"i":59,"o":"Televizyon","y":"1935","t":"Temmuz 1935: Patent Ofisi, RCA/Zworykin'e karşı Farnsworth lehine karar verir. Kanıt, lise öğretmeni Justin Tolman'ın 1922 tahta çizimini hatırlamasıdır.","u":"https://explorepahistory.com/hmarker.php?markerId=1-A-3A6"},{"i":60,"o":"Televizyon","y":"1937","t":"6 Şubat 1937: BBC, Baird'in 240 satırlık sistemini terk edip Marconi-EMI 405 satıra geçer. Kazananın aygıtı, zaferinden on bir yıl sonra yetim kalır.","u":"https://blog.scienceandmediamuseum.org.uk/history-of-british-television-timeline/"},{"i":61,"o":"Televizyon","y":"1953","t":"17 Aralık 1953: FCC, NTSC renk standardını onaylar. Renk alt taşıyıcıya gizlenir; siyah-beyaz alıcılar onu yok sayar. Kurulu aygıt tabanı bilerek yaşatılır.","u":"https://ethw.org/Milestones:Monochrome-Compatible_Electronic_Color_Television,_1946-1953"},{"i":62,"o":"Televizyon","y":"1972","t":"1970'lerin başında BBC bantları yeniden kullanmak için siler. Hartnell–Troughton dönemi Doctor Who'nun 253 bölümünden 97'si hâlâ kayıp: paketin kendisi silinmiştir.","u":"https://www.doctorwho.tv/news-and-features/why-are-some-doctor-who-episodes-missing"},{"i":63,"o":"Televizyon","y":"2012","t":"24 Ekim 2012: Birleşik Krallık'ın son analog vericisi (Divis, Belfast) kapatılır; ABD 12 Haziran 2009'da bitirmişti. Dönüştürücüsüz her analog alıcı körleşir.","u":"https://en.wikipedia.org/wiki/Digital_switchover_dates_in_the_United_Kingdom"},{"i":64,"o":"Transistör","y":"1947","t":"16 Aralık 1947: Bardeen ve Brattain germanyum üzerindeki iki altın temasla yükseltme elde eder; 23 Aralık'ta yönetime gösterilir. Cihaz elle yapılmış ve zor tekrarlanır.","u":"https://www.computerhistory.org/siliconengine/invention-of-the-point-contact-transistor/"},{"i":65,"o":"Transistör","y":"1948","t":"23 Ocak 1948: Shockley bağlantı transistörünü tasarlar. 17 Haziran'da patent başvurusu yapılır (US 2.524.035), 30 Haziran'da buluş halka duyurulur.","u":"https://www.computerhistory.org/siliconengine/invention-of-the-point-contact-transistor/"},{"i":66,"o":"Transistör","y":"1949","t":"Shockley, bağlantı transistörünün ayrıntılı kuramını Bell System Technical Journal'da yayımlar. Cihazın neden çalıştığı artık yazılı ve herkese açık.","u":"https://www.computerhistory.org/siliconengine/conception-of-the-junction-transistor/"},{"i":67,"o":"Transistör","y":"1951","t":"1951: Bell, bağlantı transistörünü seri üretilebilir kılar (patent 25 Eylül'de verilir). Eylül'deki ilk sempozyum yaklaşık 300 bilim insanı ve mühendisi toplar.","u":"https://www.pbs.org/transistor/background1/events/symposia.html"},{"i":68,"o":"Transistör","y":"1952","t":"Nisan 1952: dokuz günlük Transistör Teknolojisi Sempozyumu. 40 şirketten 100'ü aşkın temsilci; şirket başına 25.000 dolar, %5 telifin iade edilmeyen avansı.","u":"https://www.computerhistory.org/siliconengine/bell-labs-licenses-transistor-technology/"},{"i":69,"o":"Transistör","y":"1953","t":"Totsuko (sonraki Sony) 25.000 dolara lisans alır. Ama lisans beceriyi taşımaz: yüksek frekanslı transistörde hata oranı projeyi tehlikeye atacak kadar yüksek çıkar.","u":"https://www.ebsco.com/research-starters/history/morita-licenses-transistor-technology"},{"i":70,"o":"Transistör","y":"1955","t":"Ağustos 1955: Sony TR-55, Japonya'nın ilk transistörlü radyosu; beş transistörünü de Sony kendi tasarlar. Zincir ikinci bir kıtada kendi ayakları üzerinde durur.","u":"https://en.wikipedia.org/wiki/TR-55"},{"i":71,"o":"Transistör","y":"1956","t":"24 Ocak 1956: uzlaşma kararı Bell'in 7.820 patentini (geçerli ABD patentlerinin %1,3'ü) telifsiz açar. O yılın Nobel'i Shockley, Bardeen ve Brattain'e gider.","u":"http://www.monika-schnitzer.com/uploads/4/9/4/1/49415675/watzinger_fackler_nagler_schnitzer_bell_labs.pdf"},{"i":72,"o":"Ubıhça ve son konuşan","y":"1864","t":"Ubıhlar, Soçi çevresindeki Karadeniz kıyısından Rus ordusu tarafından sürülür ve Osmanlı topraklarına yerleşir; Hacı Osman, Kırkpınar, Maşukiye ve Hacı Yakup köyleri böyle kurulur. Dili her gün yeniden üreten ortam — komşuluk, iş, coğrafya — tek seferde dağılır.","u":"https://en.wikipedia.org/wiki/Ubykh_language"},{"i":73,"o":"Ubıhça ve son konuşan","y":"1956","t":"Georges Dumézil 1925'ten beri İstanbul'dadır; 1956'dan sonra Ubıhçayı kaydetmesine yardım edebilen tek konuşan Tevfik Esenç kalır. Yazıya geçirilebilen dilbilgisi ve sözlüktür; 84 ünsüzün nasıl boğumlandığı yazılamaz, ancak gösterilebilir.","u":"https://dergipark.org.tr/tr/download/article-file/305216"},{"i":74,"o":"Ubıhça ve son konuşan","y":"1963","t":"Norveçli dilbilimci Hans Vogt Dictionnaire de la langue oubykh'i yayımlar. Ubıhça kendi konuşurları tarafından hiç yazılmamıştı; bu sözlük dahil bütün kayıtlar yabancı bir kulağın transkripsiyonudur.","u":"https://en.wikipedia.org/wiki/Ubykh_language"},{"i":75,"o":"Ubıhça ve son konuşan","y":"1974","t":"George Hewitt, Esenç'i İstanbul'da kaydeder; bu kayıtların bir seçkisi bugün Hewitt'in kendi sayfasından yayımlanıyor. Ayrı bir koleksiyon olarak, Esenç'in Ubıhça anlatılarından 55 ses dosyası transkripsiyonlarıyla birlikte CNRS'in Pangloss arşivinde durur. İkisi aynı derlem değildir. Her iki durumda da dil artık, bu arşivlerin bakımı sürdüğü ve biçimlerin okunabilirliği korunduğu sürece var.","u":"https://en.wikipedia.org/wiki/Tevfik_Esen%C3%A7"},{"i":76,"o":"Ubıhça ve son konuşan","y":"1975","t":"Dumézil Le Verbe Oubykh'i yayımlar. Paket her yıl büyümeye devam eder; konuşan sayısı büyümez.","u":"https://en.wikipedia.org/wiki/Ubykh_language"},{"i":77,"o":"Ubıhça ve son konuşan","y":"1992","t":"7 Ekim: Tevfik Esenç, 88 yaşında ölür. Hacı Osman'da muhtarlık, sonra İstanbul'da memurluk yapmıştı. Üç oğlu Ubıhça sohbet edemiyordu. Çözücü sayısı sıfıra iner; paketin tek satırı bile eksilmez.","u":"https://en.wikipedia.org/wiki/Tevfik_Esen%C3%A7"},{"i":78,"o":"Ubıhça ve son konuşan","y":"2003","t":"UNESCO'nun dokuz faktörlü canlılık ölçeği, belgeleme ile kuşaklar arası aktarımı ayrı eksenler olarak derecelendirir ve toplanmalarını açıkça yasaklar: “Diller sayılar toplanarak değerlendirilemez.” Ubıhça bu ölçeğin tarif ettiği vakadır: belgelemede en yüksek derece, aktarımda sıfır.","u":"https://ich.unesco.org/doc/src/00120-EN.pdf"},{"i":79,"o":"Ubıhça ve son konuşan","y":"2011","t":"Rohan S. H. Fenwick, A Grammar of Ubykh'i yayımlar: 225 sayfa, LINCOM Europa. Son konuşanın ölümünden on dokuz yıl sonra dilin tam grameri çıkar — ve bundan sonraki her Ubıhça çalışması arşiv çalışmasıdır.","u":"https://journals.linguisticsociety.org/booknotices/?p=2376"}],"objects":[{"o":"Su kemerleri ve Frontinus’un bakım kılavuzu","e":"MÖ 1. yüzyıl – bugün; Frontinus’un raporu MS 97–98"},{"o":"Entegre Devre","e":"1958 – günümüz"},{"o":"İznik çinisi","e":"1480'ler → bugün"},{"o":"Kilogram ve 2019 yeniden tanımı","e":"1799 → bugün; yeniden tanım 20 Mayıs 2019"},{"o":"Latin alfabesi","e":"MÖ 7. yüzyıl – bugün"},{"o":"Süleymaniye ve Sinan'ın yapı bilgisi","e":"1550 → bugün"},{"o":"Süpermarket","e":"1916 → bugün"},{"o":"Televizyon","e":"1884 – günümüz"},{"o":"Transistör","e":"1947 – günümüz"},{"o":"Ubıhça ve son konuşan","e":"1864 sürgününden 7 Ekim 1992'ye"}]};
+const LINKS = [
+ ["paket","kaydın kendisi — tarif, çizim, formül, patent, standart"],
+ ["çözücü","onu okuyup uygulayabilenler — okuryazarlık, meslek, ortak notasyon"],
+ ["bağlam","neden çalıştığı — sınırları, hata tarihi"],
+ ["örtük bilgi","hiç yazıya geçmemiş el becerisi, atölye sırası"],
+ ["aparat","onu yapan ve okuyan makineler, kritik girdi"],
+ ["bakım","her kuşakta yenilenen emek, fon, kurum"]
+];
+const N = DATA.events.length, M = DATA.objects.length, TOTAL = N + M;
+let ans = new Array(TOTAL).fill(null), notes = new Array(TOTAL).fill(""), cur = 0;
+
+document.getElementById('glossary').innerHTML = LINKS.map(
+  l => '<p style="margin:6px 0"><b>'+l[0]+'</b> — <span class="mini">'+l[1]+'</span></p>').join('');
+
+function item(i){
+  if (i < N) { const e = DATA.events[i];
+    return {obj:e.o, year:e.y, text:e.t, src:e.u,
+            q:'Bu olay hangi halkayla ilgili?'}; }
+  const o = DATA.objects[i-N];
+  return {obj:o.o, year:o.e, src:'',
+          text:'Bu nesne için ŞİMDİ hangi tek halka çökerse, nesne en kısa sürede yeniden üretilemez hâle gelir?',
+          q:'En ince halka'};
+}
+function start(){ document.getElementById('intro').classList.add('hide');
+  document.getElementById('app').classList.remove('hide'); render(); }
+function back(){ document.getElementById('end').classList.add('hide');
+  document.getElementById('app').classList.remove('hide'); cur = TOTAL-1; render(); }
+
+function render(){
+  const it = item(cur);
+  document.getElementById('qobj').textContent  = it.obj;
+  document.getElementById('qyear').textContent = it.year;
+  document.getElementById('qtext').textContent = it.text;
+  document.getElementById('qsrc').innerHTML = it.src
+    ? 'Kaynak: <a href="'+it.src+'" target="_blank" rel="noreferrer">'+it.src+'</a>' : '';
+  document.getElementById('opts').innerHTML = LINKS.map((l,k)=>
+    '<button class="opt'+(ans[cur]===l[0]?' sel':'')+'" onclick="pick(\''+l[0]+'\')">'+
+    '<kbd>'+(k+1)+'</kbd><b>'+l[0]+'</b><span>'+l[1]+'</span></button>').join('');
+  document.getElementById('note').value = notes[cur] || "";
+  const done = ans.filter(Boolean).length;
+  document.getElementById('cnt').textContent =
+    (cur<N ? 'Olay '+(cur+1)+' / '+N : 'Nesne '+(cur-N+1)+' / '+M) + '  ·  ' + done + '/' + TOTAL + ' dolu';
+  document.getElementById('pi').style.width = (100*done/TOTAL)+'%';
+  document.getElementById('prev').disabled = cur===0;
+  document.getElementById('next').textContent = cur===TOTAL-1 ? 'Bitir' : 'Sonraki →';
+  window.scrollTo({top:0,behavior:'instant'});
+}
+let pending=null;
+function pick(v){
+  ans[cur]=v; render();                    // seçim hemen görünsün
+  if (pending) return;                     // hızlı ikinci basış kartı atlatmasın
+  pending = setTimeout(()=>{ pending=null; go(1); }, 160);
+}
+function go(d){
+  notes[cur] = document.getElementById('note').value;
+  if (d>0 && cur===TOTAL-1) return finish();
+  cur = Math.max(0, Math.min(TOTAL-1, cur+d)); render();
+}
+function finish(){
+  const done = ans.filter(Boolean).length, miss = ans.indexOf(null);
+  if (done < TOTAL && miss >= 0){
+    if (!confirm((TOTAL-done)+' satır boş. Boş bırakılanlar sonuca girmez.\n\nİlk boş satıra gitmek için Tamam, yine de bitirmek için İptal.')){
+      finalize(); return; }
+    cur = miss; render(); return;
+  }
+  finalize();
+}
+function finalize(){
+  document.getElementById('app').classList.add('hide');
+  document.getElementById('end').classList.remove('hide');
+  document.getElementById('endsum').textContent =
+    ans.filter(Boolean).length + ' / ' + TOTAL + ' satır dolduruldu.';
+}
+function save(final){
+  notes[cur] = document.getElementById('note').value;
+  const rows = [['tip','no','nesne','yil_veya_donem','halka','not']];
+  for (let i=0;i<TOTAL;i++){
+    const it = item(i);
+    rows.push([ i<N?'olay':'nesne', i<N?(i+1):(i-N+1), it.obj, it.year, ans[i]||'', (notes[i]||'').replace(/\s+/g,' ') ]);
+  }
+  const csv = '﻿' + rows.map(r=>r.map(c=>{
+    c = String(c); return /[",;\n]/.test(c) ? '"'+c.replace(/"/g,'""')+'"' : c; }).join(',')).join('\r\n');
+  dl('kodlama-'+(final?'SONUC':'ara-kayit')+'.csv', csv, 'text/csv;charset=utf-8');
+  dl('kodlama-'+(final?'SONUC':'ara-kayit')+'.json',
+     JSON.stringify({v:1,ans:ans,notes:notes}), 'application/json');
+}
+function dl(name, text, mime){
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([text],{type:mime}));
+  a.download = name; document.body.appendChild(a); a.click();
+  setTimeout(()=>{URL.revokeObjectURL(a.href); a.remove();}, 800);
+}
+function restore(inp){
+  const f = inp.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = () => { try{
+      const d = JSON.parse(r.result);
+      if(!Array.isArray(d.ans) || d.ans.length !== TOTAL) throw 0;
+      ans = d.ans; notes = d.notes || new Array(TOTAL).fill("");
+      cur = Math.max(0, ans.indexOf(null)); if (cur<0) cur = 0;
+      start();
+    } catch(e){ alert('Bu dosya bu forma ait bir ara kayıt değil.'); } };
+  r.readAsText(f);
+}
+document.addEventListener('keydown', e => {
+  if (document.getElementById('app').classList.contains('hide')) return;
+  if (e.target.tagName === 'TEXTAREA') return;
+  if (e.key >= '1' && e.key <= '6') pick(LINKS[+e.key-1][0]);
+  else if (e.key === 'ArrowRight') go(1);
+  else if (e.key === 'ArrowLeft') go(-1);
+});
+</script>
+</body>
+</html>

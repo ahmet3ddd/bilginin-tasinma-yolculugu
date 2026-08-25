@@ -4,7 +4,8 @@
 Aktarım Zinciri — kodlayıcılar arası uyum hesabı (Cohen kappa'sı).
 
 Kullanım:
-    python3 kappa-hesapla.py doldurulmus-form.xlsx
+    python3 kappa-hesapla.py kodlama-SONUC.csv        # HTML formundan gelen dosya
+    python3 kappa-hesapla.py doldurulmus-form.xlsx    # elektronik tablo formundan
 
 Gereken dosyalar, bu betikle aynı klasörde:
     CEVAP-ANAHTARI-gonullulere-verilmez.csv
@@ -32,6 +33,13 @@ def read_key(path, col):
     with open(path, newline='', encoding='utf-8-sig') as f:
         return [r[col] for r in csv.DictReader(f)]
 
+def sheet(wb, key):
+    """Sekme adını esnek bul: '2 · OLAYLAR' da 'Olaylar' da eşleşsin."""
+    for name in wb.sheetnames:
+        if key.lower() in name.lower():
+            return wb[name]
+    raise SystemExit("'%s' sekmesi bulunamadi. Dosyadaki sekmeler: %s" % (key, wb.sheetnames))
+
 def yorum(k):
     if k != k: return "hesaplanamadı"
     if k < 0.00: return "tesadüften kötü"
@@ -44,19 +52,34 @@ def yorum(k):
 def main():
     if len(sys.argv) < 2:
         print(__doc__); sys.exit(1)
-    try:
-        from openpyxl import load_workbook
-    except ImportError:
-        print("openpyxl gerekiyor:  pip install openpyxl"); sys.exit(1)
-
     here = os.path.dirname(os.path.abspath(__file__))
-    wb = load_workbook(sys.argv[1], data_only=True)
+    path = sys.argv[1]
+    is_csv = path.lower().endswith('.csv')
 
-    # --- events: sheet "Olaylar", column F, from row 3 (row 2 is the worked example)
-    we = wb['Olaylar']
-    got = [(we.cell(row=r, column=6).value or '').strip()
-           for r in range(3, we.max_row + 1)
-           if we.cell(row=r, column=2).value]
+    if is_csv:
+        # HTML formunun ürettiği kodlama-SONUC.csv
+        with open(path, newline='', encoding='utf-8-sig') as f:
+            rows = list(csv.DictReader(f))
+        need = {'tip', 'halka'}
+        if not need <= set(rows[0].keys()):
+            raise SystemExit('Bu CSV bu forma ait degil. Beklenen sutunlar: tip, no, nesne, '
+                             'yil_veya_donem, halka, not')
+        got  = [(r['halka'] or '').strip() for r in rows if r['tip'] == 'olay']
+        got2 = [(r['halka'] or '').strip() for r in rows if r['tip'] == 'nesne']
+    else:
+        try:
+            from openpyxl import load_workbook
+        except ImportError:
+            print("openpyxl gerekiyor:  pip install openpyxl"); sys.exit(1)
+        wb = load_workbook(path, data_only=True)
+        we = sheet(wb, 'olay')
+        got = [(we.cell(row=r, column=6).value or '').strip()
+               for r in range(3, we.max_row + 1)
+               if we.cell(row=r, column=2).value]
+        wo = sheet(wb, 'nesne')
+        got2 = [(wo.cell(row=r, column=3).value or '').strip()
+                for r in range(3, wo.max_row + 1) if wo.cell(row=r, column=1).value]
+
     gold = read_key(os.path.join(here, 'CEVAP-ANAHTARI-gonullulere-verilmez.csv'), 'ilk_kodlama_TR')
 
     if len(got) != len(gold):
@@ -86,10 +109,7 @@ def main():
     for i, x, y in dis:
         print("    satır %2d:  ilk=%-12s gönüllü=%-12s" % (i, x, y))
 
-    # --- objects: sheet "Nesneler", column C, from row 3
-    wo = wb['Nesneler']
-    got2 = [(wo.cell(row=r, column=3).value or '').strip()
-            for r in range(3, wo.max_row + 1) if wo.cell(row=r, column=1).value]
+    # --- objects
     gold2 = read_key(os.path.join(here, 'CEVAP-ANAHTARI-nesneler.csv'), 'ilk_kodlama_TR')
     names2 = read_key(os.path.join(here, 'CEVAP-ANAHTARI-nesneler.csv'), 'nesne')
     m = min(len(got2), len(gold2))

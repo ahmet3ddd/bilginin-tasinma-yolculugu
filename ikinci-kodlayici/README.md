@@ -14,8 +14,10 @@ Bir kişinin bir saatlik emeği bu sınırı kaldırır.
 Kod kitapçığını okuyup altı halkanın karar sorularını uygulayabilen, **çalışmanın
 yazarından bağımsız** bir kişi. Uzmanlık gerekmiyor.
 
-**Yapılacak iş:** `kodlama-formu-BOS.xlsx` dosyasını doldurmak. 79 olay + 10 nesne, hepsi
-açılır liste. Yaklaşık **bir saat**. Yazı yazmak gerekmiyor.
+**Yapılacak iş:** `kodlama-formu.html` dosyasını tarayıcıda açıp doldurmak. 79 olay +
+10 nesne; her biri için altı düğmeden birine basılıyor. Yaklaşık **bir saat**. Kurulum ve
+yazı yazmak gerekmiyor. Elektronik tabloyu tercih edenler için `kodlama-formu-BOS.xlsx`
+de var.
 
 **Gönderilecek yer:** depodaki *Issues* sekmesinden ya da yazara doğrudan.
 
@@ -27,7 +29,8 @@ açılır liste. Yaklaşık **bir saat**. Yazı yazmak gerekmiyor.
 
 | Dosya | Kime |
 |---|---|
-| `kodlama-formu-BOS.xlsx` | **Gönüllüye.** İhtiyaç duyulan tek dosya. |
+| **`kodlama-formu.html`** | **Gönüllüye — önerilen yol.** Tarayıcıda açılır, kurulum yok, altı düğmeden birine basılır. Hiçbir dış sunucuya istek yapmaz; cevaplar yalnız tarayıcıda kalır ve sonunda bir dosya olarak inip elle gönderilir. |
+| `kodlama-formu-BOS.xlsx` | Gönüllüye — yedek yol, elektronik tablo tercih ederse. **Önizleme penceresinde değil, indirip Excel/WPS/LibreOffice ile açılmalı**; açılır listeler önizlemede çalışmaz. |
 | `gonulluye-mesaj-TASLAK.md` | Yazara — gönüllüye yazılacak mesajın taslağı |
 | `CEVAP-ANAHTARI-*.csv` | Yazara — ilk kodlama, karşılaştırma için |
 | `kappa-hesapla.py` | Yazara — dolu formu anahtarla karşılaştırır, Cohen κ hesaplar |
@@ -53,8 +56,8 @@ hepsi temsil ediliyor (aparat 20, paket 17, bakım 14, çözücü 13, örtük bi
 ## Dolu form geldiğinde
 
 ```bash
-pip install openpyxl
-python3 kappa-hesapla.py doldurulmus-form.xlsx
+python3 kappa-hesapla.py kodlama-SONUC.csv        # HTML formundan geldiyse
+python3 kappa-hesapla.py doldurulmus-form.xlsx    # elektronik tablodan geldiyse (pip install openpyxl)
 ```
 
 Betik ağa hiçbir şey göndermez. Çıktı: yüzde uyum, Cohen κ, halka bazında döküm ve

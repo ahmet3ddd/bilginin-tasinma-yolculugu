@@ -1,7 +1,8 @@
 # Gönüllüye yazacağınız mesaj — taslak
 
 > Kendi ağzınıza çevirin. Kısa tutun; uzun bir istek gibi görünürse kabul edilme
-> ihtimali düşer. **Ekte yalnız `kodlama-formu-BOS.xlsx` olsun.**
+> ihtimali düşer. **Ekte yalnız `kodlama-formu.html` olsun** (elektronik tabloyu tercih
+> ederse `kodlama-formu-BOS.xlsx`). Cevap anahtarını asla eklemeyin.
 
 ---
 
@@ -19,9 +20,10 @@ ben savunuyorum. Yani "bu kurallar gerçekten uygulanabilir mi, yoksa benim okum
 sorusunun cevabı bende yok. Cevabı verebilecek tek şey, benim cevaplarımı görmemiş
 **başka bir insanın** aynı kuralları uygulaması.
 
-Ekteki dosyada 79 satır var. Her satır tarihli bir olay; senden istediğim, her biri için
-açılır listeden bir kategori seçmen. Yazı yazman gerekmiyor. İlk sayfada altı kategorinin
-ne demek olduğu ve üç kural yazılı — hepsi bu.
+Ekteki dosyayı **çift tıklayıp tarayıcında aç** — kurulum yok, hesap yok, internete
+hiçbir şey göndermiyor. Sana 79 tarihsel olay tek tek gösterilecek; her biri için altı
+düğmeden birine basacaksın. Yazı yazman gerekmiyor. Sonunda bir dosya iniyor, onu bana
+gönderiyorsun. Hepsi bu.
 
 **Tek önemli kural:** çalışmanın kendisine bakma. Ölçümün bütün değeri, senin
 cevaplarının benimkilerden bağımsız olmasından geliyor.
