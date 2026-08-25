@@ -1,13 +1,13 @@
-# GitHub Pages yayını — ŞİMDİLİK KAPALI.
-# Bu iş akışı kendiliğinden çalışmaz; yalnızca Actions sekmesinden elle
-# başlatılabilir (workflow_dispatch). Yayına hazır olduğunuzda:
-#   1) Depoyu public yapın (Settings → General → Change visibility)
-#   2) Settings → Pages → Source: GitHub Actions
-#   3) Aşağıdaki "push" bloğunun başındaki # işaretlerini kaldırın
+# GitHub Pages yayını — CANLI, elle tetiklenir.
+# Site yayında: https://ahmet3ddd.github.io/bilginin-tasinma-yolculugu/
+# Bu iş akışı kendiliğinden çalışmaz. index.html ya da başka bir dosya
+# güncellendiğinde: Actions → Deploy to GitHub Pages → Run workflow.
+# Her yüklemede kendiliğinden yayınlansın isterseniz aşağıdaki "push"
+# bloğunun başındaki # işaretlerini kaldırın.
 #
-# Publishing to GitHub Pages is OFF for now. This workflow only runs when
-# started by hand from the Actions tab. To publish later, make the repo public,
-# set Pages source to GitHub Actions, and uncomment the "push" trigger below.
+# Publishing to GitHub Pages is LIVE but manual: this workflow runs only when
+# started from the Actions tab. Uncomment the "push" trigger below to deploy
+# automatically on every push to main.
 
 name: Deploy to GitHub Pages
 
@@ -21,9 +21,11 @@ permissions:
   pages: write
   id-token: write
 
+# GitHub'in Pages icin onerisi cancel-in-progress: false — boylece sirada
+# bekleyen bir yayin, sonradan baslatilan biri yuzunden iptal edilip kaybolmaz.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
