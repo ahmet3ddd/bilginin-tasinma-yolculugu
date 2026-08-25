@@ -1,0 +1,34 @@
+{
+  "title": "Aktarım Zinciri / The Transmission Chain",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "version": "5.3",
+  "language": "tur",
+  "creators": [
+    {
+      "name": "Çandöken, Ahmet",
+      "orcid": "0009-0001-5197-7888"
+    }
+  ],
+  "description": "<p>An interactive bilingual (Turkish/English) study of how knowledge is transmitted between generations, built on a six-link transmission chain &mdash; <em>packet, decoder, context, tacit knowledge, apparatus, maintenance</em> &mdash; and tested against 32 real objects drawn from the modern-industrial, Ottoman and Roman worlds.</p><p>The repository contains three things:</p><ul><li><strong>The study</strong> (<code>index.html</code>): a single self-contained file with no external requests, no cookies and no analytics.</li><li><strong>The corpus</strong> (<code>data/</code>): 255 dated, individually sourced transmission events across 32 objects, each coded to exactly one of six links under one fixed rule with no per-object tuning; plus 38 dated evidence records, a 32 &times; 6 model-coverage matrix, 275 unique sources, and a bilingual codebook.</li><li><strong>The critique record</strong> (<code>docs/</code>): the adversarial review that produced the current version, and a version-by-version log of what was found wrong and corrected.</li></ul><p><strong>What this is not.</strong> It is a synthesis and a teaching instrument, not a research contribution. It has <strong>not</strong> been through human peer review; the scrutiny it has had is adversarial critique carried out by AI models from six specialist framings, and the writing, code, source checking and prior-art survey were done with AI assistance. Both facts are stated in the work itself and should travel with any reuse. The model parameters are assumed, not measured.</p><p><strong>Known limits, stated by the author.</strong> The link coding is by a single unblinded coder with no inter-rater statistic; the object set carries two selection biases running in opposite directions; no base rate can be computed from the corpus. The codebook states these in full.</p><p><strong>Licence.</strong> Text and data CC BY 4.0; source code MIT; the embedded Inter typeface &copy; 2016 The Inter Project Authors under the SIL Open Font License 1.1. Cited primary sources remain subject to their own rights holders.</p>",
+  "keywords": [
+    "knowledge transmission",
+    "cultural evolution",
+    "digital preservation",
+    "tacit knowledge",
+    "OAIS",
+    "maintenance studies",
+    "language endangerment",
+    "interactive explanation",
+    "Ottoman craft",
+    "Roman engineering"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://ahmet3ddd.github.io/bilginin-tasinma-yolculugu/",
+      "relation": "isIdenticalTo",
+      "scheme": "url"
+    }
+  ]
+}
