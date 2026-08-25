@@ -257,7 +257,7 @@ Atıf:
 
 > Ahmet Çandöken (2026). *The Transmission Chain: a link-coded corpus of 255 dated
 > transmission events across 32 objects* (Sürüm 1.0.0) [Veri kümesi]. Zenodo.
-> https://doi.org/[DOI]
+> https://doi.org/10.5281/zenodo.22093227
 
 Alıntılanan birincil kaynaklar kendi haklarına tabidir; hepsine `source_url` üzerinden
 doğrudan erişilir.

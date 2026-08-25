@@ -16,6 +16,7 @@
 </p>
 
 <p align="center">
+  <a href="https://doi.org/10.5281/zenodo.22093227"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.22093227.svg" alt="DOI" /></a>
   <img src="https://img.shields.io/badge/Sürüm-v5.3-315cf4" alt="Sürüm v5.3" />
   <img src="https://img.shields.io/badge/Durum-yayında-1a7f4f" alt="Durum: yayında" />
   <img src="https://img.shields.io/badge/Dış%20istek-yok-1a7f4f" alt="Dış istek yok" />
@@ -189,8 +190,13 @@ Otomatikleştirmek isterseniz `pages.yml` içindeki `push:` bloğunun yorumunu k
 
 Makine okunur künye `CITATION.cff` dosyasındadır.
 
-> Çandöken, Ahmet (2026). *Aktarım Zinciri / The Transmission Chain*, v5.3.
-> https://ahmet3ddd.github.io/bilginin-tasinma-yolculugu/ — CC BY 4.0
+> Çandöken, Ahmet (2026). *Aktarım Zinciri / The Transmission Chain* (Sürüm 5.3)
+> [Yazılım]. Zenodo. https://doi.org/10.5281/zenodo.22093227 — CC BY 4.0
+
+**DOI:** `10.5281/zenodo.22093227` — *concept DOI*; her zaman en son sürüme gider, atıflarda bunu kullanın.
+Yalnız bu sürümü işaret etmek isterseniz: `10.5281/zenodo.22093228`
+
+Kayıt ayrıca **Software Heritage**'ta arşivlendi ve **OpenAIRE**'de indekslendi.
 
 ## Belgeler / Documents
 
