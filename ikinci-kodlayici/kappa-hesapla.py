@@ -1,97 +1,96 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Aktarım Zinciri — kodlayıcılar arası uyum hesabı (Cohen kappa'sı).
+Aktarım Zinciri — kodlayıcılar arası uyum (Cohen kappa'sı).
 
 Kullanım:
-    python3 kappa-hesapla.py kodlama-SONUC.csv        # HTML formundan gelen dosya
-    python3 kappa-hesapla.py doldurulmus-form.xlsx    # elektronik tablo formundan
+    python3 kappa-hesapla.py kodlama-SONUC.csv
 
-Gereken dosyalar, bu betikle aynı klasörde:
-    CEVAP-ANAHTARI-gonullulere-verilmez.csv
-    CEVAP-ANAHTARI-nesneler.csv
+Karşılaştırma referansı ayrı bir dosyada tutulmaz: betik, alt örneklemi ve ilk
+kodlamayı doğrudan ../data/events.csv ve ../data/objects.csv dosyalarından türetir.
+Alt örneklem kuralı yazılıdır ve tekrar üretilebilir — uygarlığa göre orantılı
+tabakalama, tohum 20260825.
 
-Çıktı: yüzde uyum, Cohen kappa'sı, halka bazında dökümanlar, ve anlaşmazlığa
-düşülen satırların listesi. Hiçbir şeyi ağa göndermez.
+Ağa hiçbir şey göndermez.
 """
-import csv, sys, os, collections
+import csv, sys, os, random, collections
 
-LINKS = ['paket','çözücü','bağlam','örtük bilgi','aparat','bakım']
+SEED  = 20260825
+QUOTA = [('modern', 6), ('ottoman', 2), ('roman', 2)]
+LINKS = ['paket', 'çözücü', 'bağlam', 'örtük bilgi', 'aparat', 'bakım']
+TR    = {'packet':'paket', 'decoder':'çözücü', 'context':'bağlam',
+         'tacit':'örtük bilgi', 'apparatus':'aparat', 'maintenance':'bakım'}
+
+def load(path):
+    with open(path, newline='', encoding='utf-8-sig') as f:
+        return list(csv.DictReader(f))
+
+def subsample(objects):
+    """Formu üreten seçim kuralının birebir aynısı."""
+    rng, sel = random.Random(SEED), []
+    for civ, k in QUOTA:
+        pool = sorted(r['object_id'] for r in objects if r['civilisation'] == civ)
+        rng.shuffle(pool)
+        sel += sorted(pool[:k])
+    return sorted(sel)
+
+def reference(here):
+    data = os.path.normpath(os.path.join(here, '..', 'data'))
+    objects = load(os.path.join(data, 'objects.csv'))
+    events  = load(os.path.join(data, 'events.csv'))
+    sel = subsample(objects)
+    sub = sorted((e for e in events if e['object_id'] in sel),
+                 key=lambda e: (e['object_id'], int(e['year'])))
+    by_id = {o['object_id']: o for o in objects}
+    return ([TR[e['link']] for e in sub],
+            [TR[by_id[o]['thinnest_link']] for o in sel],
+            [by_id[o]['name_tr'] for o in sel], sel)
 
 def kappa(a, b):
-    """Cohen's kappa for two equal-length lists of labels."""
     n = len(a)
     if n == 0: return float('nan'), 0.0, 0.0
     po = sum(1 for x, y in zip(a, b) if x == y) / n
     ca, cb = collections.Counter(a), collections.Counter(b)
     pe = sum((ca[k]/n) * (cb[k]/n) for k in set(ca) | set(cb))
-    k = (po - pe) / (1 - pe) if pe != 1 else float('nan')
-    return k, po, pe
-
-def read_key(path, col):
-    # utf-8-sig: dosyalar elektronik tablo uygulamaları doğru açsın diye BOM ile yazılır
-    with open(path, newline='', encoding='utf-8-sig') as f:
-        return [r[col] for r in csv.DictReader(f)]
-
-def sheet(wb, key):
-    """Sekme adını esnek bul: '2 · OLAYLAR' da 'Olaylar' da eşleşsin."""
-    for name in wb.sheetnames:
-        if key.lower() in name.lower():
-            return wb[name]
-    raise SystemExit("'%s' sekmesi bulunamadi. Dosyadaki sekmeler: %s" % (key, wb.sheetnames))
+    return ((po - pe) / (1 - pe) if pe != 1 else float('nan')), po, pe
 
 def yorum(k):
-    if k != k: return "hesaplanamadı"
-    if k < 0.00: return "tesadüften kötü"
-    if k < 0.20: return "çok zayıf"
-    if k < 0.40: return "zayıf"
-    if k < 0.60: return "orta"
-    if k < 0.80: return "iyi (substantial)"
+    if k != k:      return "hesaplanamadı"
+    if k < 0.00:    return "tesadüften kötü"
+    if k < 0.20:    return "çok zayıf"
+    if k < 0.40:    return "zayıf"
+    if k < 0.60:    return "orta"
+    if k < 0.80:    return "iyi (substantial)"
     return "çok iyi (almost perfect)"
 
 def main():
     if len(sys.argv) < 2:
         print(__doc__); sys.exit(1)
     here = os.path.dirname(os.path.abspath(__file__))
-    path = sys.argv[1]
-    is_csv = path.lower().endswith('.csv')
+    try:
+        gold, gold2, names, sel = reference(here)
+    except FileNotFoundError as e:
+        raise SystemExit("../data/ bulunamadi (%s). Betigi depo icindeki "
+                         "ikinci-kodlayici/ klasorunden calistirin." % e.filename)
 
-    if is_csv:
-        # HTML formunun ürettiği kodlama-SONUC.csv
-        with open(path, newline='', encoding='utf-8-sig') as f:
-            rows = list(csv.DictReader(f))
-        need = {'tip', 'halka'}
-        if not need <= set(rows[0].keys()):
-            raise SystemExit('Bu CSV bu forma ait degil. Beklenen sutunlar: tip, no, nesne, '
-                             'yil_veya_donem, halka, not')
-        got  = [(r['halka'] or '').strip() for r in rows if r['tip'] == 'olay']
-        got2 = [(r['halka'] or '').strip() for r in rows if r['tip'] == 'nesne']
-    else:
-        try:
-            from openpyxl import load_workbook
-        except ImportError:
-            print("openpyxl gerekiyor:  pip install openpyxl"); sys.exit(1)
-        wb = load_workbook(path, data_only=True)
-        we = sheet(wb, 'olay')
-        got = [(we.cell(row=r, column=6).value or '').strip()
-               for r in range(3, we.max_row + 1)
-               if we.cell(row=r, column=2).value]
-        wo = sheet(wb, 'nesne')
-        got2 = [(wo.cell(row=r, column=3).value or '').strip()
-                for r in range(3, wo.max_row + 1) if wo.cell(row=r, column=1).value]
+    rows = load(sys.argv[1])
+    if not {'tip', 'halka'} <= set(rows[0].keys()):
+        raise SystemExit('Bu CSV bu forma ait degil. Beklenen sutunlar: '
+                         'tip, no, nesne, yil_veya_donem, halka, not')
+    got  = [(r['halka'] or '').strip() for r in rows if r['tip'] == 'olay']
+    got2 = [(r['halka'] or '').strip() for r in rows if r['tip'] == 'nesne']
 
-    gold = read_key(os.path.join(here, 'CEVAP-ANAHTARI-gonullulere-verilmez.csv'), 'ilk_kodlama_TR')
-
+    print("Alt örneklem (tohum %d): %s" % (SEED, ' · '.join(sel)))
     if len(got) != len(gold):
-        print("UYARI: satır sayıları tutmuyor — form %d, anahtar %d" % (len(got), len(gold)))
+        print("UYARI: satır sayıları tutmuyor — form %d, referans %d" % (len(got), len(gold)))
+
     n = min(len(got), len(gold))
     pairs = [(g, h) for g, h in zip(gold[:n], got[:n]) if h]
-    bos = n - len(pairs)
     a = [p[0] for p in pairs]; b = [p[1] for p in pairs]
-
     k, po, pe = kappa(a, b)
+
     print("=" * 62)
-    print("OLAY KODLAMASI  —  %d satırın %d'i dolu%s" % (n, len(pairs), (", %d boş" % bos) if bos else ""))
+    print("OLAY KODLAMASI  —  %d satırın %d'i dolu" % (n, len(pairs)))
     print("=" * 62)
     print("  yüzde uyum        : %.1f%%" % (po * 100))
     print("  beklenen uyum     : %.1f%%  (tesadüfen)" % (pe * 100))
@@ -102,16 +101,13 @@ def main():
         idx = [i for i, x in enumerate(a) if x == L]
         if not idx: continue
         agree = sum(1 for i in idx if b[i] == L)
-        print("    %-12s %2d satır, %2d'inde aynı (%3.0f%%)" % (L, len(idx), agree, 100 * agree / len(idx)))
+        print("    %-12s %2d satır, %2d'inde aynı (%3.0f%%)" % (L, len(idx), agree, 100*agree/len(idx)))
     print()
     dis = [(i + 1, a[i], b[i]) for i in range(len(a)) if a[i] != b[i]]
     print("  anlaşmazlık: %d satır" % len(dis))
     for i, x, y in dis:
         print("    satır %2d:  ilk=%-12s gönüllü=%-12s" % (i, x, y))
 
-    # --- objects
-    gold2 = read_key(os.path.join(here, 'CEVAP-ANAHTARI-nesneler.csv'), 'ilk_kodlama_TR')
-    names2 = read_key(os.path.join(here, 'CEVAP-ANAHTARI-nesneler.csv'), 'nesne')
     m = min(len(got2), len(gold2))
     pairs2 = [(g, h) for g, h in zip(gold2[:m], got2[:m]) if h]
     if pairs2:
@@ -125,12 +121,13 @@ def main():
         print("  Cohen kappa       : %.3f   → %s" % (k2, yorum(k2)))
         print("  (10 nesnede kappa çok gürültülüdür; yüzde uyumu rapor etmek daha dürüst.)")
         for i, (x, y) in enumerate(zip(a2, b2)):
-            if x != y: print("    %-30s ilk=%-12s gönüllü=%-12s" % (names2[i][:30], x, y))
+            if x != y:
+                print("    %-30s ilk=%-12s gönüllü=%-12s" % (names[i][:30], x, y))
 
     print()
     print("Raporlanacak cümle örneği:")
     print('  "10 nesnelik bir alt örneklemde (79 olay) ikinci ve bağımsız bir kodlayıcı ile')
-    print('   olay-halka kodlaması için Cohen kappa = %.2f (%%%.0f yüzde uyum) elde edilmiştir."' % (k, po * 100))
+    print('   olay-halka kodlaması için Cohen kappa = %.2f (%%%.0f yüzde uyum) elde edilmiştir."' % (k, po*100))
 
 if __name__ == '__main__':
     main()

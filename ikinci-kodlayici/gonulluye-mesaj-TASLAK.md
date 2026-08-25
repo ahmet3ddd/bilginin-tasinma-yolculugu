@@ -2,7 +2,7 @@
 
 > Kendi ağzınıza çevirin. Kısa tutun; uzun bir istek gibi görünürse kabul edilme
 > ihtimali düşer. **Ekte yalnız `kodlama-formu.html` olsun** (elektronik tabloyu tercih
-> ederse `kodlama-formu-BOS.xlsx`). Cevap anahtarını asla eklemeyin.
+> ederse `kodlama-formu-BOS.xlsx`).
 
 ---
 

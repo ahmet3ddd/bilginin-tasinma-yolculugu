@@ -32,16 +32,14 @@ de var.
 | **`kodlama-formu.html`** | **Gönüllüye — önerilen yol.** Tarayıcıda açılır, kurulum yok, altı düğmeden birine basılır. Hiçbir dış sunucuya istek yapmaz; cevaplar yalnız tarayıcıda kalır ve sonunda bir dosya olarak inip elle gönderilir. |
 | `kodlama-formu-BOS.xlsx` | Gönüllüye — yedek yol, elektronik tablo tercih ederse. **Önizleme penceresinde değil, indirip Excel/WPS/LibreOffice ile açılmalı**; açılır listeler önizlemede çalışmaz. |
 | `gonulluye-mesaj-TASLAK.md` | Yazara — gönüllüye yazılacak mesajın taslağı |
-| `CEVAP-ANAHTARI-*.csv` | Yazara — ilk kodlama, karşılaştırma için |
-| `kappa-hesapla.py` | Yazara — dolu formu anahtarla karşılaştırır, Cohen κ hesaplar |
+| `kappa-hesapla.py` | Yazara — dolu formu `data/` içindeki ilk kodlamayla karşılaştırır, Cohen κ hesaplar |
 
-### Cevap anahtarı hakkında dürüst bir not
+### Körleme hakkında
 
-Bu klasördeki "cevap anahtarı" bir sır değildir ve olamaz: ilk kodlamanın tamamı zaten
-`data/events.csv` içinde, `link` sütununda, herkese açık olarak yayımlanmıştır. Yani
-körleme **usule dayanır, gizliliğe değil** — gönüllüden istenen, formu doldururken
-çalışmaya ve veri dosyalarına *bakmamasıdır*. Bir hakem bunu bilmelidir; bu yüzden burada
-yazılıdır ve raporlanacak sonuçta da belirtilecektir.
+Gönüllüden istenen, formu doldururken çalışmaya ve `data/` içindeki dosyalara
+*bakmamasıdır*. İlk kodlama zaten herkese açık yayımlıdır (`data/events.csv` →
+`link`, `data/objects.csv` → `thinnest_link`), yani körleme **usule dayanır,
+gizliliğe değil.** Bir hakem bunu bilmelidir; raporlanacak sonuçta da belirtilecek.
 
 ## Alt örneklem nasıl seçildi
 
