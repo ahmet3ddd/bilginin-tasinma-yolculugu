@@ -7,9 +7,10 @@ tarihi 23 Ağustos 2026
 Bu kitapçık, bu klasördeki dosyaların işletim tarifidir. Çalışmayı hiç görmemiş bir
 kodlayıcının bir kodlama kararını yeniden üretebilmesi ve **belirli bir yerde itiraz
 edebilmesi** için yazıldı. Aşağıdaki her madde ya bir tanımdır, ya yayımlanmış kaynak
-koddan olduğu gibi alınmış bir kuraldır, ya da açıkça beyan edilmiş bir sınırdır. Yalnız
-asıl kodlayıcının bilebileceği bir kural varsa, tahmin edilmedi — **[YAZAR TAMAMLAYACAK]**
-diye işaretlendi.
+koddan olduğu gibi alınmış bir kuraldır, ya tam gücüyle beyan edilmiş bir sınırdır, ya da
+yazarın kendi sözleriyle bildirdiği bir karardır. Hiçbiri çıkarım değildir: yalnız asıl
+kodlayıcının bilebileceği bir şey varsa, tahmin edilmedi — soruldu ve olduğu gibi
+aktarıldı.
 
 ---
 
@@ -117,16 +118,40 @@ yukarıdaki dağılım bir ölçüm değil **bir okuma** olarak ele alınmalıd�
 - Olay yılları MÖ 700 ile MS 2026 arasında.
 - Nesneler çalışmanın ardışık sürümlerinde eklendi; set 30'dan 32'ye büyüdü.
 
-**Katılım kuralı — [YAZAR TAMAMLAYACAK].** Buraya, kendi cümlelerinizle şunları yazın: bir
-aday nesne listeye nasıl girdi; asgari kanıt eşiği neydi (ör. "her biri bağımsız
-denetlenebilir kaynaklı en az N tarihli olay"); ve hangi adaylar değerlendirilip
-**reddedildi**, hangi gerekçeyle. Bir veri makalesi hakemi bunu soracaktır ve veri kümesi
-bu olmadan esaslı biçimde zayıftır. **Dosyalardan yeniden üretilemez.**
+**Katılım kuralı.** Önceden konmuş biçimsel bir ölçüt yoktu. Nesneler yazarın ilgisini
+çektiği için aday oldu; aday olduktan sonra, açılıp bağımsız denetlenebilen tarihli kaynak
+bulunamayanlar çalışmadan çıkarıldı. Yani kaynak bulunabilirliği bir **seçim** değil, bir
+**eleme** ölçütüydü. Bu gerekçeyle değerlendirilip alınmayan adaylar aşağıda listelidir.
 
-**Şimdiden söylenebilecek ve açıkça söylenmesi gereken:** bu, tanımlı bir evrenden değil,
-tek bir yazarın elinden çıkma bir kolaylık örneklemidir. Aktarım tarihlerinin rastgele ya
-da temsilî bir örneği değildir ve ondan hiçbir taban oran hesaplanamaz. "32'nin 26'sı
-tuttu" rakamı **yalnız bu kısa listenin** özelliğidir. Bkz. §6.2.
+Sonuçtaki bir düzenlilik, kullanıcı fark edeceği için yazılmalıdır: her nesne yedi ya da
+sekiz tarihli olayla (ortanca 8) ve dört-altı ek okuma kaynağıyla temsil edilmiştir. Bu bir
+hedef olarak konmadı; bitmiş korpusun bir özelliğidir ve sebebi belgelenmemiştir.
+
+**Değerlendirilip alınmayan adaylar.**
+
+*Mısır piramitleri.* Başlangıçta, nasıl yapıldıkları yeterince bilinmediği için kaynaklı
+bir zaman çizelgesi çıkarılamayacağı düşünülerek elendi. Denetimde bunun literatürün değil
+popüler anlatının konumu olduğu görüldü: Wadi el-Jarf papirüsleri (~MÖ 2560, Merer'in
+Günlüğü) Keops piramidi için kireçtaşı taşınmasını çağdaş bir kayıtla belgeler ve rampa
+ile iş gücü lojistiği üzerine yaşayan bir mühendislik literatürü vardır. Nesne yine de
+alınmadı, ancak **kapsam gerekçesiyle**: eklenmesi çalışmanın anlatmak istediği şeyden
+uzaklaştıracaktı. Bu kayıt, çalışmanın efsane düzeltmesi ölçütünün yazarın kendi kararına
+uygulanmış hâli olarak burada durur.
+
+*Cep telefonu.* Bileşen sayısı nedeniyle elendi: bu kadar çok bileşenli bir nesneyi altı
+halkayla çözümlemek anlamlı bir sonuç vermeyecekti. Bu bilinçli bir kapsam kararıdır —
+aynı sınırın **görünmesi** için bazı çok bileşenli teknolojik nesneler (entegre devre,
+sabit disk, bilgisayar, internet) korpusta bilerek bırakılmıştır.
+
+*Soyut kavramlar.* Kendi dönemlerinde de maddi bir taşıyıcısı olmayan kavramlar dışarıda
+bırakıldı; böyle bir nesnede altı halkanın *paket* ve *aparat* halkaları tanımsız kalır.
+
+*Genel ilke.* Benzer gerekçelerle daha fazla nesne eklemenin, anlatılmak istenen şeyden
+uzaklaştıracağı değerlendirilmiştir; konu zaten karmaşık ve kavranması kolay değildir.
+
+**Bundan açıkça çıkan sonuç:** bu, tanımlı bir evrenden değil, tek bir yazarın elinden çıkma
+bir kolaylık örneklemidir. Rastgele değildir, temsilî değildir. Ondan hiçbir taban oran
+hesaplanamaz ve "32'nin 26'sı tuttu" rakamı yalnız bu kısa listenin özelliğidir. Bkz. §6.2.
 
 ---
 

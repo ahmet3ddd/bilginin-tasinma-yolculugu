@@ -6,9 +6,9 @@
 This codebook is the operational specification for the files in this directory. It is
 written so that a coder who has never seen the study can reproduce a coding decision and
 disagree with it in a specific place. Everything below is either a definition, a rule
-taken verbatim from the published source code, or a stated limitation. Where a rule is
-known only to the original coder it is marked **[AUTHOR TO COMPLETE]** rather than
-guessed at.
+taken verbatim from the published source code, a limitation stated at full strength, or a
+decision reported by the author in their own words. Nothing here is inferred: where only
+the original coder could know something, it was asked and is quoted, not guessed.
 
 ---
 
@@ -116,17 +116,46 @@ and the reason the distribution above should be treated as one reading, not a me
 - Event years span 700 BCE to 2026 CE.
 - Objects were added across successive versions of the study; the set grew from 30 to 32.
 
-**The inclusion rule — [AUTHOR TO COMPLETE].** State here, in the author's own words:
-how a candidate object came to be on the list; what the minimum evidence bar was (e.g.
-"at least N dated events each with an independently checkable source"); and which
-candidates were considered and **rejected**, with the reason. A data paper reviewer will
-ask for this and the dataset is materially weaker without it. It cannot be reconstructed
-from the files.
+**The inclusion rule.** There was no formal criterion set in advance. Objects became
+candidates because they interested the author; a candidate was then dropped if dated,
+independently checkable sources could not be found for it. Source availability was
+therefore an *elimination* criterion, not a selection criterion. Candidates that were
+considered and rejected on that basis are listed at the end of this section.
 
-**What can be said now, and should be said plainly:** this is a convenience sample chosen
-by one author from no defined population. It is not a random or representative sample of
-transmission histories and no base rate should be computed from it. The "26 of 32 held"
-figure is a property of this shortlist and of nothing else. See §6.2.
+One regularity in the result is worth reporting because a user will notice it: every
+object is represented by seven or eight dated events (median 8) and four to six further
+reading sources. This was not set as a target; it is a property of the finished corpus and
+its cause is not documented.
+
+**Candidates considered and rejected.**
+
+*The Egyptian pyramids.* Initially rejected on the assumption that no sourced timeline
+could be built, because how they were constructed is not well enough understood. On
+checking, that turned out to be the popular framing rather than the position of the
+literature: the Wadi al-Jarf papyri (c. 2560 BCE, the Diary of Merer) document limestone
+haulage for Khufu's pyramid in a contemporary record, and there is an active engineering
+literature on ramps and workforce logistics. The object was still left out, but **on scope
+grounds**: including it would have pulled the study away from what it set out to show.
+This entry stands here as the study's own myth-correction criterion applied to the
+author's own decision.
+
+*The mobile telephone.* Rejected on component count: decomposing an object with that many
+components through six links would not have yielded a meaningful result. This is a
+deliberate scope decision — and so that the same limit stays **visible**, some
+many-component technological objects (the integrated circuit, the hard disk, the computer,
+the internet) were deliberately kept in the corpus.
+
+*Abstract concepts.* Concepts with no material carrier even in their own period were left
+out; for such an object the *packet* and *apparatus* links are undefined.
+
+*The general principle.* Adding further objects for similar reasons was judged likely to
+pull the work away from what it set out to say; the subject is already complex and not
+easy to grasp.
+
+**What follows from this, plainly:** the sample is a convenience sample chosen by one
+author from no defined population. It is not random and not representative. No base rate
+should be computed from it, and the figure "26 of 32 held" is a property of this shortlist
+and of nothing else. See §6.2.
 
 ---
 
