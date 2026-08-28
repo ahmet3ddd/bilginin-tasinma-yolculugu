@@ -34,7 +34,7 @@ düzyazısı bu veri kümesine **dâhil değildir** ve kullanmak için gerekmez.
 | `objects.csv` | 32 | bir nesne |
 | `evidence.csv` | 38 | tarihli bir kanıt kaydı (23'ü kanıt şeridinden, 15'i zincir haritalarından) |
 | `model-coverage.csv` | 192 | 32 × 6 matrisin bir nesne × halka hücresi |
-| `sources.csv` | 275 | benzersiz bir kaynak adresi ve kullanım sayısı |
+| `sources.csv` | 291 | benzersiz bir kaynak adresi ve kullanım sayısı |
 | `corpus.json` | — | kayıpsız dışa aktarım: özgün iki dilli alanlar, satır içi işaretlemesiyle, artı model parametreleri |
 
 CSV dosyaları **BOM'lu** UTF-8, virgülle ayrılmış, RFC 4180 tırnaklama, başlık satırlı.
@@ -236,12 +236,72 @@ büyük ölçüde ünlü, iyi belgelenmiş, **hayatta kalmış** nesnelerden se�
 yanlılığı. Bu iki yanlılık birbirini götürmez; **yön değiştirir.** Bu korpustan aktarım
 başarısızlığının genel sıklığı, dağılımı ya da nedenleri hakkında hiçbir çıkarım yapılamaz.
 
-### 6.3 Kaynak kalitesi eşit değil, ve karışım yayımlanıyor
-275 benzersiz kaynağın dağılımı: dergi ya da ön baskı 17, üniversite 19, resmî ya da
-standart kuruluşu 18, müze ya da arşiv 13, ansiklopedi 29, diğer web 179. `source_type`
-sütunu dışa aktarım betiği tarafından adresin sunucu adından **otomatik** atanır; kaba bir
-kolaylık etiketidir, kalite hakkında editoryal bir yargı değildir. Kaynak kalitesine göre
-süzülmüş bir alt küme gerekiyorsa, bu sütunla süzüp elle kontrol edin.
+### 6.3 Kaynak kökeni eşit değil, ve karışım yayımlanıyor
+
+Bu korpustaki her iddia kaynağını adıyla verir; ama kaynaklar tek cinsten değildir ve
+v5.4'e kadar veri bunu gizliyordu: `source_type` alanının `web` diye tek bir torba değeri
+255 olayın 163'ünü içine alıyordu. Bu yüzden `mevzuat.gov.tr`'deki bir kanun metni,
+imzalı maddeleri olan bir ansiklopedi maddesi ve bir gazete yazısı, dosyayı süzen biri
+için birbirinden ayırt edilemiyordu. Bu, yalnız kaynakların değil, **verinin** kusuruydu.
+
+`source_type` artık **yayıncı türünü** kaydediyor. Bu bir kalite puanı değil, bir köken
+etiketidir: bir atfı yeterli kılan şey, kaynağın türü ile iddianın türü arasındaki
+uygunluktur — ve o yargı aşağıda bir politika olarak yazılıdır.
+
+**Kaynak politikası — kaynak türünü iddia türü belirler.**
+
+| İddianın türü | Gereken kaynak |
+|---|---|
+| Hukukî ya da idarî olgu | kanunun kendisi, Resmî Gazete ya da kararı veren kurumun yayımladığı metin |
+| İstatistik | rakamı üreten kurum; rapor edilmiş rakam yerine denetlenmiş rakam |
+| Tarihsel yorum | hakemli çalışma, akademik yayınevi ya da imzalı maddeleri olan editörlü başvuru eseri |
+| Nesne, yazıt, yazma, kazı | koleksiyon, arşiv ya da kazı kaydı |
+| Teknik standart ya da birim | standardın kendisi (ISO, BIPM, IANA, RFC) |
+| Bir buluşun önceliği | patent, Nobel dersi ya da hakemli tarih yazımı — asla tek başına firmanın kendi anlatısı değil |
+| Güncel olay | çağdaş gazetecilik meşrudur; tarihiyle verilir ve öyle etiketlenir |
+
+Bundan iki sonuç çıkar ve ikisi de bu korpusta uygulanmıştır. Haber kaynağı **elenmiş
+değildir** — 2014 tarihli bir bakanlık kararı ya da 2026 tarihli bir ürün duyurusu için
+uygun kayıt o olabilir — ama hakkında akademik literatür bulunan bir tarihsel iddiayı
+taşıyamaz. Resmî kaynak da **kendiliğinden üstün değildir**: bir bakanlığın yürüttüğü
+reforma dair anlatısı olayın tarafıdır; neye karar verildiğinin birincil kaydıdır,
+bilgiye ne olduğunun yansız kaydı değil.
+
+**Karışım, yayımlandığı hâliyle:**
+
+| `source_type` | Benzersiz kaynak | Olay |
+|---|---:|---:|
+| `official-legal` | 48 | 40 |
+| `patent` | 12 | 11 |
+| `peer-reviewed` | 47 | 46 |
+| `university-or-institute` | 36 | 31 |
+| `museum-archive-library` | 60 | 54 |
+| `reference-work` | 25 | 32 |
+| `professional-or-trade-body` | 13 | 14 |
+| `corporate-or-interested-party` | 17 | 12 |
+| `news-media` | 18 | 9 |
+| `blog-or-personal-compilation` | 10 | 3 |
+| `tertiary-open-encyclopedia` | 5 | 3 |
+| **Toplam** | **291** | **255** |
+
+Daha iyisi doğrulanamadığı için zayıf bir kaynağın korunduğu yerlerde, çalışmadaki kaynak
+notu bunu açıkça söyler — `corporate-or-interested-party` ve
+`blog-or-personal-compilation` girdileri bu kaydı taşır. Üç iddia hâlâ Wikipedia'ya
+dayanıyor; kökene göre derecelendirilmiş bir alt küme isteyen kullanıcı `source_type`
+üzerinden süzmeli ve bu üçünü çözülmemiş saymalıdır.
+
+**v5.4'te ne değişti ve bu neden atıf hijyeninden ibaret değil.** Yeniden kaynaklandırma
+biçimsel bir iş olmadı: iddiaları üst kaynaklara karşı denetlemek iddiaları değiştirdi.
+**255 olay atfının 80'i değiştirildi, 63 olay iddiası doğrulanabilir kaynağın söylediğine
+göre yeniden yazıldı ve dört olayın yılı düzeltildi.** Hiçbir üst kaynağın doğrulamadığı
+sayılar yeniden atıflandırılmak yerine çıkarıldı — bunların arasında kilogram
+prototipinin dönemsel doğrulama yılları (1889/1948/1989 → 1899-1911, 1939-1953,
+1988-1992), 1931 Osmanlı evrak satışının tonajı (27 ton → 30-50 ton), Süleymaniye'nin
+kubbe ölçüleri (26,5 m / 53 m → 27,40 m / 50 metreyi biraz aşan), Glossa Ordinaria'daki
+gloss sayısı (96.940 → yaklaşık 96.000), Valens kanal ağının uzunluğu (250 kilometreyi
+aşkın → yaklaşık 246 km, 5. yüzyıl uzantısıyla en az 426 km) ve Hasan Çelebi'nin icâzet
+yılı (1975 → 1391/1971) var. v5.3 verisini bu noktalarda olduğu gibi alan bir kullanıcı,
+tek dayanağı üçüncül bir kaynak olan bir rakamı almış oluyordu.
 
 ### 6.4 Kapsama coğrafi ve zamansal olarak dengesiz
 Üç katman da Avrupa, Anadolu ve Akdeniz merkezlidir. Ayrı kanıt şeridinde görünenler
@@ -295,9 +355,13 @@ doğrudan erişilir.
 
 ## 9. Bu dosyanın künyesi
 
-CSV ve JSON dosyaları `index.html` v5.2'den bir dışa aktarım betiğiyle **mekanik olarak**
-üretildi; dışa aktarım sırasında elle hiçbir değer girilmedi ve yukarıda raporlanan
-sayılar çalışmada yayımlanan sayıları yeniden üretir. **Çalışmanın metni, kodu, kaynak
+CSV ve JSON dosyaları `index.html` v5.4'ten, depoyla birlikte gelen
+`tools/export-data.py` betiğiyle **mekanik olarak** üretilir; dışa aktarım sırasında elle
+hiçbir değer girilmez ve yukarıda raporlanan sayılar çalışmada yayımlanan sayıları yeniden
+üretir. Yeniden üretmek için: `python3 tools/export-data.py index.html data`.
+`source_type` değerini bu betik, adresin alan adına bakarak bir yayıncı türü tablosundan
+atar; tabloda olmayan bir alan adı, dışa aktarımı sessizce bir torba değere düşürmek
+yerine **hata verdirir** — eski tek `web` kovasının yaptığı tam da o düşürmeydi. **Çalışmanın metni, kodu, kaynak
 denetimi ve öncül taraması esaslı ölçüde yapay zekâ desteğiyle üretilmiştir; çalışmanın
 eskiden "uzman incelemesi" dediği süreç, altı uzmanlık çerçevesinden yapay zekâ modelleri
 tarafından yürütülen çekişmeli eleştiridir — insan hakemliği değildir ve öyle

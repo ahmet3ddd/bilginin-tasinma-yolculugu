@@ -19,9 +19,9 @@ o zaman her yükleme kendiliğinden yayınlanır.
 
 | Yer | Ne yazar |
 |---|---|
-| JSON-LD | `"version":"5.3"` ve `"dateModified"` |
-| Künye (`mCreditBody`) | `Sürüm: v5.3` / `Version: v5.3` |
-| Yöntem rozeti (`mBadgeNote`) ve alt bilgi (`footerLeft`) | `Sürüm 5.3` / `Model v5.3` |
+| JSON-LD | `"version":"5.4"` ve `"dateModified"` |
+| Künye (`mCreditBody`) | `Sürüm: v5.4` / `Version: v5.4` |
+| Yöntem rozeti (`mBadgeNote`) ve alt bilgi (`footerLeft`) | `Sürüm 5.4` / `Model v5.4` |
 
 Ayrıca `CITATION.cff` içindeki `version` ve `date-released`, ve düzeltme günlüğüne
 (`var changes`) yeni bir kayıt. Bu çalışmanın kendi tezi gereği: **ne değiştiğini
@@ -31,7 +31,7 @@ yazmadan sürüm çıkarılmaz.**
 
 Zenodo'ya bağlandıktan sonra her **GitHub Release**, yeni bir sürüm DOI'si üretir.
 Sürüm çıkarma sırası: dosyaları yükle → Actions ile yayınla → **Releases → Draft a new
-release** → etiket `v5.3` → Publish. DOI birkaç dakika içinde Zenodo'da görünür ve
+release** → etiket `v5.4` → Publish. DOI birkaç dakika içinde Zenodo'da görünür ve
 `CITATION.cff` ile `README` içindeki DOI satırına yazılır.
 
 ## Depodaki dosyalar

@@ -32,7 +32,7 @@ simulation and its prose are **not** part of this dataset and are not needed to 
 | `objects.csv` | 32 | one object |
 | `evidence.csv` | 38 | one dated evidence record (23 from the evidence strip, 15 derived from chain maps) |
 | `model-coverage.csv` | 192 | one object × link cell of the 32 × 6 matrix |
-| `sources.csv` | 275 | one unique cited URL, with usage count |
+| `sources.csv` | 291 | one unique cited URL, with usage count |
 | `corpus.json` | — | lossless export: original bilingual fields with their inline markup, plus model parameters |
 
 CSV files are UTF-8 **with a byte-order mark**, comma-separated, RFC 4180 quoting, with a
@@ -242,12 +242,73 @@ well-documented, *surviving* objects — survivorship selection. These biases do
 they rotate. No inference about the frequency, distribution or causes of transmission
 failure in general can be drawn from this corpus.
 
-### 6.3 Source quality is uneven, and the mix is published
-Of 275 unique sources: journal or preprint 17, university 19, official or standards body
-18, museum or archive 13, encyclopedia 29, other web 179. The `source_type` column is
-assigned automatically from the URL host by the export script and is a coarse
-convenience label, not an editorial judgement of quality. Users who need a
-provenance-graded subset should filter on it and check by hand.
+### 6.3 Source provenance is uneven, and the mix is published
+
+Every claim in this corpus names its source, but the sources are not of one kind, and
+until v5.4 the data hid that: `source_type` had a single catch-all `web` value holding
+163 of 255 events, so a statute on `mevzuat.gov.tr`, a signed article in a scholarly
+encyclopaedia and a newspaper feature were indistinguishable to anyone filtering the
+file. That was a defect in the data, not only in the sources.
+
+`source_type` now records the **publisher kind**. It is a provenance label, not a
+quality score: what makes a citation adequate is the fit between the kind of source and
+the kind of claim, and that judgement is set out as a policy below.
+
+**The source policy — claim type governs source type.**
+
+| Kind of claim | Source required |
+|---|---|
+| Legal or administrative fact | the statute, gazette or the deciding body's own published decision |
+| Statistic | the institution that produced the figure; an audited figure in preference to a reported one |
+| Historical interpretation | refereed scholarship, an academic press, or an edited reference work with signed articles |
+| Object, inscription, manuscript, excavation | the collection, archive or excavation record |
+| Technical standard or unit | the standard itself (ISO, BIPM, IANA, RFC) |
+| Priority of an invention | the patent, the Nobel lecture, or refereed history — never the firm's own account alone |
+| Contemporary event | contemporaneous journalism is legitimate; it is dated and labelled as such |
+
+Two consequences follow, and both are applied in this corpus. A news source is **not**
+disqualified — for a 2014 ministerial decision or a 2026 product announcement it may be
+the appropriate record — but it may not carry a historical claim for which scholarship
+exists. And an official source is **not** automatically superior: a ministry's account of
+a reform it carried out is a party to the events, a primary record of what was decided
+rather than a neutral record of what happened to the knowledge.
+
+**The mix, as published:**
+
+| `source_type` | Unique sources | Events |
+|---|---:|---:|
+| `official-legal` | 48 | 40 |
+| `patent` | 12 | 11 |
+| `peer-reviewed` | 47 | 46 |
+| `university-or-institute` | 36 | 31 |
+| `museum-archive-library` | 60 | 54 |
+| `reference-work` | 25 | 32 |
+| `professional-or-trade-body` | 13 | 14 |
+| `corporate-or-interested-party` | 17 | 12 |
+| `news-media` | 18 | 9 |
+| `blog-or-personal-compilation` | 10 | 3 |
+| `tertiary-open-encyclopedia` | 5 | 3 |
+| **Total** | **291** | **255** |
+
+Where a weaker source is retained because no better one could be verified, the note on
+that source in the study says so in plain words — `corporate-or-interested-party` and
+`blog-or-personal-compilation` entries carry that qualifier. Three claims still rest on
+Wikipedia; a user who needs a provenance-graded subset should filter on `source_type`
+and treat those three as unresolved.
+
+**What changed in v5.4, and why it matters beyond citation hygiene.** Re-sourcing was not
+cosmetic: checking claims against higher-order sources changed the claims. **80 of the 255
+event citations were replaced, 63 event claims were rewritten to what the verifiable
+source actually says, and four event years were corrected.** Figures that no higher-order
+source would corroborate were removed rather than re-cited — among them the
+periodic-verification years of the kilogram prototype (1889/1948/1989 → 1899-1911,
+1939-1953, 1988-1992), the tonnage in the 1931 Ottoman archive sale (27 tons → 30-50
+tons), the dome measurements of the Süleymaniye (26.5 m / 53 m → 27.40 m / just over
+50 m), the gloss count of the Glossa Ordinaria (96,940 → c. 96,000), the length of the
+Valens channel network (over 250 km → c. 246 km, or at least 426 km including the
+fifth-century extension), and the year of Hasan Çelebi's icâzet (1975 → 1391/1971). Any
+user who took the v5.3 data at face value on those points was taking a figure whose only
+warrant was a tertiary source.
 
 ### 6.4 Coverage is geographically and temporally lopsided
 The three strata are Europe-, Anatolia- and Mediterranean-centred. There is no
@@ -301,9 +362,13 @@ Cited primary sources remain subject to their own rights; every one is reachable
 
 ## 9. Provenance of this file
 
-The CSV and JSON files were generated mechanically from `index.html` v5.2 by an export
-script; no value was entered by hand during export, and the counts reported above
-reproduce the counts published in the study. **The study's text, code, source checking
+The CSV and JSON files are generated mechanically from `index.html` v5.4 by
+`tools/export-data.py`, which ships with the repository; no value is entered by hand
+during export, and the counts reported above reproduce the counts published in the study.
+Re-run it with `python3 tools/export-data.py index.html data`. The `source_type` value is
+assigned by that script from the URL host against a table of publisher kinds; a host the
+table does not know makes the export fail loudly rather than fall back to a catch-all,
+which is what the old single `web` bucket did. **The study's text, code, source checking
 and prior-art survey were produced with substantial AI assistance, and what the study
 formerly called "expert review" was adversarial critique by AI models across six
 specialist framings — it is not human peer review and must not be counted as such.** This

@@ -1,7 +1,8 @@
 # The Transmission Chain — link-coded transmission corpus
 # Aktarım Zinciri — halka-kodlu aktarım korpusu
 
-**v1.0.0** · derived from / türetildiği kaynak: `index.html` v5.2 (2026-08-23)
+**v1.1.0** · derived from / türetildiği kaynak: `index.html` v5.4 (2026-08-28)
+**Regenerate / yeniden üret:** `python3 tools/export-data.py index.html data`
 **Licence / Lisans:** CC BY 4.0 (data + text) · code elsewhere in the repo is MIT
 
 255 dated, individually sourced events in the transmission history of 32 objects
@@ -30,7 +31,7 @@ reasons not to compute a base rate from it.
 | `objects.csv` | 32 | one object |
 | `evidence.csv` | 38 | one dated evidence record |
 | `model-coverage.csv` | 192 | one object × link cell (32 × 6) |
-| `sources.csv` | 275 | one unique cited URL |
+| `sources.csv` | 291 | one unique cited URL |
 | `corpus.json` | — | lossless bilingual export + model parameters |
 
 ## Headline counts / Manşet sayılar
@@ -40,3 +41,15 @@ reasons not to compute a base rate from it.
 - events per link: apparatus 58 · packet 53 · maintenance 49 · decoder 38 · context 32 · tacit 25
 - model coverage of each object's own thinnest link: **10 full · 16 partial · 6 none**
 - event years: 700 BCE – 2026 CE
+
+## Source provenance / Kaynak kökeni
+
+`source_type` records the **publisher kind** of each citation in eleven categories, not a
+quality score. The rule that governs which kind of source a claim may rest on — the
+**source policy** — is set out in §6.3 of the codebook, together with the published mix
+and the list of figures corrected in v5.4 when higher-order sources contradicted them.
+
+`source_type` her atfın **yayıncı türünü** on bir kategoride kaydeder; bir kalite puanı
+değildir. Bir iddianın hangi tür kaynağa dayanabileceğini belirleyen **kaynak politikası**
+kod kitapçığının 6.3 bölümündedir; yayımlanan karışım ve üst kaynakların çelişttiği için
+v5.4'te düzeltilen sayıların listesi de oradadır.

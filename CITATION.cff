@@ -7,8 +7,8 @@ authors:
     given-names: "Ahmet"
     alias: "ahmetoff"
     orcid: "https://orcid.org/0009-0001-5197-7888"
-version: "5.3"
-date-released: "2026-08-25"
+version: "5.4"
+date-released: "2026-08-28"
 license:
   - CC-BY-4.0
   - MIT
@@ -22,7 +22,7 @@ identifiers:
     description: "Concept DOI (all versions)"
   - type: doi
     value: "10.5281/zenodo.22093228"
-    description: "Version DOI (v5.3)"
+    description: "Version DOI (v5.4)"
   - type: url
     value: "https://ahmet3ddd.github.io/bilginin-tasinma-yolculugu/"
     description: "The study, live"

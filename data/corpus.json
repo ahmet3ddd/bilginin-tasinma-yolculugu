@@ -1,112 +1,23 @@
 {
- "dataset": "Aktarim Zinciri / The Transmission Chain — link-coded transmission corpus",
- "version": "1.0.0",
- "derived_from": "index.html v5.2 (data cut-off 23 August 2026)",
- "counts": {
-  "objects": 32,
-  "events": 255,
-  "evidence_records": 38,
-  "unique_sources": 275,
-  "links": 6,
-  "thinnest_link_distribution": {
-   "apparatus": 8,
-   "tacit": 6,
-   "context": 8,
-   "maintenance": 7,
-   "decoder": 2,
-   "packet": 1
-  },
-  "model_coverage": {
-   "partial": 16,
-   "none": 6,
-   "full": 10
-  },
-  "events_per_link": {
-   "packet": 53,
-   "decoder": 38,
-   "context": 32,
-   "maintenance": 49,
-   "apparatus": 58,
-   "tacit": 25
-  }
+ "title": {
+  "tr": "Aktarım Zinciri",
+  "en": "The Transmission Chain"
  },
- "model": {
-  "default_parameters": {
-   "capacity": 5,
-   "gain": 4,
-   "qc": 0.88,
-   "qd": 0.82,
-   "innovation": 1.5,
-   "halfLife": 35,
-   "generations": 40
-  },
-  "scenario_rule": {
-   "qc": {
-    "low": 0.4,
-    "healthy": 0.9
-   },
-   "qd": {
-    "low": 0.4,
-    "healthy": 0.9
-   },
-   "gain": {
-    "low": 1.5,
-    "healthy": 4
-   },
-   "halfLife": {
-    "healthy": 45
-   }
-  },
-  "link_representation": {
-   "packet": {
-    "state": "partial",
-    "slider": "gain",
-    "note": [
-     "Model paketin <i>varlığını</i> değil yalnız <i>kazancını</i> (G) taşır: bir sembolün ne kadar deneyimi sıkıştırdığını ölçer, o sembolün kaydedilip kaydedilmediğini değil.",
-     "The model carries the packet's <i>gain</i> (G), not its <i>existence</i>: it measures how much experience a symbol compresses, not whether that symbol was recorded at all."
-    ]
-   },
-   "decoder": {
-    "state": "full",
-    "slider": "qd",
-    "note": [
-     "Doğrudan karşılığı var: q<sub>d</sub> kaydırıcısı tam olarak bu halkadır — dil, standart, eğitim ve erişim.",
-     "Directly represented: the q<sub>d</sub> slider <i>is</i> this link — language, standards, training and access."
-    ]
-   },
-   "context": {
-    "state": "full",
-    "slider": "qc",
-    "note": [
-     "Doğrudan karşılığı var: q<sub>c</sub> kaydırıcısı tam olarak bu halkadır — yöntem, kanıt, sınırlar ve hata tarihi.",
-     "Directly represented: the q<sub>c</sub> slider <i>is</i> this link — method, evidence, limits and error history."
-    ]
-   },
-   "tacit": {
-    "state": "none",
-    "note": [
-     "<b>Modelde hiçbir terim yok.</b> El becerisi, atölye sırası ve tedarik zinciri denklemlerin hiçbirinde geçmiyor. Çin'in kalem ucu, Bell'in dokuz günlük okulu, F-1 motoru — hepsi bu modelin dışında kalır.",
-     "<b>No term at all.</b> Hand skill, shop-floor sequence and supply chain appear in none of the equations. China's pen tip, Bell's nine-day school, the F-1 engine — all of them fall outside this model."
-    ]
-   },
-   "apparatus": {
-    "state": "partial",
-    "slider": "halfLife",
-    "note": [
-     "Yalnızca arşiv yarı ömrünün içine gömülü. Model “ortam çürüdü” ile “okuyan makine üretimden kalktı”yı birbirinden <b>ayıramaz</b> — Domesday'in dersi tam olarak buydu. v5.3'ten beri vaka merceği bu halka için yarı ömrü <b>düşürmüyor</b>: düşürmek, motorun aritmetiği gereği bu vakaları olduğundan sağlıklı gösteriyordu.",
-     "Folded into the archive half-life only. The model <b>cannot separate</b> “the medium decayed” from “the machine that reads it went out of production” — which was precisely Domesday's lesson. Since v5.3 the case lens <b>no longer lowers</b> the half-life for this link: lowering it made these cases look healthier than they are, as an artefact of the engine's arithmetic."
-    ]
-   },
-   "maintenance": {
-    "state": "partial",
-    "slider": "halfLife",
-    "note": [
-     "Ayrı bir bakım terimi yok; yarı ömrün içinde eriyip gidiyor. Bu, yarı ömür açıklamasında zaten kabul edilen bir sınırdır. v5.3'ten beri vaka merceği bu halka için yarı ömrü <b>düşürmüyor</b>: düşürmek, motorun aritmetiği gereği bu vakaları olduğundan sağlıklı gösteriyordu.",
-     "There is no separate maintenance term; it dissolves into the half-life. This limit is already conceded in the half-life explanation. Since v5.3 the case lens <b>no longer lowers</b> the half-life for this link: lowering it made these cases look healthier than they are, as an artefact of the engine's arithmetic."
-    ]
-   }
-  }
- },
+ "licence": "CC BY 4.0 (metin ve veri) · MIT (kod)",
+ "generated_by": "tools/export-data.py",
+ "source_type_vocabulary": [
+  "official-legal",
+  "patent",
+  "peer-reviewed",
+  "university-or-institute",
+  "museum-archive-library",
+  "reference-work",
+  "tertiary-open-encyclopedia",
+  "professional-or-trade-body",
+  "corporate-or-interested-party",
+  "news-media",
+  "blog-or-personal-compilation"
+ ],
  "objects": [
   {
    "id": "pencil",
@@ -165,11 +76,11 @@
     {
      "y": 1795,
      "t": [
-      "İngiliz grafiti savaş yüzünden kesilince Nicolas-Jacques Conté grafit tozunu kille karıştırıp fırınlar: sertlik artık orana göre ayarlanabilir.",
-      "With English graphite cut off by war, Nicolas-Jacques Conté mixes powdered graphite with clay and kiln-fires it: hardness becomes tunable by ratio."
+      "İngiliz grafiti savaş yüzünden kesilince Nicolas-Jacques Conté grafit tozunu kille karıştırıp fırınlar (brevet n° 1BA12531, 3 Ocak 1795): sertlik artık orana göre ayarlanabilir.",
+      "With English graphite cut off by war, Nicolas-Jacques Conté mixes powdered graphite with clay and kiln-fires it (patent no. 1BA12531, 3 January 1795): hardness becomes tunable by ratio."
      ],
      "link": "packet",
-     "src": "https://www.britannica.com/biography/Nicolas-Jacques-Conte"
+     "src": "https://www.inpi.fr/conte-ou-l-art-du-crayon-1795"
     },
     {
      "y": 1839,
@@ -187,7 +98,7 @@
       "Leonard Read's essay “I, Pencil” appears in the December 1958 Freeman: the claim that no one person can make a pencil."
      ],
      "link": "context",
-     "src": "https://fee.org/articles/leonard-read-the-spiritual-economist/"
+     "src": "https://fee.org/ebooks/i-pencil/"
     },
     {
      "y": 2023,
@@ -265,14 +176,14 @@
     },
     {
      "t": [
-      "Nicolas-Jacques Conté",
-      "Nicolas-Jacques Conté"
+      "INPI — Conté ya da kalem sanatı (1795)",
+      "INPI — Conté, or the art of the pencil (1795)"
      ],
      "m": [
-      "Encyclopædia Britannica",
-      "Encyclopædia Britannica"
+      "Fransız patent ofisinin kaydı: brevet n° 1BA12531, 3 Ocak 1795; 1794 ablukasının yol açtığı kalem kıtlığı, grafit-kil karışımının fırınlanması ve sedir yuvası.",
+      "The French patent office’s record: patent no. 1BA12531 of 3 January 1795; the pencil shortage caused by the 1794 blockade, the kiln-fired graphite-and-clay mixture, and the cedar casing."
      ],
-     "u": "https://www.britannica.com/biography/Nicolas-Jacques-Conte"
+     "u": "https://www.inpi.fr/conte-ou-l-art-du-crayon-1795"
     },
     {
      "t": [
@@ -364,11 +275,11 @@
     {
      "y": 1950,
      "t": [
-      "Marcel Bich BIC Cristal'i piyasaya sürer; lisans yasal olarak alınmıştır ve Bich metali 0,01 milimetreye kadar işleyen İsviçre teknolojisine yatırım yapar.",
-      "Marcel Bich launches the BIC Cristal on a properly licensed design, investing in Swiss technology able to shape metal down to 0.01 millimetres."
+      "Marcel Bich BIC Cristal’i piyasaya sürer; tasarımın lisansı hak sahibinden usulünce alınmıştır.",
+      "Marcel Bich launches the BIC Cristal on a design properly licensed from the rights holder."
      ],
      "link": "apparatus",
-     "src": "https://en.wikipedia.org/wiki/Bic_Cristal"
+     "src": "https://www.moma.org/collection/works/82141"
     },
     {
      "y": 1961,
@@ -382,11 +293,11 @@
     {
      "y": 2017,
      "t": [
-      "Çin yılda 38 milyar tükenmez üretirken uç çeliğinin tamamını Japonya'dan alıyordu; TISCO beş yıllık çalışmayla yerli ucu başardı.",
-      "China was making 38 billion ballpoints a year while importing all its tip steel from Japan; after five years' work TISCO produced a domestic tip."
+      "Çin yılda yaklaşık 38 milyar tükenmez üretirken uç çeliğini başta Japonya ve İsviçre olmak üzere dışarıdan alıyordu; bir çelik üreticisi beş yıllık çalışmayla yerli ucu başardı.",
+      "China was making some 38 billion ballpoints a year while importing its tip steel, largely from Japan and Switzerland; after five years’ work a steelmaker produced a domestic tip."
      ],
      "link": "tacit",
-     "src": "https://www.chinadaily.com.cn/china/2017-01/10/content_27914009.htm"
+     "src": "https://www.caixinglobal.com/2017-01-10/china-steelmaker-finally-puts-the-ball-in-ballpoint-pen-101042333.html"
     }
    ],
    "links": {
@@ -563,11 +474,11 @@
     {
      "y": 1973,
      "t": [
-      "BIC tek kullanımlık çakmağını çıkarır; şirket 2024'e kadar 30 milyardan fazla çakmak sattığını bildirir.",
-      "BIC launches its disposable lighter; by 2024 the company reports having sold over 30 billion of them."
+      "BIC tek kullanımlık çakmağını çıkarır; şirket o günden bu yana dünyanın en çok satan çakmağı olduğunu bildirir.",
+      "BIC launches its disposable lighter; the company reports it has been the world’s best-selling lighter ever since."
      ],
      "link": "maintenance",
-     "src": "https://en.wikipedia.org/wiki/Bic_lighter"
+     "src": "https://mea.bic.com/en-za/lighters/50-years-of-BIC"
     },
     {
      "y": 1994,
@@ -739,7 +650,7 @@
       "On 4 June Sylvan Goldman debuts the shopping cart; when nobody will push one he hires models to demonstrate, teaching the behaviour."
      ],
      "link": "tacit",
-     "src": "https://www.britannica.com/today-in-history/June-4-1937-Debut-of-the-Shopping-Cart"
+     "src": "https://www.smithsonianmag.com/history/industrious-grocer-1930s-wanted-make-easier-customers-buy-more-just-needed-push-180987633/"
     },
     {
      "y": 1956,
@@ -753,11 +664,11 @@
     {
      "y": 1973,
      "t": [
-      "1 Nisan'da UPC sembolü standart olarak kabul edilir; tasarımı IBM'den George Laurer'e ait. Ürün artık makinece okunabilir bir isme sahip.",
-      "On 1 April the UPC symbol is adopted as a standard, designed by IBM's George Laurer. A product now has a machine-readable name."
+      "3 Nisan’ta ABD gıda sektörünün önde gelenleri UPC sembolünü standart olarak kabul eder. Ürün artık makinece okunabilir bir isme sahip.",
+      "On 3 April industry leaders in the US grocery sector adopt the UPC symbol as a standard. A product now has a machine-readable name."
      ],
      "link": "packet",
-     "src": "https://www.ibm.com/mx-es/history/upc"
+     "src": "https://support.gs1.org/support/solutions/articles/43000734073-gs1-historical-timeline"
     },
     {
      "y": 1974,
@@ -824,14 +735,14 @@
     },
     {
      "t": [
-      "4 Haziran 1937: alışveriş arabasının doğuşu",
-      "June 4, 1937: Debut of the Shopping Cart"
+      "Sylvan Goldman ve alışveriş arabası — Smithsonian",
+      "Sylvan Goldman and the shopping cart — Smithsonian"
      ],
      "m": [
-      "Encyclopædia Britannica",
-      "Encyclopædia Britannica"
+      "4 Haziran 1937’de Oklahoma City’deki Humpty Dumpty bakkalında ilk resmî alışveriş arabası; kimsenin itmek istememesi ve mağazaya kiralık modeller konması. Nesnenin kendi kaydı: NMAH, Goldman’ın katlanır sepetli arabası (patent başvurusu 14 Mart 1938, tescil 9 Nisan 1940).",
+      "The first official shopping cart at the Humpty Dumpty grocery in Oklahoma City on 4 June 1937; nobody willing to push one, and the hiring of models to demonstrate. The object’s own record: NMAH, Goldman’s folding basket carriage (filed 14 March 1938, granted 9 April 1940)."
      ],
-     "u": "https://www.britannica.com/today-in-history/June-4-1937-Debut-of-the-Shopping-Cart"
+     "u": "https://www.si.edu/object/goldmans-folding-basket-carriage:nmah_1216280"
     },
     {
      "t": [
@@ -846,14 +757,14 @@
     },
     {
      "t": [
-      "UPC: barkodun tarihi",
-      "The UPC: a history of the barcode"
+      "GS1 — barkodun kurumsal zaman çizelgesi",
+      "GS1 — the barcode’s institutional timeline"
      ],
      "m": [
-      "IBM",
-      "IBM"
+      "Standardı bugün yöneten kurumun kaydı: 3 Nisan 1973’te ABD gıda sektörünün önde gelenleri barkodu ortaya koydu; 26 Haziran 1974’te Ohio’daki bir Marsh süpermarketinde bir paket Wrigley sakızı dünyada barkodla taranan ilk ürün oldu.",
+      "The record of the body that now governs the standard: on 3 April 1973 leaders of the US grocery sector created the barcode; on 26 June 1974, in a Marsh supermarket in Ohio, a pack of Wrigley’s gum became the first product scanned by barcode."
      ],
-     "u": "https://www.ibm.com/mx-es/history/upc"
+     "u": "https://support.gs1.org/support/solutions/articles/43000734073-gs1-historical-timeline"
     },
     {
      "t": [
@@ -889,11 +800,11 @@
     {
      "y": 1906,
      "t": [
-      "Albert Marsh nikel-krom alaşımını patentler (US 852.338, 1907'de verilir): bakırın 50 katı direnç, yüksek erime noktası, oksitlenmeye direnç.",
-      "Albert Marsh patents his nickel-chromium alloy (US 852,338, granted 1907): 50 times the resistance of copper, a high melting point, resistant to oxidation."
+      "Albert Marsh nikel-krom alaşımını patentler (US 811.859; başvuru 15 Mart 1905, tescil 6 Şubat 1906): elektrik iletkenliği çok düşük, erime noktası yüksek, oksitlenmeye dirençli.",
+      "Albert Marsh patents his nickel-chromium alloy (US 811,859; filed 15 March 1905, granted 6 February 1906): very low in electrical conductivity, high in melting point, resistant to oxidation."
      ],
      "link": "packet",
-     "src": "https://www.chemistryworld.com/opinion/marshs-wires-and-the-birth-of-the-toaster/4019457.article"
+     "src": "https://patents.google.com/patent/US811859A/en"
     },
     {
      "y": 1909,
@@ -1124,11 +1035,11 @@
     {
      "y": 1959,
      "t": [
-      "Methane Pioneer, Ocak 1959'da Lake Charles'tan (Louisiana) kalkıp Canvey Island'a (İngiltere) varır: dünyanın ilk okyanus aşırı LNG yükü.",
-      "The Methane Pioneer sails from Lake Charles, Louisiana in January 1959 and reaches Canvey Island, England: the world's first ocean cargo of LNG."
+      "Methane Pioneer 25 Ocak 1959’da Louisiana kıyısından kalkıp yükünü İngiltere’ye ulaştırır: dünyanın ilk okyanus aşırı LNG yükü.",
+      "On 25 January 1959 the Methane Pioneer leaves the Louisiana coast and delivers its cargo to the UK: the world’s first ocean cargo of LNG."
      ],
      "link": "apparatus",
-     "src": "https://www.conocophillips.com/spiritnow/story/from-pioneer-to-powerhouse-how-conocophillips-shaped-the-lng-industry/"
+     "src": "https://higherlogicdownload.s3.amazonaws.com/SNAME/1dcdb863-8881-4263-af8d-530101f64412/UploadedFiles/c3352777fcaa4c4daa8f125c0a7c03e9.pdf"
     },
     {
      "y": 1964,
@@ -1137,7 +1048,7 @@
       "12 October 1964: the Methane Princess delivers the first commercial LNG cargo, from the CAMEL plant at Arzew, Algeria, to Canvey Island. The chain becomes a global trade."
      ],
      "link": "maintenance",
-     "src": "https://www.conocophillips.com/spiritnow/story/from-pioneer-to-powerhouse-how-conocophillips-shaped-the-lng-industry/"
+     "src": "https://www.lngindustry.com/lng-shipping/19062014/first_lng_carrier_entered_service_50_years_ago_802/"
     },
     {
      "y": 2026,
@@ -1327,7 +1238,7 @@
       "GM's EV1 goes out on lease: about 1,000 built, never sold, later recalled. The Prius follows in 1997, the Tesla Roadster in February 2008, the Leaf and Volt in late 2010."
      ],
      "link": "tacit",
-     "src": "https://news.gm.com/home.detail.html/Pages/news/us/en/2026/mar/0311-ev1.html"
+     "src": "https://americanhistory.si.edu/collections/object/nmah_1293145"
     },
     {
      "y": 2025,
@@ -1486,11 +1397,11 @@
     {
      "y": 1897,
      "t": [
-      "10 Ağustos 1897: Bayer'de Felix Hoffmann, salisilik asidi asetik anhidritle asetilleyerek ASA'yı kimyasal olarak saf ve kararlı biçimde elde eder.",
-      "10 August 1897: at Bayer, Felix Hoffmann acetylates salicylic acid with acetic anhydride and obtains ASA in chemically pure, stable form."
+      "10 Ağustos 1897: Bayer’de asetilsalisilik asidin ilk saf örneği hazırlanır. Deftere Felix Hoffmann’ın adı düşer; Arthur Eichengrün 1949’da sentezin kendi yönlendirmesiyle yapıldığını yazar ve hakemli literatür bu iddiayı ciddiye alır.",
+      "10 August 1897: at Bayer the first pure sample of acetylsalicylic acid is prepared. The notebook names Felix Hoffmann; in 1949 Arthur Eichengrün wrote that the synthesis was made under his direction — a claim the peer-reviewed literature takes seriously."
      ],
      "link": "tacit",
-     "src": "https://www.bayer.com/en/history/felix-hoffmann"
+     "src": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1119266/"
     },
     {
      "y": 1899,
@@ -1625,6 +1536,17 @@
       "The myth-busting source: epidemiologist Sean Harrison reports finding no willow-for-pain-or-fever entry in a translation of the Ebers Papyrus, and only one willow reference in the Hippocratic corpus — a uterine fumigation."
      ],
      "u": "https://www.asimov.press/p/aspirin"
+    },
+    {
+     "t": [
+      "W. Sneader, “The discovery of aspirin: a reappraisal”",
+      "W. Sneader, “The discovery of aspirin: a reappraisal”"
+     ],
+     "m": [
+      "BMJ 321 (2000), 1591-1594 — hakemli: 10 Ağustos 1897’de ilk saf örnek; Eichengrün’ün 1949’daki iddiası ve yazarın bu iddiayı makul bulan sonucu. Bayer’in kendi tarihçesi bu tartışmanın taraflarından biridir.",
+      "BMJ 321 (2000), 1591-1594 — peer-reviewed: the first pure sample on 10 August 1897; Eichengrün’s 1949 claim and the author’s conclusion that it is credible. Bayer’s own history is one party to this dispute."
+     ],
+     "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1119266/"
     }
    ]
   },
@@ -1857,19 +1779,19 @@
     {
      "y": 1906,
      "link": "tacit",
-     "src": "https://en.wikipedia.org/wiki/Crystal_detector",
+     "src": "https://patents.google.com/patent/US836531A/en",
      "t": [
-      "Pickard 30 Ağustos 1906'da silisyum dedektörünün patentini alır. Kedi bıyığı çağı: kullanılabilir temas noktası her seferinde deneme yanılmayla yeniden bulunur.",
-      "Pickard patents his silicon detector on 30 August 1906. The cat's-whisker era: a usable contact point has to be found again by trial and error before every single use."
+      "Pickard silisyum dedektörünü 30 Ağustos 1906’da patente verir; patent 20 Kasım’da alınır (US 836.531). Kedi bıyığı çağı: kullanılabilir temas noktası her seferinde deneme yanılmayla yeniden bulunur.",
+      "Pickard files his silicon detector patent on 30 August 1906; it is granted on 20 November (US 836,531). The cat’s-whisker era: a usable contact point has to be found again by trial and error before every single use."
      ]
     },
     {
      "y": 1907,
      "link": "context",
-     "src": "https://en.wikipedia.org/wiki/History_of_the_LED",
+     "src": "https://assets.cambridge.org/97805218/65388/excerpt/9780521865388_excerpt.pdf",
      "t": [
-      "9 Şubat 1907: H. J. Round, karborundum temasından ışık çıktığını bildirir; nedenini kimse bilmez. Losev 1920'lerde ayrıntılı çalışır, yarım yüzyıl fark edilmez.",
-      "9 February 1907: H. J. Round reports light from a carborundum contact; nobody knows why. Losev studies it in detail in the 1920s and goes unnoticed for half a century."
+      "H. J. Round, karborundum temasından ışık çıktığını Electrical World’e bildirir; nedenini kimse bilmez. Losev 1928’de ayrıntılı çalışır, yarım yüzyıl fark edilmez.",
+      "H. J. Round reports light from a carborundum contact to Electrical World; nobody knows why. Lossev investigates it in detail in 1928 and goes unnoticed for half a century."
      ]
     },
     {
@@ -1975,14 +1897,14 @@
     },
     {
      "t": [
-      "Kristal dedektör (Wikipedia)",
-      "Crystal detector (Wikipedia)"
+      "US 836.531 — G. W. Pickard, kristal dedektör patenti",
+      "US 836,531 — G. W. Pickard, crystal detector patent"
      ],
      "m": [
-      "Kedi bıyığının örtük becerisi: duyarlı noktanın her kullanımda yeniden aranması, Pickard'ın 1906 patenti.",
-      "Documents the cat's-whisker's tacit skill — hunting the sensitive spot before every use — and Pickard's 1906 patent."
+      "Başvuru 30 Ağustos 1906, tescil 20 Kasım 1906; silisyumun yüksek direnç ve yüksek termoelektromotor kuvvet özellikleri. Pickard’in otuz binden fazla malzeme birleşimini denediği kaydı için IEEE/ETHW.",
+      "Filed 30 August 1906, granted 20 November 1906; silicon’s high resistance and high thermo-electromotive force. For the record that Pickard tested more than thirty thousand material combinations, see IEEE/ETHW."
      ],
-     "u": "https://en.wikipedia.org/wiki/Crystal_detector"
+     "u": "https://patents.google.com/patent/US836531A/en"
     },
     {
      "t": [
@@ -2056,10 +1978,10 @@
     {
      "y": 1951,
      "link": "apparatus",
-     "src": "https://www.pbs.org/transistor/background1/events/symposia.html",
+     "src": "https://patents.google.com/patent/US2569347A/en",
      "t": [
-      "1951: Bell, bağlantı transistörünü seri üretilebilir kılar (patent 25 Eylül'de verilir). Eylül'deki ilk sempozyum yaklaşık 300 bilim insanı ve mühendisi toplar.",
-      "1951: Bell makes the junction transistor manufacturable (patent granted 25 September). September's first symposium gathers some 300 scientists and engineers."
+      "1951: Bell, bağlantı transistörünü seri üretilebilir kılar; Shockley’in patenti 25 Eylül’de verilir. Eylül’de düzenlenen ilk sempozyum askerî kullanıcılara ayrılır.",
+      "1951: Bell makes the junction transistor manufacturable; Shockley’s patent is granted on 25 September. September’s first symposium is addressed to military users."
      ]
     },
     {
@@ -2092,7 +2014,7 @@
     {
      "y": 1956,
      "link": "maintenance",
-     "src": "http://www.monika-schnitzer.com/uploads/4/9/4/1/49415675/watzinger_fackler_nagler_schnitzer_bell_labs.pdf",
+     "src": "https://cepr.org/voxeu/columns/how-antitrust-enforcement-can-spur-innovation-bell-labs-and-1956-consent-decree",
      "t": [
       "24 Ocak 1956: uzlaşma kararı Bell'in 7.820 patentini (geçerli ABD patentlerinin %1,3'ü) telifsiz açar. O yılın Nobel'i Shockley, Bardeen ve Brattain'e gider.",
       "24 Jan 1956: the consent decree opens 7,820 Bell patents (1.3% of unexpired US patents) royalty-free. That year's Nobel goes to Shockley, Bardeen and Brattain."
@@ -2169,8 +2091,8 @@
       "PBS: Sharing the Technology — Bell Hosts Transistor Symposia"
      ],
      "m": [
-      "Eylül 1951 sempozyumu (~300 kişi), iki ciltlik 'Transistor Technology' ve Jack Morton'ın açık paylaşım gerekçesi.",
-      "The September 1951 symposium (~300 people), the two-volume Transistor Technology, and Jack Morton's rationale for opening it up."
+      "Eylül 1951 sempozyumu, iki ciltlik Transistor Technology ve Jack Morton’ın açık paylaşım gerekçesi. Yayıncı bir televizyon kurumu; katılımcı sayısı için kurumsal karşılık bulunamadı.",
+      "The September 1951 symposium, the two-volume Transistor Technology, and Jack Morton’s rationale for opening it up. A broadcaster’s companion site; no institutional corroboration was found for the attendance figure."
      ],
      "u": "https://www.pbs.org/transistor/background1/events/symposia.html"
     },
@@ -2180,10 +2102,10 @@
       "Watzinger, Fackler, Nagler & Schnitzer: Bell Labs and the 1956 consent decree"
      ],
      "m": [
-      "Kararın tarihi ve kapsamı (7.820 patent, %1,3), 1949 davası ve türev buluşlarda ölçülen %11'lik artış.",
-      "The decree's date and scope (7,820 patents, 1.3%), the 1949 complaint, and the measured ~11% rise in follow-on innovation."
+      "CEPR/VoxEU özeti; hakemli künye American Economic Journal: Economic Policy 12 (2020). Kararın kapsamı 7.820 patent (yürürlükteki ABD patentlerinin %1,3’ü) ve ilk beş yılda türev buluşlarda %17’lik artış.",
+      "The CEPR/VoxEU summary; the peer-reviewed article is in American Economic Journal: Economic Policy 12 (2020). The decree freed 7,820 patents (1.3% of unexpired US patents) and follow-on innovation rose 17% in the first five years."
      ],
-     "u": "http://www.monika-schnitzer.com/uploads/4/9/4/1/49415675/watzinger_fackler_nagler_schnitzer_bell_labs.pdf"
+     "u": "https://cepr.org/voxeu/columns/how-antitrust-enforcement-can-spur-innovation-bell-labs-and-1956-consent-decree"
     },
     {
      "t": [
@@ -2219,7 +2141,7 @@
     {
      "y": 1958,
      "link": "packet",
-     "src": "https://www.ti.com/about-ti/newsroom/company-blog/from-idea-to-invention-the-origin-story-of-the-tiny-chip-that-changed-the-world.html",
+     "src": "https://www.computerhistory.org/siliconengine/all-semiconductor-solid-circuit-is-demonstrated/",
      "t": [
       "12 Eylül 1958: Jack Kilby, TI laboratuvarında ilk çalışan entegre devreyi gösterir — germanyum bir parça, elle bağlanmış altın teller. Patent Şubat 1959'da başvurulur.",
       "12 September 1958: Kilby demonstrates the first working integrated circuit in a TI lab — a germanium sliver with hand-attached gold wires. Patent filed February 1959."
@@ -2418,10 +2340,10 @@
     {
      "y": 1961,
      "link": "context",
-     "src": "https://en.wikipedia.org/wiki/Flying_height",
+     "src": "https://www.computerhistory.org/storageengine/flying-heads-improve-hdd-capacity-speed/",
      "t": [
-      "IBM 1301, kendi kendine uçan hidrodinamik hava yatağını getirir: boşluk 0,00025 inçe (6,35 µm) iner. Kafayı taşıyan artık pompalı hava değil, akışkan fiziği.",
-      "The IBM 1301 brings the self-flying hydrodynamic air bearing: the gap falls to 0.00025 inch (6.35 µm). What holds the head up is no longer pumped air but fluid physics."
+      "IBM 1301, kendi kendine uçan hidrodinamik hava yatağını getirir: ortalama boşluk 800 mikroinçten 250 mikroinçe (6,35 µm) iner. Kafayı taşıyan artık pompalı hava değil, akışkan fiziği.",
+      "The IBM 1301 brings the self-flying hydrodynamic air bearing: the average gap falls from 800 to 250 microinches (6.35 µm). What holds the head up is no longer pumped air but fluid physics."
      ]
     },
     {
@@ -2436,10 +2358,10 @@
     {
      "y": 2002,
      "link": "decoder",
-     "src": "https://www.ed-thelen.org/RAMAC/",
+     "src": "https://computerhistory.org/restorations/",
      "t": [
-      "IBM emeklileri ve Santa Clara öğrencileri bir RAMAC 350'yi restore etmeye başlar (2002-2004, sonra 2006-2011). Ünite iz arıyor; yazma hiç kapsama alınmadı.",
-      "IBM retirees and Santa Clara students restore a RAMAC 350 (2002-2004, then 2006-2011). The unit can seek to tracks; writing was never part of the restoration."
+      "Bir RAMAC 350’yi restore etme çalışması başlar: özgün tasarım ekibinden Al Hoagland’ın yürüttüğü proje Santa Clara Üniversitesi ile birlikte gider. Ünite iz arıyor.",
+      "A project to restore a RAMAC 350 begins, led by Al Hoagland of the original design team in collaboration with Santa Clara University. The unit can seek to tracks."
      ]
     },
     {
@@ -2529,8 +2451,8 @@
       "Ed Thelen: Myths About IBM RAMAC, First HDD"
      ],
      "m": [
-      "Efsane temizliği: '5 MB' aslında 3,75 MB, ağırlık 785 kg, 1957 fiyatı 34.500 dolar; duyuru 14 Eylül 1956.",
-      "The myth-bust: '5 MB' is really 3.75 MB, weight 785 kg, 1957 price $34,500, announcement 14 September 1956."
+      "Efsane temizliği: “5 MB” aslında 3,75 MB, ağırlık 785 kg, 1957 fiyatı 34.500 dolar; duyuru 14 Eylül 1956. Kişisel derleme sitesi; bu rakamlar için kurumsal bir karşılık bulunamadı.",
+      "The myth-bust: “5 MB” is really 3.75 MB, weight 785 kg, 1957 price $34,500, announcement 14 September 1956. A personal compilation site; no institutional corroboration was found for these figures."
      ],
      "u": "https://ed-thelen.org/RAMAC/Myths.html"
     },
@@ -2617,11 +2539,11 @@
     {
      "y": 1935,
      "t": [
-      "Temmuz 1935: Patent Ofisi, RCA/Zworykin'e karşı Farnsworth lehine karar verir. Kanıt, lise öğretmeni Justin Tolman'ın 1922 tahta çizimini hatırlamasıdır.",
-      "July 1935: the Patent Office rules for Farnsworth against RCA/Zworykin. The decisive evidence is his high-school teacher Justin Tolman recalling a 1922 blackboard sketch."
+      "1935: üç yıllık davanın sonunda mahkeme RCA/Zworykin’e karşı Farnsworth lehine karar verir. Belirleyici kanıt, lise öğretmeni Justin Tolman’ın Farnsworth’ün 1922’de yaptığı görüntü ayrıştırıcı çizimini saklamış olmasıdır.",
+      "1935: after three years of litigation the court rules for Farnsworth against RCA/Zworykin. The decisive evidence is that his high-school teacher Justin Tolman had kept the image dissector sketch Farnsworth made in 1922."
      ],
      "link": "decoder",
-     "src": "https://explorepahistory.com/hmarker.php?markerId=1-A-3A6"
+     "src": "https://www.lindahall.org/about/news/scientist-of-the-day/philo-farnsworth/"
     },
     {
      "y": 1937,
@@ -2648,16 +2570,16 @@
       "In the early 1970s the BBC wipes videotape for reuse. Of 253 Hartnell–Troughton Doctor Who episodes, 97 are still missing — the packet itself was erased to save tape."
      ],
      "link": "packet",
-     "src": "https://www.doctorwho.tv/news-and-features/why-are-some-doctor-who-episodes-missing"
+     "src": "https://blog.scienceandmediamuseum.org.uk/unravelling-the-mystery-of-lost-television/"
     },
     {
      "y": 2012,
      "t": [
-      "24 Ekim 2012: Birleşik Krallık'ın son analog vericisi (Divis, Belfast) kapatılır; ABD 12 Haziran 2009'da bitirmişti. Dönüştürücüsüz her analog alıcı körleşir.",
-      "24 October 2012: the UK's last analogue transmitter (Divis, Belfast) goes off; the US finished on 12 June 2009. Analogue-only sets go blank without a converter."
+      "24 Ekim 2012: Birleşik Krallık’ın son analog yayınları Kuzey İrlanda’da kapatılır; ABD 12 Haziran 2009’da bitirmişti. Dönüştürücüsüz her analog alıcı körleşir.",
+      "24 October 2012: the UK’s last analogue signals are switched off in Northern Ireland; the US finished on 12 June 2009. Analogue-only sets go blank without a converter."
      ],
      "link": "apparatus",
-     "src": "https://en.wikipedia.org/wiki/Digital_switchover_dates_in_the_United_Kingdom"
+     "src": "https://www.gov.uk/government/news/on-time-and-under-budget-an-all-digital-uk--2"
     }
    ],
    "links": {
@@ -2748,14 +2670,14 @@
     },
     {
      "t": [
-      "Philo T. Farnsworth tarihî levhası – ExplorePAhistory",
-      "Philo T. Farnsworth historical marker – ExplorePAhistory"
+      "Philo Farnsworth — Linda Hall Library",
+      "Philo Farnsworth — Linda Hall Library"
      ],
      "m": [
-      "1934'te başlayan RCA davası, Temmuz 1935 kararı, 1939'daki 1 milyon dolarlık uzlaşma ve Farnsworth'ün kazanamayışı.",
-      "The RCA litigation from 1934, the July 1935 ruling, the $1 million settlement of 1939, and Farnsworth's failure to profit."
+      "Üç yıllık davanın 1935’te Farnsworth lehine sonuçlanması ve belirleyici kanıt: lise öğretmeni Justin Tolman’ın 1922 tarihli görüntü ayrıştırıcı çizimini saklamış olması.",
+      "The three-year litigation ending in Farnsworth’s favour in 1935, and the decisive evidence: his high-school teacher Justin Tolman had kept the 1922 image dissector sketch."
      ],
-     "u": "https://explorepahistory.com/hmarker.php?markerId=1-A-3A6"
+     "u": "https://www.lindahall.org/about/news/scientist-of-the-day/philo-farnsworth/"
     }
    ]
   },
@@ -2807,11 +2729,11 @@
     {
      "y": 1945,
      "t": [
-      "30 Haziran 1945: von Neumann'ın EDVAC taslağı 24 kişiye dağıtılır. Çözücünün ortak dilini kurar; önceden yayın sayıldığı için ENIAC patentini de geçersiz kılar.",
-      "30 June 1945: von Neumann's EDVAC draft goes to 24 people. It standardises the decoder's shared vocabulary — and, as prior publication, later voids the ENIAC patent."
+      "1945: von Neumann’ın “First Draft of a Report on the EDVAC”ı Moore School’dan dağıtılır. Çözücünün ortak dilini kurar; önceden yayın sayıldığı için ENIAC patentini de zayıflatır.",
+      "1945: von Neumann’s “First Draft of a Report on the EDVAC” circulates from the Moore School. It standardises the decoder’s shared vocabulary — and, as prior publication, later undermines the ENIAC patent."
      ],
      "link": "decoder",
-     "src": "https://www.historyofinformation.com/detail.php?id=639"
+     "src": "https://library.si.edu/digital-library/book/firstdraftofrepo00vonn"
     },
     {
      "y": 1948,
@@ -2917,11 +2839,11 @@
     {
      "t": [
       "ENIAC patentiyle ilgili gelişmeler – History of Information",
-      "Key Developments Concerning the ENIAC Patent – History of Information"
+      "Key developments concerning the ENIAC patent – History of Information"
      ],
      "m": [
-      "30 Haziran 1945'te 24 kişiye dağıtım, 1947'de patent avukatının uyarısı ve 19 Ekim 1973 Honeywell–Sperry Rand kararı.",
-      "The 30 June 1945 circulation to 24 people, the patent attorney's 1947 warning, and the Honeywell v. Sperry Rand ruling of 19 October 1973."
+      "1945’teki dağıtım, 1947’de patent avukatının uyarısı ve 19 Ekim 1973 Honeywell-Sperry Rand kararı. Kişisel derleme sitesi; birincil belge için Smithsonian nüshasına bakınız.",
+      "The 1945 circulation, the patent attorney’s warning of 1947, and the Honeywell v. Sperry Rand ruling of 19 October 1973. A personal compilation site; for the primary document see the Smithsonian copy."
      ],
      "u": "https://www.historyofinformation.com/detail.php?id=639"
     },
@@ -2946,6 +2868,17 @@
       "The March 2024 incident in detail: social engineering running since 2022, the sole maintainer's exhaustion, and the discovery by chance."
      ],
      "u": "https://www.atlanticcouncil.org/content-series/the-5x5/the-5x5-the-xz-backdoor-trust-and-open-source-software/"
+    },
+    {
+     "t": [
+      "von Neumann, “First Draft of a Report on the EDVAC” (1945)",
+      "von Neumann, “First Draft of a Report on the EDVAC” (1945)"
+     ],
+     "m": [
+      "Moore School of Electrical Engineering, University of Pennsylvania, 1945 — belgenin Smithsonian Libraries’deki sayısal nüshası.",
+      "Moore School of Electrical Engineering, University of Pennsylvania, 1945 — the document’s digital copy at Smithsonian Libraries."
+     ],
+     "u": "https://library.si.edu/digital-library/book/firstdraftofrepo00vonn"
     }
    ]
   },
@@ -3187,11 +3120,11 @@
     {
      "y": 1973,
      "t": [
-      "Minsky–Papert'in 1969 'Perceptrons'u ve Lighthill'in 1973'te yayımlanan raporu: Britanya'da yapay zekâ araştırması üç üniversite dışında sökülür, DARPA kesintileri izler.",
-      "Minsky and Papert's Perceptrons (1969) and the Lighthill report, published 1973: AI research in Britain is dismantled outside three universities, and DARPA cuts follow."
+      "Lighthill’in Science Research Council için yazdığı rapor yayımlanır: alanın “hiçbir bölümünde o zaman vaat edilen büyük etkinin” üretilemediği bildirilir, temel engel olarak kombinatoryal patlama gösterilir. Fon kesintileri bunu izler.",
+      "Lighthill’s report for the Science Research Council is published: “in no part of the field have the discoveries made so far produced the major impact that was then promised”, with the combinatorial explosion named as the obstacle. Funding cuts follow."
      ],
      "link": "maintenance",
-     "src": "https://en.wikipedia.org/wiki/AI_winter"
+     "src": "http://www.chilton-computing.org.uk/inf/literature/reports/lighthill_report/p001.htm"
     },
     {
      "y": 1986,
@@ -3326,6 +3259,17 @@
       "24 July 2024: the primary finding that training on model output destroys the tails of the distribution."
      ],
      "u": "https://www.nature.com/articles/s41586-024-07566-y"
+    },
+    {
+     "t": [
+      "Lighthill, “Artificial Intelligence: A General Survey” (1972/1973)",
+      "Lighthill, “Artificial Intelligence: A General Survey” (1972/1973)"
+     ],
+     "m": [
+      "Science Research Council için yazılan raporun tam metni, Chilton Computing arşivi (STFC Rutherford Appleton Laboratory): yirmi beş yılın hayal kırıklığı ve kombinatoryal patlama.",
+      "The full text of the report written for the Science Research Council, in the Chilton Computing archive (STFC Rutherford Appleton Laboratory): twenty-five years of disappointment, and the combinatorial explosion."
+     ],
+     "u": "http://www.chilton-computing.org.uk/inf/literature/reports/lighthill_report/contents.htm"
     }
    ]
   },
@@ -3354,7 +3298,7 @@
       "A quartz-based white body with underglaze cobalt takes hold at Iznik; the designs come from the palace studio, the firing stays in a provincial town."
      ],
      "link": "apparatus",
-     "src": "https://en.wikipedia.org/wiki/Iznik_pottery"
+     "src": "https://islamicceramics.ashmolean.org/Iznik/develop.htm"
     },
     {
      "y": 1557,
@@ -3395,20 +3339,20 @@
     {
      "y": 1963,
      "t": [
-      "Oktay Aslanapa İznik çini fırınları kazısını başlatır; ikinci dönem 1981'den beri sürer. Üretim yerinin İznik olduğu ilk kez arkeolojik olarak kanıtlanır.",
-      "Oktay Aslanapa begins excavating the Iznik kilns; a second campaign has run since 1981. Iznik is archaeologically proved to be the production site."
+      "Oktay Aslanapa İznik çini fırınları kazısını başlatır; ilk dönem 1963-1969’u kapsar, ikinci dönem 1981’de başlar ve 1984’ten beri BHD alanında düzenli sürer.",
+      "Oktay Aslanapa begins excavating the Iznik kilns; the first campaign runs 1963-1969, a second starts in 1981 and has run systematically in the BHD sector since 1984."
      ],
      "link": "apparatus",
-     "src": "https://turkiyeturizmansiklopedisi.com/iznik-cini-firinlari-kazilari"
+     "src": "https://dergipark.org.tr/en/pub/akdenizsanat/issue/49183/620055"
     },
     {
      "y": 1993,
      "t": [
-      "İznik Vakfı kurulur. İTÜ, MIT ve Princeton'la yürütülen yaklaşık iki yıllık deneme-yanılma sonunda kuvars hamuru yeniden tutturulur.",
-      "The İznik Foundation is established; roughly two years of trial and error with İTÜ, MIT and Princeton finally get the quartz body to work again."
+      "İznik Vakfı, Prof. Dr. Işıl Akbaygil’in öncülüğünde kurulur; yıllar süren çalışmanın sonunda kuvars hamuru yeniden tutturulur.",
+      "The İznik Foundation is established under Prof. Işıl Akbaygil; after years of work the quartz body is achieved again."
      ],
      "link": "decoder",
-     "src": "https://malaymail.com/news/life/2025/11/20/iznik-reborn-how-turkiye-cracked-the-lost-secret-of-ottoman-tilemaking/198972"
+     "src": "https://www.iznik.com/tr/sayfa/iznik-vakfi"
     },
     {
      "y": 2004,
@@ -3508,14 +3452,14 @@
     },
     {
      "t": [
-      "AFP, “Iznik reborn: how Türkiye cracked the lost secret of Ottoman tilemaking” (2025)",
-      "AFP, “Iznik reborn: how Türkiye cracked the lost secret of Ottoman tilemaking” (2025)"
+      "İznik Vakfı — kurumsal kayıt",
+      "The İznik Foundation — institutional record"
      ],
      "m": [
-      "İznik Vakfı'nın 1993'te Işıl Akbaygil tarafından kurulması, iki yıllık deneme süreci ve %85'e varan kuvars iddiası.",
-      "The İznik Foundation's establishment by Işıl Akbaygil in 1993, the two-year trial process, and the claim of up to 85% quartz."
+      "Vakfın 1993’te Prof. Dr. Işıl Akbaygil’in öncülüğünde kuruluşu. Basında dolaşan “iki yıllık deneme” ve “%85’e varan kuvars” ifadeleri kurumsal ya da hakemli kaynakta doğrulanamadı; hamurun ölçülmüş bileşimi için Paynter ve diğerleri 2004 (ağırlıkça %65-75 kuvars) esas alınmıştır.",
+      "The foundation’s establishment in 1993 under Prof. Işıl Akbaygil. The “two years of trials” and “up to 85% quartz” that circulate in the press could not be corroborated in institutional or peer-reviewed sources; for the measured body composition this study follows Paynter et al. 2004 (65-75% quartz by weight)."
      ],
-     "u": "https://malaymail.com/news/life/2025/11/20/iznik-reborn-how-turkiye-cracked-the-lost-secret-of-ottoman-tilemaking/198972"
+     "u": "https://www.iznik.com/tr/sayfa/iznik-vakfi"
     }
    ],
    "ev": {
@@ -3611,13 +3555,13 @@
      "src": "https://turkmaarifansiklopedisi.org.tr/hat"
     },
     {
-     "y": 1975,
+     "y": 1971,
      "t": [
-      "Hâmid Aytaç, Hasan Çelebi'ye sülüs-nesih icâzeti verir; belge, 1928'de kesilen bağlamın üzerinden zinciri atlatır.",
-      "Hâmid Aytaç issues Hasan Çelebi his icâzet in sülüs and nesih — a document that carries the chain across the context severed in 1928."
+      "Hâmid Aytaç, Hasan Çelebi’ye sülüs-nesih icâzeti verir (1391/1971); belge, 1928’de kesilen bağlamın üzerinden zinciri atlatır.",
+      "Hâmid Aytaç issues Hasan Çelebi his icâzet in sülüs and nesih (1391/1971) — a document that carries the chain across the context severed in 1928."
      ],
      "link": "decoder",
-     "src": "https://www.turkiyeninustalari.org/tr/ustalar/hat-sanati/hasan-celebi"
+     "src": "https://dergipark.org.tr/tr/download/article-file/2197259"
     },
     {
      "y": 1982,
@@ -4008,16 +3952,16 @@
       "The foundations are laid. The account books register labour, material and akçe day by day — and never once the method."
      ],
      "link": "packet",
-     "src": "https://yedikita.com.tr/mimarlik-tarihimizin-en-buyuk-insa-organizasyonlarindan-suleymaniye/"
+     "src": "https://kutuphane.ttk.gov.tr/details?id=518458&materialType=KT&query=Barkan,+%C3%96mer+L%C3%BBtfi."
     },
     {
      "y": 1557,
      "t": [
-      "Cami ibadete açılır; kitâbe 1550 ve 1557 tarihlerini verir, külliye 1559'a kadar sürer. Ana kubbe 26,5 m çapında ve 53 m yüksekliğindedir.",
-      "The mosque opens; the inscription gives 1550 and 1557, while the complex runs on to 1559. The main dome is 26.5 m across and 53 m high."
+      "Cami 15 Ekim 1557’de ibadete açılır; ana kubbe iki ay önce, 16 Ağustos’ta kapatılmıştır. Ana kubbenin çapı 27,40 m, taban döşemesinden kilit taşına yüksekliği 50 metreyi biraz aşar.",
+      "The mosque opens for worship on 15 October 1557, the main dome having been closed two months earlier on 16 August. The dome is 27.40 m across and a little over 50 m from floor to keystone."
      ],
      "link": "tacit",
-     "src": "https://en.wikipedia.org/wiki/S%C3%BCleymaniye_Mosque"
+     "src": "https://islamansiklopedisi.org.tr/suleymaniye-camii-ve-kulliyesi"
     },
     {
      "y": 1588,
@@ -4031,20 +3975,20 @@
     {
      "y": 1660,
      "t": [
-      "Büyük yangında cami zarar görür ve IV. Mehmed tarafından onartılır; onarımlar Sinan'ın özgün iç bezemesinin çoğunu ortadan kaldırır.",
-      "The mosque is damaged in the great fire and repaired under Mehmed IV; the repairs destroy most of Sinan's original interior decoration."
+      "Temmuz’daki büyük yangında minarelerin kurşun külahları erir. Sinan dönemi kalemişinin büyük bölümü ise yangında değil, 19. yüzyıl Fossati onarımında ve 1959-1969 çalışmalarında kaybolur.",
+      "In July’s great fire the lead cones of the minarets melt. Most of Sinan’s painted decoration is lost not to the fire but to the nineteenth-century Fossati restoration and the 1959-1969 campaign."
      ],
      "link": "maintenance",
-     "src": "https://en.wikipedia.org/wiki/S%C3%BCleymaniye_Mosque"
+     "src": "https://isamveri.org/pdfdrg/D175781/2007/2007_EYUPGILLER_OZALTIN.pdf"
     },
     {
      "y": 1766,
      "t": [
-      "22 Mayıs depremi (M≈7,1): Süleymaniye'nin kubbesinin bir bölümü çöker. Aynı sarsıntı Sinan'ın Edirnekapı Mihrimah'ının ana kubbesini ve minaresini tamamen yıkar.",
-      "The 22 May earthquake (M≈7.1) collapses part of the Süleymaniye's dome; the same shock brings down the main dome and minaret of Sinan's Edirnekapı Mihrimah entirely."
+      "22 Mayıs depremi (Ms≈6,8-7,2): Sinan’ın Edirnekapı Mihrimah’ının minaresi yıkılır ve III. Mustafa’nın emriyle eski şekline uygun olarak yeniden yaptırılır. Ana kubbenin çökmesi bu depremin değil, 1894’ün sonucudur.",
+      "The earthquake of 22 May (Ms≈6.8-7.2) brings down the minaret of Sinan’s Edirnekapı Mihrimah, rebuilt to its old form by order of Mustafa III. The collapse of the main dome belongs to 1894, not to this shock."
      ],
      "link": "context",
-     "src": "https://en.wikipedia.org/wiki/1766_Istanbul_earthquake"
+     "src": "https://acikerisim.fsm.edu.tr/bitstreams/cbef0a7b-a2be-4935-9546-8ae5a5488885/download"
     },
     {
      "y": 1965,
@@ -4058,11 +4002,11 @@
     {
      "y": 2010,
      "t": [
-      "2007–2010 restorasyonu: ana kubbedeki çatlaklar enjeksiyonla sağlamlaştırılır, korozyona uğramış demir kenetler paslanmaz çelikle değiştirilir, çimento ekleri sökülür.",
-      "The 2007–2010 restoration injects and consolidates cracks in the main dome, replaces corroded iron cramps with stainless steel and strips out cement additions."
+      "2007-2010 restorasyonu: ana kubbede içeriden ve dışarıdan enjeksiyonla sağlamlaştırma yapılır, okside olmuş kenet ve zıvanalar paslanmaz çelikle değiştirilir, çimento esaslı imitasyonlar sökülür.",
+      "The 2007-2010 restoration consolidates the main dome by injection inside and out, replaces oxidised cramps and dowels with stainless steel, and strips out cement-based imitations."
      ],
      "link": "apparatus",
-     "src": "https://en.wikipedia.org/wiki/S%C3%BCleymaniye_Mosque"
+     "src": "https://acikerisim.fsm.edu.tr/xmlui/bitstream/handle/11352/247/Ersen%26Olgun%26Akbulut%26Y%C4%B1ld%C4%B1r%C4%B1m.pdf"
     },
     {
      "y": 2019,
@@ -4140,14 +4084,14 @@
     },
     {
      "t": [
-      "1766 İstanbul depremi kaydı (Ambraseys & Finkel 1991 ve Müller-Wiener 1977 temelli)",
-      "Record of the 1766 Istanbul earthquake (after Ambraseys & Finkel 1991 and Müller-Wiener 1977)"
+      "Ambraseys & Jackson, Marmara Denizi sismisitesi (1500 sonrası)",
+      "Ambraseys & Jackson, Seismicity of the Sea of Marmara since 1500"
      ],
      "m": [
-      "22 Mayıs 1766, M≈7,1; Süleymaniye'nin hasar görmesi, Fatih Camii kubbesinin ve Mihrimah'ın ana kubbesinin çökmesi.",
-      "22 May 1766, M≈7.1; damage to the Süleymaniye, and the collapse of the domes of the Fatih and Mihrimah mosques."
+      "Geophysical Journal International 141/3 (2000): 22 Mayıs 1766 depremi için Ms 6,8-7,2 aralığı. Tek bir M≈7,1 değeri, aralığın üst ucudur.",
+      "Geophysical Journal International 141/3 (2000): a range of Ms 6.8-7.2 for the earthquake of 22 May 1766. A single value of M≈7.1 is the top of that range."
      ],
-     "u": "https://en.wikipedia.org/wiki/1766_Istanbul_earthquake"
+     "u": "https://academic.oup.com/gji/article/141/3/F1/613019"
     },
     {
      "t": [
@@ -4162,14 +4106,36 @@
     },
     {
      "t": [
-      "Encyclopædia Britannica, “Süleymaniye Mosque”",
-      "Encyclopædia Britannica, “Süleymaniye Mosque”"
+      "TDV İslâm Ansiklopedisi, “Süleymaniye Camii ve Külliyesi”",
+      "TDV Encyclopaedia of Islam, “Süleymaniye Camii ve Külliyesi”"
      ],
      "m": [
-      "Kubbe 53 m yükseklik ve ~27 m çap; 1660 yangını, 1766 depremi ve 1956 ile 2007–2010 restorasyonları.",
-      "Dome 53 m high and ~27 m across; the 1660 fire, the 1766 earthquake, and the restorations of 1956 and 2007–2010."
+      "Ana kubbe 27,40 m çapında, taban döşemesinden kilit taşına 50 metreyi biraz aşan yükseklikte; kubbe 16 Ağustos 1557’de kapatıldı, cami 15 Ekim 1557’de açıldı; temel 13 Haziran 1550. Yaygın “26,5 m / 53 m” ikilisi bu neşirle tutmuyor.",
+      "The main dome is 27.40 m across and a little over 50 m from floor to keystone; the dome was closed on 16 August 1557 and the mosque opened on 15 October 1557; the foundation was laid on 13 June 1550. The widely repeated “26.5 m / 53 m” does not match this account."
      ],
-     "u": "https://www.britannica.com/topic/Suleymaniye-Mosque"
+     "u": "https://islamansiklopedisi.org.tr/suleymaniye-camii-ve-kulliyesi"
+    },
+    {
+     "t": [
+      "Ö. L. Barkan, Süleymaniye Cami ve İmareti İnşaatı (1550-1557)",
+      "Ö. L. Barkan, The Construction of the Süleymaniye Mosque and Imaret (1550-1557)"
+     ],
+     "m": [
+      "Türk Tarih Kurumu, I-II, Ankara 1972-1979 — inşaat muhasebe defterlerinin yayımlanmış neşri. İşçiyi, malzemeyi ve akçeyi gün gün verir; yöntemi vermez. TTK kütüphane katalog kaydı.",
+      "Turkish Historical Society, 2 vols, Ankara 1972-1979 — the published edition of the construction accounts. It records labour, material and money day by day; it does not record method. TTK library catalogue record."
+     ],
+     "u": "https://kutuphane.ttk.gov.tr/details?id=518458&materialType=KT&query=Barkan,+%C3%96mer+L%C3%BBtfi."
+    },
+    {
+     "t": [
+      "Ersen ve diğerleri, Süleymaniye Camii 2007-2010 restorasyonu",
+      "Ersen et al., The 2007-2010 restoration of the Süleymaniye Mosque"
+     ],
+     "m": [
+      "Vakıf Restorasyon Yıllığı 3 (2011), 6-27 — restorasyonu yürüten ekibin Vakıflar Genel Müdürlüğü’nde yayımlanan raporu: ana kubbede enjeksiyonla sağlamlaştırma, okside kenet ve zıvanaların paslanmaz çelikle değişimi, çimento esaslı imitasyonların sökülmesi.",
+      "Vakıf Restorasyon Yıllığı 3 (2011), 6-27 — the report of the team that carried out the work, published by the General Directorate of Foundations: consolidation of the main dome by injection, replacement of oxidised cramps and dowels with stainless steel, removal of cement-based imitations."
+     ],
+     "u": "https://acikerisim.fsm.edu.tr/xmlui/bitstream/handle/11352/247/Ersen%26Olgun%26Akbulut%26Y%C4%B1ld%C4%B1r%C4%B1m.pdf"
     }
    ],
    "ev": {
@@ -4229,13 +4195,13 @@
      "src": "https://atamdergi.gov.tr/tam-metin/193/tur"
     },
     {
-     "y": 1917,
+     "y": 1913,
      "t": [
-      "Enver Paşa’nın hurûf-ı munfasıla’sı (ordu elifbası): harfler bitişmez, sesliler yazılır. Askerî yazışmada denenir, yaygınlaşmaz.",
-      "Enver Paşa’s hurûf-ı munfasıla (army alphabet): letters unjoined, vowels written. Tried in military correspondence, never generalised."
+      "1 Mayıs: Harbiye Nezâreti askerî yazışmayı hurûf-ı munfasılaya bağlar — Enver Paşa’nın ordu elifbası, harfler bitişmez. Bir süre sonra yine Enver Paşa’nın emriyle kaldırılır.",
+      "1 May: the War Ministry ties military correspondence to hurûf-ı munfasıla — Enver Paşa’s army alphabet, letters unjoined. It is abolished a while later by Enver Paşa’s own order."
      ],
      "link": "apparatus",
-     "src": "https://en.wikipedia.org/wiki/Hur%C3%BBf-%C4%B1_munfas%C4%B1la"
+     "src": "https://islamansiklopedisi.org.tr/elifba"
     },
     {
      "y": 1928,
@@ -4258,11 +4224,11 @@
     {
      "y": 1931,
      "t": [
-      "Osmanlı evrakından 27 ton, beş vagon hâlinde Bulgaristan’a hurda kâğıt fiyatına satılır; 2 Haziran’da Bulgar elçiliğinin bildirimiyle ortaya çıkar.",
-      "Twenty-seven tons of Ottoman documents are sold to Bulgaria as scrap paper in five wagons; the Bulgarian embassy’s own notice on 2 June exposes it."
+      "Mayıs: Osmanlı evrakından 30-50 ton — çoğu Maliye’ye ait yaklaşık 1,5 milyon belge — okkası üç kuruş on paraya Bulgaristan’a hurda kâğıt olarak satılır.",
+      "May: between 30 and 50 tons of Ottoman documents — some 1.5 million papers, mostly from the Finance Ministry — are sold to Bulgaria as scrap at three kuruş ten para per okka."
      ],
      "link": "maintenance",
-     "src": "https://bnrnews.bg/tr/post/378512/1931de-osmanli-arsiv-belgelerinin-bulgaristana-hurda-kagit-fiyatina-satilmasi-ve-kurtarilmasi"
+     "src": "http://eprints.rclis.org/11734/1/bulgaristana_satilan_evrakveozel.pdf"
     },
     {
      "y": 1935,
@@ -4276,17 +4242,17 @@
     {
      "y": 2014,
      "t": [
-      "Aralık’taki 19. Millî Eğitim Şûrası kararıyla Osmanlı Türkçesi imam hatip liselerinde zorunlu, diğer ortaöğretimde seçmeli ders olur.",
-      "The 19th National Education Council in December makes Ottoman Turkish compulsory in religious vocational high schools and elective elsewhere."
+      "Aralık’taki 19. Millî Eğitim Şûrası (madde 1.4.6): Osmanlı Türkçesi, sosyal bilimler liselerinde olduğu gibi Anadolu imam hatip liselerinde de zorunlu, diğer ortaöğretim kurumlarında seçmeli ders olur.",
+      "The 19th National Education Council in December (item 1.4.6): Ottoman Turkish becomes compulsory in Anatolian imam hatip high schools, as in social sciences high schools, and elective in other secondary institutions."
      ],
      "link": "decoder",
-     "src": "https://www.voanews.com/a/ottoman-language-drive-objections-turkey/2552449.html"
+     "src": "https://ttkb.meb.gov.tr/meb_iys_dosyalar/2019_12/10095332_19_sura.pdf"
     },
     {
      "y": 2026,
      "t": [
-      "Yazma Eserler Kurumu envanteri 784 bini aşar; 640 bin eser kataloglu, 483.600’ü görüntülü olarak dijital ortamda erişilebilir.",
-      "The Manuscripts Institution’s inventory passes 784,000 works; 640,000 catalogued and 483,600 available digitally with images."
+      "Kurumun kamuoyuna açıkladığı yazma eser envanteri 784 bini aşar; 640 bin eser kataloglu, 483.600’ü görüntülü olarak sayısal ortamda erişilebilir. Denetlenmiş son rakam bundan düşüktür.",
+      "The inventory the institution reports publicly passes 784,000 works; 640,000 catalogued and 483,600 available digitally with images. The last audited figure is lower."
      ],
      "link": "apparatus",
      "src": "https://www.hurriyet.com.tr/gundem/784-bin-eserlik-dev-hazine-turkiyenin-yazma-eser-envanteri-dunyanin-en-buyukleri-arasinda-43149971"
@@ -4362,8 +4328,8 @@
       "What did the 1927 census actually measure?"
      ],
      "m": [
-      "Tartışmalı okuryazarlık rakamının ayrıntılı çözümlemesi: 7 yaş üstü %10,58 (erkek %17,42, kadın %4,63); tüm nüfusta ~%8,6; ölçüm eski yazı üzerinden.",
-      "A detailed analysis of the contested literacy figure: 10.58% of those aged 7+ (men 17.42%, women 4.63%); about 8.6% of the whole population; measured in the old script."
+      "Tartışmalı okuryazarlık rakamının ayrıntılı çözümlemesi: 7 yaş üstü %10,58 (erkek %17,42, kadın %4,63); tüm nüfusta ~%8,6; ölçüm eski yazı üzerinden. Hakemli değil — alan bilgisi olan bir yazarın blog dizisi.",
+      "A detailed analysis of the contested literacy figure: 10.58% of those aged 7+ (men 17.42%, women 4.63%); about 8.6% of the whole population; measured in the old script. Not peer-reviewed — a blog series by an informed author."
      ],
      "u": "https://daktilo1984.com/daktilo2/osmanlida-okuryazarlik-bolum-3-1927-sayimi-aslinda-neyi-olctu/"
     },
@@ -4373,21 +4339,32 @@
       "Volume and cataloguing status of the Ottoman Archive"
      ],
      "m": [
-      "Cumhurbaşkanı Yardımcısı Fuat Oktay’ın 31 Ekim 2018 tarihli TBMM soru önergesi cevabı: ~95 milyon belge, 400 bin defter, ~%75 tasnifli.",
-      "Vice-President Fuat Oktay’s answer to a parliamentary question, 31 October 2018: c. 95 million documents, 400,000 registers, c. 75% catalogued."
+      "Cumhurbaşkanı Yardımcısı Fuat Oktay’ın 31 Ekim 2018 tarihli TBMM soru önergesi cevabı: ~95 milyon belge, 400 bin defter, ~%75 tasnifli. Haber kaynağı; birincil belge TBMM tutanaklarındadır.",
+      "Vice-President Fuat Oktay’s answer to a parliamentary question, 31 October 2018: c. 95 million documents, 400,000 registers, c. 75% catalogued. A news source; the primary record is in the parliamentary proceedings."
      ],
      "u": "https://www.sabah.com.tr/gundem/2018/10/31/osmanli-arsivinde-95-milyon-belge-var"
     },
     {
      "t": [
-      "1931’de Bulgaristan’a satılan Osmanlı evrakı",
-      "The Ottoman documents sold to Bulgaria in 1931"
+      "Bulgaristan’a satılan Osmanlı evrakı (1931)",
+      "The Ottoman documents sold to Bulgaria (1931)"
      ],
      "m": [
-      "27 ton belgenin beş vagonla satışı, 2 Haziran 1931’deki bildirim, iki vagonun iadesi ve kalanların Sofya Millî Kütüphanesi’ndeki âkıbeti.",
-      "The sale of 27 tons in five wagons, the notification of 2 June 1931, the return of two wagons, and the fate of the rest in the Sofia National Library."
+      "Anameriç & Rukancı, Balkan Ülkeleri Kütüphanelerarası Bilgi-Belge Yönetimi ve İşbirliği Sempozyumu, Edirne 2008 (açık erişim): Mayıs 1931, 30-50 ton, ~1,5 milyon belge, okkası üç kuruş on para. Yaygın olarak dolaşan “27 ton / beş vagon” rakamı akademik neşirlerde doğrulanmıyor.",
+      "Anameriç & Rukancı, Balkan Countries’ Library Information and Documentation Management Symposium, Edirne 2008 (open access): May 1931, 30-50 tons, c. 1.5 million documents, three kuruş ten para per okka. The widely circulated “27 tons in five wagons” is not corroborated in the scholarly publications."
      ],
-     "u": "https://bnrnews.bg/tr/post/378512/1931de-osmanli-arsiv-belgelerinin-bulgaristana-hurda-kagit-fiyatina-satilmasi-ve-kurtarilmasi"
+     "u": "http://eprints.rclis.org/11734/1/bulgaristana_satilan_evrakveozel.pdf"
+    },
+    {
+     "t": [
+      "Yazma eser sayıları — Sayıştay denetim raporu",
+      "Manuscript holdings — Court of Accounts audit report"
+     ],
+     "m": [
+      "2021 İdare Faaliyet Raporunda 219.821 yazma + 485.981 eski eser = 705.802 adet; muhasebe kayıtlarında ise 356.559 adet görünüyor. Basında dolaşan 784 bin rakamı denetlenmiş bir sayı değildir.",
+      "The 2021 activity report gives 219,821 manuscripts + 485,981 rare works = 705,802; the accounting records show 356,559. The 784,000 figure circulating in the press is not an audited number."
+     ],
+     "u": "https://www.sayistay.gov.tr/reports/download/2Mgpn2MYjy-turkiye-yazma-eserler-kurumu-baskanligi"
     }
    ],
    "ev": {
@@ -4662,7 +4639,7 @@
       "David and Samuel ibn Nahmias print Jacob ben Asher’s Arba‘ah Turim in Istanbul on 13 December 1493: the first book printed in the empire."
      ],
      "link": "packet",
-     "src": "https://www.historyofinformation.com/detail.php?id=342"
+     "src": "https://islamansiklopedisi.org.tr/matbaa"
     },
     {
      "y": 1553,
@@ -4671,16 +4648,16 @@
       "Pierre Belon records that Istanbul’s Jewish printers “do not print in Turkish or Arabic, because it is not permitted to them”: the restriction is about the script."
      ],
      "link": "context",
-     "src": "https://www.ageofinvention.xyz/p/age-of-invention-did-the-ottomans"
+     "src": "https://dergipark.org.tr/en/download/article-file/5498251"
     },
     {
      "y": 1567,
      "t": [
-      "İstanbul’da ilk Ermeni matbaası kurulur; 1627’de Nikodemos Metaxas’ın Rum matbaası açılır, misyonerlik kaygısıyla ertesi yıl kapatılır.",
-      "The first Armenian press opens in Istanbul; in 1627 Nikodemos Metaxas’s Greek press follows, closed the next year over missionary concerns."
+      "İstanbul’da ilk Ermeni matbaası Tokatlı Apkar tarafından kurulur; 1627’de Nikodemos Metaxas’ın Rum matbaası açılır, misyonerlik kaygısıyla ertesi yıl kapatılır.",
+      "The first Armenian press in Istanbul is founded by Apkar of Tokat; in 1627 Nicodemus Metaxas opens a Greek press, closed the next year over missionary concerns."
      ],
      "link": "apparatus",
-     "src": "https://www.dailysabah.com/feature/2015/06/08/myths-and-reality-about-the-printing-press-in-the-ottoman-empire"
+     "src": "https://islamansiklopedisi.org.tr/matbaa"
     },
     {
      "y": 1727,
@@ -4794,25 +4771,25 @@
     },
     {
      "t": [
-      "Did the Ottomans Ban Print?",
-      "Did the Ottomans Ban Print?"
+      "Osmanlılar 18. yüzyıldan önce Arap harfli metin bastı mı?",
+      "Did the Ottomans print Arabic-script texts before the 18th century?"
      ],
      "m": [
-      "Anton Howes’un kaynak eleştirisi: 1485/1515 yasaklarının André Thevet’ye dayanması, sınırlamanın harfe bağlılığı ve hattat loncası anlatısının belgesizliği.",
-      "Anton Howes’s source criticism: the 1485/1515 bans resting on André Thevet, the script-bound nature of the restriction, and the undocumented status of the scribes’-guild story."
+      "Orlin Sabev, OTAM 58 (2025), 141-193 — hakemli: Pierre Belon’un 1553 gözlemi (İspanyolca, İtalyanca, Latince, Yunanca ve Almanca basılıyor; Türkçe ve Arapça basılmıyor, çünkü izin yok) ve yasak anlatılarının kaynak eleştirisi.",
+      "Orlin Sabev, OTAM 58 (2025), 141-193 — peer-reviewed: Pierre Belon’s 1553 observation (they print in Spanish, Italian, Latin, Greek and German, but not Turkish or Arabic, not being permitted to) and a source criticism of the ban narratives."
      ],
-     "u": "https://www.ageofinvention.xyz/p/age-of-invention-did-the-ottomans"
+     "u": "https://dergipark.org.tr/en/download/article-file/5498251"
     },
     {
      "t": [
-      "İmparatorlukta basılan ilk kitap",
-      "The first book printed in the empire"
+      "TDV İslâm Ansiklopedisi, “Matbaa”",
+      "TDV Encyclopaedia of Islam, “Matbaa”"
      ],
      "m": [
-      "Arba‘ah Turim’in David ve Samuel ibn Nahmias tarafından 4 Tevet 5254 / 13 Aralık 1493’te İstanbul’da tamamlandığının kaydı.",
-      "The record that the Arba‘ah Turim was completed by David and Samuel ibn Nahmias in Constantinople on 4 Tevet 5254 / 13 December 1493."
+      "Arba‘ah Turim’in David ve Samuel ben Nahmias tarafından 13 Aralık 1493’te İstanbul’da basıldığı; ilk Ermeni matbaasının 1567’de Tokatlı Apkar tarafından kurulduğu ve Metaxas’ın 1627 Rum matbaası.",
+      "That the Arba‘ah Turim was printed by David and Samuel ben Nahmias in Istanbul on 13 December 1493; that the first Armenian press was founded in 1567 by Apkar of Tokat; and Metaxas’s Greek press of 1627."
      ],
-     "u": "https://www.historyofinformation.com/detail.php?id=342"
+     "u": "https://islamansiklopedisi.org.tr/matbaa"
     },
     {
      "t": [
@@ -4876,20 +4853,20 @@
     {
      "y": 529,
      "t": [
-      "Iustinianus’un ilk Codex’i ilan edildi; derlemenin dışında kalan bütün imparatorluk emirnameleri aynı anda yürürlükten kaldırıldı.",
-      "Justinian’s first Codex is promulgated; every imperial ordinance left outside it is repealed in the same act."
+      "7 Nisan’ta Iustinianus’un ilk Codex’i ilan edildi; bundan böyle mahkemelerde üç eski codex’in emirnamelerinin anılması yasaklandı — geçerli olan yalnızca derlemeye alınandır.",
+      "On 7 April Justinian’s first Codex is promulgated; from now on litigants and lawyers are forbidden to cite the constitutions of the three ancient codes — only what the compilation contains has force."
      ],
      "link": "packet",
-     "src": "https://www.britannica.com/topic/Roman-law/The-law-of-Justinian"
+     "src": "https://www.uwyo.edu/lawlib/blume-justinian/ajc-edition-2/books/book1/Book%201-ConcerningCode.pdf"
     },
     {
      "y": 533,
      "t": [
-      "Digesta ve Institutiones ilan edildi: iki bini aşkın kitap ve üç milyon satırlık hukuk yazını, elli kitaplık tek bir külliyata indirildi.",
-      "The Digest and Institutes are promulgated: over two thousand books and three million lines of legal writing reduced to a single fifty-book corpus."
+      "Digesta ve Institutiones ilan edildi: otuz dokuz hukukçunun 1.528 kitabı — Tribonianus’un kendi deyişiyle “iki bin kitap” — elli kitaplık tek bir külliyata indirildi.",
+      "The Digest and Institutes are promulgated: 1,528 books by thirty-nine jurists — “two thousand books” in Tribonian’s own telling — reduced to a single fifty-book corpus."
      ],
      "link": "packet",
-     "src": "https://www.worldhistory.org/Corpus_Juris_Civilis/"
+     "src": "https://scholarship.law.wm.edu/cgi/viewcontent.cgi?article=1122&context=libpubs"
     },
     {
      "y": 534,
@@ -4898,7 +4875,7 @@
       "The revised Codex appears and commentaries on the compilation are forbidden: the packet is locked and the argument that produced it left outside."
      ],
      "link": "context",
-     "src": "https://en.wikipedia.org/wiki/Digests_(Roman_law)"
+     "src": "https://scholarship.law.wm.edu/cgi/viewcontent.cgi?article=1122&context=libpubs"
     },
     {
      "y": 1080,
@@ -4912,38 +4889,38 @@
     {
      "y": 1250,
      "t": [
-      "Accursius’un Glossa Ordinaria’sı tamamlanır: 96.940 kenar notu, bunların 62.577’si yalnızca Digesta üzerine. Paketin bakım defteri.",
-      "Accursius completes the Glossa Ordinaria: 96,940 marginal notes, 62,577 of them on the Digest alone. The packet’s maintenance log."
+      "Accursius’un Glossa Ordinaria’sı tamamlanır: seleflerinin özetleri ve yaklaşık 96.000 kenar notu tek kitapta toplanır. Paketin bakım defteri.",
+      "Accursius completes the Glossa Ordinaria: his predecessors’ summae and some 96,000 of their glosses gathered into one book. The packet’s maintenance log."
      ],
      "link": "maintenance",
-     "src": "https://en.wikipedia.org/wiki/Glossa_ordinaria_(Accursius)"
+     "src": "https://scholarship.law.wm.edu/cgi/viewcontent.cgi?article=1122&context=libpubs"
     },
     {
      "y": 1406,
      "t": [
-      "Savaş ganimeti olarak Pisa’dan Floransa’ya getirilen geç antik Digesta yazması, bugün Littera Florentina adıyla bilinen tek tam tanıktır.",
-      "Taken from Pisa to Florence as war booty, the late-antique Digest codex is the one near-complete witness now called the Littera Florentina."
+      "1406’da Pisa’dan Floransa’ya geçen geç antik Digesta yazması, bugün Littera Florentina adıyla bilinen en eski ve en iyi tanıktır.",
+      "Passing from Pisa to Florence in 1406, the late-antique Digest codex is the oldest and best surviving witness, now called the Littera Florentina."
      ],
      "link": "apparatus",
-     "src": "https://www.historyofinformation.com/detail.php?id=165"
+     "src": "https://scholarship.law.wm.edu/cgi/viewcontent.cgi?article=1122&context=libpubs"
     },
     {
      "y": 1804,
      "t": [
-      "Code civil yürürlüğe girdi; kategorileri eski Fransız hukukundan değil, doğrudan Iustinianus’un altıncı yüzyıl derlemesinden alınmıştı.",
-      "The Code civil takes effect; its categories are drawn not from earlier French law but directly from Justinian’s sixth-century codification."
+      "Code civil yürürlüğe girdi; yapısı ve konu düzeni Iustinianus’un Institutiones’inden geliyordu.",
+      "The Code civil takes effect; its structure and choice of subjects come from Justinian’s Institutes."
      ],
      "link": "packet",
-     "src": "https://en.wikipedia.org/wiki/Napoleonic_Code"
+     "src": "https://scholarship.law.wm.edu/cgi/viewcontent.cgi?article=1122&context=libpubs"
     },
     {
      "y": 1926,
      "t": [
-      "17 Şubat 1926’da Türk Kanunu Medenîsi kabul edildi; İsviçre medenî kanunundan çevrilen metin zinciri Bologna üzerinden Roma’ya bağladı.",
-      "On 17 February 1926 the Turkish Civil Code is adopted; translated from the Swiss code, it ties the chain back through Bologna to Rome."
+      "1926’da Türk Kanunu Medenîsi kabul edildi; 1907 tarihli İsviçre medenî kanunundan yapılan bu ölçülü çeviri, zinciri Bologna üzerinden Roma’ya bağladı.",
+      "In 1926 the Turkish Civil Code is adopted; a nuanced translation of the Swiss Civil Code of 1907, it ties the chain back through Bologna to Rome."
      ],
      "link": "decoder",
-     "src": "https://en.wikipedia.org/wiki/Turkish_civil_code_(1926)"
+     "src": "https://www.cambridge.org/core/journals/international-journal-of-law-in-context/article/abs/receiving-the-swiss-civil-code-translating-authority-in-early-republican-turkey/870523755C8D09C5F157C0FB8E0DA03C"
     }
    ],
    "links": {
@@ -5001,25 +4978,25 @@
     },
     {
      "t": [
-      "Britannica, “Roman law: the law of Justinian”",
-      "Britannica, “Roman law: The law of Justinian”"
+      "F. W. Dingledy, “The Corpus Juris Civilis: A Guide to Its History and Use”",
+      "F. W. Dingledy, “The Corpus Juris Civilis: A Guide to Its History and Use”"
      ],
      "m": [
-      "Codex (529), Digesta (533), Institutiones ve Novellae (534–565) tarihlerini bağımsız olarak doğrular.",
-      "Independently corroborates the dates of the Codex (529), Digest (533), Institutes, and Novels (534–565)."
+      "Legal Reference Services Quarterly 35/4 (2016), William & Mary açık erişim: otuz dokuz hukukçunun 1.528 kitabı (Tribonianus’un “iki bin” demesi abartı olabilir), 15 Kasım 534 Codex Repetitae Praelectionis, Glossa Ordinaria’daki ~96.000 gloss ve 1406’da Littera Florentina’nın Floransa’ya geçişi.",
+      "Legal Reference Services Quarterly 35/4 (2016), William & Mary open access: 1,528 books by thirty-nine jurists (Tribonian’s “two thousand” may be exaggeration), the Codex Repetitae Praelectionis of 15 November 534, the c. 96,000 glosses of the Glossa Ordinaria, and the passage of the Littera Florentina to Florence in 1406."
      ],
-     "u": "https://www.britannica.com/topic/Roman-law/The-law-of-Justinian"
+     "u": "https://scholarship.law.wm.edu/cgi/viewcontent.cgi?article=1122&context=libpubs"
     },
     {
      "t": [
-      "Jeremy Norman, History of Information: Pandectarum codex Florentinus",
-      "Jeremy Norman, History of Information: Pandectarum codex Florentinus"
+      "Littera Florentina — Leuven Database of Ancient Books kaydı",
+      "Littera Florentina — Leuven Database of Ancient Books record"
      ],
      "m": [
-      "Floransa yazmasının 907 yaprağını, altıncı yüzyıl tarihini ve Konstantinopolis–Amalfi–Pisa–Floransa (1406) izini belgeler.",
-      "Documents the Florentine codex’s 907 leaves, its sixth-century date, and the Constantinople–Amalfi–Pisa–Florence (1406) trail."
+      "Trismegistos TM 66369 / LDAB 7619: Iustinianus, Digesta, parşömen, MS 533-550; Codex Florentinus, Codex Pisanus F ve Littera Florentina adlarıyla kayıtlı.",
+      "Trismegistos TM 66369 / LDAB 7619: Justinian, Digesta, parchment, AD 533-550; recorded under the names Codex Florentinus, Codex Pisanus F and Littera Florentina."
      ],
-     "u": "https://www.historyofinformation.com/detail.php?id=165"
+     "u": "https://www.trismegistos.org/text/66369"
     },
     {
      "t": [
@@ -5031,6 +5008,17 @@
       "Shows the decoder becoming an institution: Irnerius is documented to 1125, and Accursius’s gloss runs to 96,940 notes."
      ],
      "u": "https://www.unibo.it/en/university/who-we-are/our-history/famous-people-and-students/Irnerius"
+    },
+    {
+     "t": [
+      "Blume, Annotated Justinian Code — Codex’i ilan eden anayasalar",
+      "Blume, Annotated Justinian Code — the constitutions promulgating the Code"
+     ],
+     "m": [
+      "University of Wyoming College of Law: “Given at Constantinople April 7 (529)” ve üç eski codex’in emirnamelerinin mahkemede anılmasının yasaklanması.",
+      "University of Wyoming College of Law: “Given at Constantinople April 7 (529)” and the prohibition on citing the constitutions of the three ancient codes in court."
+     ],
+     "u": "https://www.uwyo.edu/lawlib/blume-justinian/ajc-edition-2/books/book1/Book%201-ConcerningCode.pdf"
     }
    ],
    "ev": {
@@ -5083,20 +5071,20 @@
     {
      "y": -19,
      "t": [
-      "Agrippa’nın Aqua Virgo’su tamamlandı: 20,5 kilometrenin son 1.800 metresi dışında tamamı yer altında — hayatta kalmasının asıl sebebi bu.",
-      "Agrippa’s Aqua Virgo is completed: of its 20.5 km all but the last 1,800 m runs underground — the real reason it outlived the others."
+      "Agrippa’nın Aqua Virgo’su tamamlandı: Frontinus’un ölçümüne göre 14.105 adımın 12.865’i yer altında; yer üstündeki 1.240 adım parça parça payanda ve kemerler üzerinde — hayatta kalmasının asıl sebebi bu.",
+      "Agrippa’s Aqua Virgo is completed: by Frontinus’s own measurement 12,865 of its 14,105 paces run underground, the 1,240 above ground split between substructures and arches — the real reason it outlived the others."
      ],
      "link": "apparatus",
-     "src": "https://en.wikipedia.org/wiki/Aqua_Virgo"
+     "src": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Frontinus/De_Aquis/Bennett/1*.html"
     },
     {
      "y": 97,
      "t": [
-      "Nerva, Frontinus’u curator aquarum olarak atadı; işletme sorumluluğu Britannia eski valisi bir devlet adamına verildi.",
-      "Nerva appoints Frontinus curator aquarum; responsibility for the system passes to a statesman who had governed Britain."
+      "Nerva, Frontinus’u curator aquarum olarak atadı; Frontinus göreve başlarken kendi kılavuzu olsun diye sistemin dökümünü çıkardı.",
+      "Nerva appoints Frontinus curator aquarum; on taking office Frontinus draws up an inventory of the system for his own instruction and guidance."
      ],
      "link": "maintenance",
-     "src": "https://www.britannica.com/biography/Sextus-Julius-Frontinus"
+     "src": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Frontinus/De_Aquis/Bennett/1*.html"
     },
     {
      "y": 98,
@@ -5110,20 +5098,20 @@
     {
      "y": 373,
      "t": [
-      "Konstantinopolis’te Valens Kemeri tamamlandı; hat, Trakya’da 120 kilometre öteye uzanan 250 kilometreyi aşkın bir kanal ağının parçasıydı.",
-      "The Aqueduct of Valens is completed at Constantinople, part of a network of over 250 km of channels reaching 120 km into Thrace."
+      "Konstantinopolis’te Valens Kemeri tamamlandı; hat, 4. yüzyılda yaklaşık 246 kilometrelik bir kanal ağının parçasıydı. 5. yüzyıldaki 180 kilometrelik uzantıyla toplam en az 426 kilometreye çıktı ve Trakya’da kuş uçuşu 120 kilometre öteye ulaştı.",
+      "The Aqueduct of Valens is completed at Constantinople, part of a c. 246 km fourth-century channel network. A 180 km fifth-century extension took the total to at least 426 km, reaching 120 km into Thrace in a straight line."
      ],
      "link": "apparatus",
-     "src": "https://www.thebyzantinelegacy.com/valens-aqueduct"
+     "src": "https://e-docs.geo-leo.de/server/api/core/bitstreams/706965e5-4d59-45c7-a1d6-1f1db9aec336/content"
     },
     {
      "y": 537,
      "t": [
-      "Gotlar Roma’yı kuşatırken Vitiges su kemerlerini kesti; Belisarius Tiber üzerinde yüzer değirmenler kurdu. Ortaçağa yalnız Virgo ulaştı.",
-      "During the Gothic siege Vitiges cuts the aqueducts; Belisarius answers with floating mills on the Tiber. Only the Virgo reaches the Middle Ages."
+      "537’de Gotların kuşatması Roma’nın su kemeri sistemine ilk büyük kesintiyi vurur. Ortaçağa yalnız Virgo ulaştı.",
+      "In 537 the Gothic siege deals the first major disruption to Rome’s aqueduct system. Only the Virgo reaches the Middle Ages."
      ],
      "link": "maintenance",
-     "src": "http://www.romanaqueducts.info/aquasite/romaaftermath/index.html"
+     "src": "https://waters.iath.virginia.edu/karmon.html"
     },
     {
      "y": 1429,
@@ -5141,16 +5129,16 @@
       "Just after the conquest Mehmed II orders the Valens line repaired; in the same year Nicholas V restores the channel of the Aqua Virgo in Rome."
      ],
      "link": "maintenance",
-     "src": "https://www.thebyzantinelegacy.com/valens-aqueduct"
+     "src": "https://nit-istanbul.net/index.php/2024/02/01/introducing-water-heritage-for-sustainable-cities-the-revalorization-of-the-valens-aqueduct-in-istanbul/"
     },
     {
      "y": 1563,
      "t": [
-      "Sinan, Süleyman için Kırkçeşme sistemini tamamladı: yaklaşık 55 kilometre kanal, 33 kemer, 300’ü aşkın çeşme, kısmen Roma hatları üzerinde.",
-      "Sinan completes the Kırkçeşme system for Süleyman: some 55 km of channels, 33 aqueducts, over 300 fountains, partly on Roman lines."
+      "Sinan, Süleyman için Kırkçeşme sistemini tamamladı: 55.274 metre kanal, 33 kemer, dört bent ve yedi su alma yapısı, kısmen Roma hatları üzerinde.",
+      "Sinan completes the Kırkçeşme system for Süleyman: 55,274 m of channels, 33 aqueducts, four dams and seven intakes, partly on Roman lines."
      ],
      "link": "maintenance",
-     "src": "https://islamicart.museumwnf.org/database_item.php?id=monument%3BISL%3Btr%3BMon01%3B34%3Ben"
+     "src": "https://dergipark.org.tr/tr/download/article-file/481733"
     }
    ],
    "links": {
@@ -5219,25 +5207,25 @@
     },
     {
      "t": [
-      "romanaqueducts.info, Roma su kemerlerinin sonrası ve Aqua Virgo dosyası",
-      "romanaqueducts.info, on the aftermath of Rome’s aqueducts and the Aqua Virgo"
+      "D. Karmon, Rönesans Roma’sında antik su sisteminin onarımı",
+      "D. Karmon, Restoring the ancient water supply system in Renaissance Rome"
      ],
      "m": [
-      "537 kesintisini, ortaçağ boyunca yalnız Virgo’nun akmaya devam ettiğini ve nüfusun çöküşünü belgeler.",
-      "Documents the cutting of 537, the fact that only the Virgo kept flowing through the Middle Ages, and the population collapse."
+      "The Waters of Rome, Occasional Papers 3 (2005), Virginia Üniversitesi IATH: 537 Got kuşatmasının sisteme vurduğu ilk büyük kesinti, ortaçağ boyunca yalnız Virgo’nun akması ve V. Nicolaus’un 18 Haziran 1453 tarihli onarım ödemesi.",
+      "The Waters of Rome, Occasional Papers no. 3 (2005), University of Virginia IATH: the Gothic siege of 537 as the first major disruption to the system, the Virgo alone flowing through the Middle Ages, and Nicholas V’s repair payment of 18 June 1453."
      ],
-     "u": "http://www.romanaqueducts.info/aquasite/romavirgo/"
+     "u": "https://waters.iath.virginia.edu/karmon.html"
     },
     {
      "t": [
-      "Museum With No Frontiers ve The Byzantine Legacy, Kırkçeşme ve Valens dosyaları",
-      "Museum With No Frontiers and The Byzantine Legacy on Kırkçeşme and Valens"
+      "Karakuş, Urak & Özcan, İstanbul’un tarihî su sistemleri: Kırkçeşme örneği",
+      "Karakuş, Urak & Özcan, The historical water systems of Istanbul: the Kırkçeşme case"
      ],
      "m": [
-      "Kırkçeşme’nin 1554–1563 tarihlerini, 55 kilometrelik uzunluğunu, 33 kemerini ve Bizans hatları üzerine kurulduğunu verir.",
-      "Gives Kırkçeşme’s 1554–1563 dates, its 55 km length, its 33 aqueducts, and its partial construction on Byzantine lines."
+      "GU J Sci 31/2 (2018), 368-379 — hakemli: Kırkçeşme 55.274 metre uzunluğunda, 33 kemer, dört bent ve yedi su alma yapısı. Yaygın “300’ü aşkın çeşme” rakamı bu neşirde yer almıyor.",
+      "GU J Sci 31/2 (2018), 368-379 — peer-reviewed: Kırkçeşme is 55,274 m long, with 33 aqueducts, four dams and seven intakes. The commonly cited “over 300 fountains” does not appear in this publication."
      ],
-     "u": "https://islamicart.museumwnf.org/database_item.php?id=monument%3BISL%3Btr%3BMon01%3B34%3Ben"
+     "u": "https://dergipark.org.tr/tr/download/article-file/481733"
     }
    ],
    "ev": {
@@ -5290,20 +5278,20 @@
     {
      "y": -700,
      "t": [
-      "Latinler alfabeyi Etrüsklerden aldı; Etrüsklerin yirmi altı işaretinden Latince için yalnız yirmi biri tutuldu, üç Yunan nefesli harfi atıldı.",
-      "The Latins take the alphabet from the Etruscans; of twenty-six Etruscan signs only twenty-one are kept for Latin, the three Greek aspirates being dropped."
+      "Latinler alfabeyi Etrüsklerden aldı; Etrüsklerin yirmi altı işaretinden Latince için zamanla yirmi bir harf tutuldu, üç Yunan nefesli harfi düştü.",
+      "The Latins take the alphabet from the Etruscans; of twenty-six Etruscan signs twenty-one are in time retained for Latin, the three Greek aspirates falling away."
      ],
      "link": "packet",
-     "src": "https://www.britannica.com/topic/alphabet-writing/Later-development-of-the-Latin-alphabet"
+     "src": "https://www.uvm.edu/~jbailly/courses/LundquistLatinHistoryPrehistory/Wallace%20Latin%20alphabet%20from%20Clackson%202013%20Companion%20to%20the%20Latin%20Language-2.pdf"
     },
     {
-     "y": -560,
+     "y": -520,
      "t": [
-      "Roma Forumu’ndaki Lapis Niger cippusu: bilinen en eski Latince yazıtlardan biri, boustrophedon dizilmiş, MÖ 570–550 dolayına tarihleniyor.",
-      "The Lapis Niger cippus in the Roman Forum: one of the oldest known Latin inscriptions, written boustrophedon, dated to about 570–550 BCE."
+      "Roma Forumu’ndaki Lapis Niger cippusu (CIL I² 2.1, 1): bilinen en eski Latince yazıtlardan biri, boustrophedon dizilmiş, MÖ 6. yüzyılın sonuna tarihleniyor.",
+      "The Lapis Niger cippus in the Roman Forum (CIL I² 2.1, 1): one of the oldest known Latin inscriptions, written boustrophedon, dated to the late sixth century BCE."
      ],
      "link": "packet",
-     "src": "https://en.wikipedia.org/wiki/Lapis_Niger"
+     "src": "https://epigraphy.osu.edu/collections/latin-photo/cil-i2-21-24"
     },
     {
      "y": -250,
@@ -5312,25 +5300,25 @@
       "G, derived from C, is added and fills the place of the dropped zeta; the alphabet is now not a borrowing but a decoder tuned to Latin."
      ],
      "link": "decoder",
-     "src": "https://www.britannica.com/topic/alphabet-writing/Later-development-of-the-Latin-alphabet"
+     "src": "https://www.uvm.edu/~jbailly/courses/LundquistLatinHistoryPrehistory/Wallace%20Latin%20alphabet%20from%20Clackson%202013%20Companion%20to%20the%20Latin%20Language-2.pdf"
     },
     {
      "y": -50,
      "t": [
-      "Yunanca alıntıları yazmak için Y ve Z alındı; klasik alfabe yirmi üç harfe ulaştı. J, U ve W ancak ortaçağda ayrı harfler oldu.",
-      "Y and Z are adopted to transliterate Greek loanwords, bringing the classical alphabet to twenty-three letters; J, U and W separate only in the Middle Ages."
+      "Yunanca alıntıları yazmak için Y ve Z alındı ve dizinin sonuna kondu; yirmi bir harflik kadro yirmi üçe çıktı. J, U ve W ancak ortaçağda ayrı harfler oldu.",
+      "Y and Z are adopted for Greek loanwords and placed at the end of the series, taking the twenty-one-letter set to twenty-three; J, U and W separate only in the Middle Ages."
      ],
      "link": "decoder",
-     "src": "https://www.britannica.com/topic/alphabet-writing/Later-development-of-the-Latin-alphabet"
+     "src": "https://www.uvm.edu/~jbailly/courses/LundquistLatinHistoryPrehistory/Wallace%20Latin%20alphabet%20from%20Clackson%202013%20Companion%20to%20the%20Latin%20Language-2.pdf"
     },
     {
      "y": 800,
      "t": [
-      "Karolenj minüskülü: Corbie ve Tours’da geliştirilen, kelime aralığı ve noktalama getiren tek tip okunaklı yazı bölgesel elleri tasfiye etti.",
-      "Carolingian minuscule: a single legible hand developed at Corbie and Tours, introducing word spacing and punctuation, displaces the regional hands."
+      "Karolenj minüskülü: Kuzey Fransa ve Almanya’daki manastırlarda — Corbie ve Tours başta — geliştirilen, düzenli kelime aralığı getiren tek tip okunaklı yazı bölgesel elleri tasfiye etti.",
+      "Carolingian minuscule: a single legible hand developed in the monasteries of northern France and Germany — Corbie and Tours foremost — introducing regular word spacing, displaces the regional hands."
      ],
      "link": "maintenance",
-     "src": "https://www.britannica.com/art/Carolingian-minuscule"
+     "src": "https://hmmlschool.org/latin-caroline/"
     },
     {
      "y": 1450,
@@ -5339,25 +5327,25 @@
       "Italian humanists mistake Carolingian manuscripts for ancient Roman work and imitate them; the error becomes the direct ancestor of modern roman type."
      ],
      "link": "apparatus",
-     "src": "https://en.wikipedia.org/wiki/Carolingian_minuscule"
+     "src": "https://www.europeana.eu/en/stories/how-corbie-abbeys-medieval-manuscripts-connect-to-todays-fonts"
     },
     {
      "y": 1928,
      "t": [
-      "1 Kasım 1928 tarihli 1353 sayılı kanunla Türkiye yirmi dokuz harfli Latin alfabesine geçti; okuryazar bir kuşak bir gecede yeniden öğrenci oldu.",
-      "By Law No. 1353 of 1 November 1928 Turkey adopts a twenty-nine-letter Latin alphabet; a literate generation becomes students again overnight."
+      "1 Kasım 1928 tarihli 1353 sayılı kanunla Türkiye, kanuna ekli cetvelde şekilleri gösterilen Latin esaslı harflere geçti; okuryazar bir kuşak bir gecede yeniden öğrenci oldu.",
+      "By Law no. 1353 of 1 November 1928 Turkey adopts the Latin-based letters set out in the schedule annexed to the act; a literate generation becomes students again overnight."
      ],
      "link": "decoder",
-     "src": "https://en.wikipedia.org/wiki/Turkish_alphabet_reform"
+     "src": "https://www.mevzuat.gov.tr/MevzuatMetin/1.3.1353.pdf"
     },
     {
      "y": 1989,
      "t": [
-      "ISO/IEC 8859-9 (Latin-5) yayımlandı: ğ, İ, ı ve ş, İzlandaca harflerin boşalttığı yerlere yerleşerek sayısal alfabeye girdi.",
-      "ISO/IEC 8859-9 (Latin-5) is published: ğ, İ, ı and ş enter the digital alphabet in the slots vacated by Icelandic letters."
+      "ISO/IEC 8859-9 (Latin-5) yayımlandı: ğ, İ, ı ve ş sekiz bitlik tek baytlık kod kümesine girerek sayısal alfabede yer aldı.",
+      "ISO/IEC 8859-9 (Latin alphabet No. 5) is published: ğ, İ, ı and ş enter the 8-bit single-byte coded character set, and so the digital alphabet."
      ],
      "link": "apparatus",
-     "src": "https://en.wikipedia.org/wiki/ISO/IEC_8859-9"
+     "src": "https://www.iso.org/standard/16346.html"
     }
    ],
    "links": {
@@ -5404,47 +5392,58 @@
    "sources": [
     {
      "t": [
-      "Britannica, “Alphabet: later development of the Latin alphabet”",
-      "Britannica, “Alphabet: Later development of the Latin alphabet”"
+      "Rex Wallace, “The Latin Alphabet and Orthography”",
+      "Rex Wallace, “The Latin Alphabet and Orthography”"
      ],
      "m": [
-      "Etrüsk kökenini, yirmi bir harflik ilk kadroyu, G’nin eklenmesini ve Y ile Z’nin MÖ 1. yüzyılda alınmasını verir.",
-      "Gives the Etruscan origin, the initial twenty-one-letter set, the addition of G, and the adoption of Y and Z in the 1st century BCE."
+      "J. Clackson (haz.), A Companion to the Latin Language, Wiley-Blackwell 2011, böl. 2 — hakemli el kitabı: Etrüsk kökeni, Marsiliana levhasındaki yirmi altı işaret, geç cumhuriyette yirmi bir harf, 3. yüzyılda G’nin türetilmesi ve MÖ 1. yüzyılda Y ile Z.",
+      "In J. Clackson (ed.), A Companion to the Latin Language, Wiley-Blackwell 2011, ch. 2 — a peer-reviewed handbook: the Etruscan origin, the twenty-six signs on the Marsiliana tablet, twenty-one letters in the late republic, the creation of G in the third century, and Y and Z in the first century BCE."
      ],
-     "u": "https://www.britannica.com/topic/alphabet-writing/Later-development-of-the-Latin-alphabet"
+     "u": "https://www.uvm.edu/~jbailly/courses/LundquistLatinHistoryPrehistory/Wallace%20Latin%20alphabet%20from%20Clackson%202013%20Companion%20to%20the%20Latin%20Language-2.pdf"
     },
     {
      "t": [
-      "Britannica, “Carolingian minuscule” ve Karolenj yazısı üzerine ansiklopedi maddeleri",
-      "Britannica, “Carolingian minuscule”, with encyclopedic accounts of the script"
+      "Hill Museum & Manuscript Library, Karolenj yazısı",
+      "Hill Museum & Manuscript Library, Caroline minuscule"
      ],
      "m": [
-      "Alcuin, Tours ve Corbie bağlantısını, kelime aralığı gibi yenilikleri ve on beşinci yüzyıl hümanist canlanmasını belgeler.",
-      "Documents the Alcuin, Tours and Corbie connection, innovations such as word spacing, and the fifteenth-century humanist revival."
+      "Yazma eser kütüphanesinin paleografi kaydı: yazının 8. yüzyıl sonunda Kuzey Fransa ve Almanya manastırlarında gelişmesi, düzenli kelime ve harf aralığı, Charlemagne’ın metin reformuyla bağı.",
+      "The palaeography record of a manuscript library: the script’s development in the monasteries of northern France and Germany late in the eighth century, its regular word and letter spacing, and its link to Charlemagne’s programme of textual reform."
      ],
-     "u": "https://www.britannica.com/art/Carolingian-minuscule"
+     "u": "https://hmmlschool.org/latin-caroline/"
     },
     {
      "t": [
-      "Britannica, dünyanın en yaygın beş yazı sistemi listesi",
-      "Britannica, list of the world’s five most commonly used writing systems"
+      "Europeana, Corbie yazmalarından bugünün yazı karakterlerine",
+      "Europeana, from Corbie’s manuscripts to today’s fonts"
      ],
      "m": [
-      "Latin alfabesinin dünya nüfusunun yaklaşık yüzde yetmişi tarafından kullanıldığı tahminini kaynaklandırır.",
-      "Sources the estimate that the Latin alphabet is used by nearly seventy per cent of the world’s population."
+      "Avrupa kültürel miras kurumlarının ortak platformu: hümanistlerin Karolenj yazısını antik sanması, hümanist minüskülün doğuşu ve 15. yüzyıl ikinci yarısında Antiqua harf karakterine dönüşmesi.",
+      "The shared platform of Europe’s heritage institutions: the humanists mistaking Carolingian script for ancient script, the birth of humanistic minuscule, and its turn into the Antiqua type of the later fifteenth century."
      ],
-     "u": "https://www.britannica.com/list/the-worlds-5-most-commonly-used-writing-systems"
+     "u": "https://www.europeana.eu/en/stories/how-corbie-abbeys-medieval-manuscripts-connect-to-todays-fonts"
     },
     {
      "t": [
-      "1928 Harf Devrimi (1353 sayılı kanun) ve ISO/IEC 8859-9 standardı",
-      "The 1928 alphabet reform (Law No. 1353) and the ISO/IEC 8859-9 standard"
+      "ISO/IEC 8859-9:1989 katalog kaydı",
+      "ISO/IEC 8859-9:1989 catalogue record"
      ],
      "m": [
-      "Türkçenin çözücü devrini ve altmış bir yıl sonra aynı harflerin sayısal katmana kabul edilişini tarihlendirir.",
-      "Dates Turkish’s decoder handover and, sixty-one years later, the admission of the same letters into the digital layer."
+      "Standardın kendi künyesi: “Information processing — 8-bit single-byte coded graphic character sets — Part 9: Latin alphabet No. 5”, Mayıs 1989, bugün geri çekilmiş durumda.",
+      "The standard’s own record: “Information processing — 8-bit single-byte coded graphic character sets — Part 9: Latin alphabet No. 5”, May 1989, now withdrawn."
      ],
-     "u": "https://en.wikipedia.org/wiki/ISO/IEC_8859-9"
+     "u": "https://www.iso.org/standard/16346.html"
+    },
+    {
+     "t": [
+      "TBMM Kanunlar Dergisi — 1353 sayılı kanun",
+      "Grand National Assembly, Kanunlar Dergisi — Law no. 1353"
+     ],
+     "m": [
+      "Kanunun meclis neşrindeki tam metni: harfler “merbut cetvelde” gösterilir; Resmî Gazete 3 Teşrinisani 1928, sayı 1030. Metinde harf sayısı verilmez.",
+      "The full parliamentary text of the act: the letters are given in an annexed schedule; Official Gazette 3 November 1928, no. 1030. The text itself states no letter count."
+     ],
+     "u": "https://www5.tbmm.gov.tr/tutanaklar/KANUNLAR_KARARLAR/kanuntbmmc007/kanuntbmmc007/kanuntbmmc00701353.pdf"
     }
    ],
    "ev": {
@@ -5524,11 +5523,11 @@
     {
      "y": 673,
      "t": [
-      "Benedict Biscop, Wearmouth manastırının camları için Galya’dan usta getirtir: Britanya’da zanaat, Roma’nın çekilmesinden sonra fiilen durmuştur.",
-      "Benedict Biscop brings glaziers from Gaul for his monastery at Wearmouth: in Britain the craft had effectively stopped after Rome withdrew."
+      "670’lerde Benedict Biscop, Wearmouth manastırının camları için Galya’dan usta getirtir: Britanya’da zanaat, Roma’nın çekilmesinden sonra fiilen durmuştur.",
+      "In the 670s Benedict Biscop brings glaziers from Gaul for his monastery at Wearmouth: in Britain the craft had effectively stopped after Rome withdrew."
      ],
      "link": "maintenance",
-     "src": "https://the-past.com/feature/glass-roots-examining-the-archaeology-of-glassmaking-in-england/"
+     "src": "https://sitelines.newcastle.gov.uk/SMR/417"
     },
     {
      "y": 800,
@@ -5726,11 +5725,11 @@
     {
      "y": 85,
      "t": [
-      "Martialis, Homeros ve Vergilius’un “tek elde tutulan” parşömen kodekslerini kitapçının adresini vererek över; yenilik kendi kuşağında tutmaz.",
-      "Martial praises parchment codices of Homer and Vergil that “one hand holds”, naming the bookseller; the novelty does not catch on in his own generation."
+      "Martialis, Homeros ve Vergilius’un parşömen kodekslerini över (14.184, 14.186) ve kendi şiirlerini “küçük parşömen levhalarda” sunar (1.2); yenilik kendi kuşağında tutmaz.",
+      "Martial praises parchment codices of Homer and Vergil (14.184, 14.186) and offers his own poems “in little parchment tablets” (1.2); the novelty does not catch on in his own generation."
      ],
      "link": "apparatus",
-     "src": "https://www.historyofinformation.com/detail.php?id=1577"
+     "src": "https://publications.dainst.org/journals/chiron/article/download/369/4977"
     },
     {
      "y": 150,
@@ -5753,11 +5752,11 @@
     {
      "y": 331,
      "t": [
-      "Constantinus, başkentin kiliseleri için parşömen üzerine elli İncil kodeksi ısmarlar (Eusebios, Vita Constantini 4.36): biçim artık devlet bütçesiyle çoğaltılır.",
-      "Constantine orders fifty Bible codices on parchment for the churches of the capital (Eusebius, Vita Constantini 4.36): the format is now copied on a state budget."
+      "Constantinus, başkentin kiliseleri için parşömen üzerine, işinde usta müstensihlere elli İncil kodeksi ısmarlar (Eusebios, Vita Constantini IV.36): biçim artık devlet bütçesiyle çoğaltılır.",
+      "Constantine orders fifty Bible codices on prepared parchment from practised professional transcribers for the churches of the capital (Eusebius, Vita Constantini IV.36): the format is now copied on a state budget."
      ],
      "link": "maintenance",
-     "src": "https://en.wikipedia.org/wiki/Fifty_Bibles_of_Constantine"
+     "src": "https://www.ccel.org/ccel/schaff/npnf201.iv.vi.iv.xxxvi.html"
     },
     {
      "y": 350,
@@ -5771,20 +5770,20 @@
     {
      "y": 400,
      "t": [
-      "5. yüzyılda oran %89’dur; y. 400’de kitapların yaklaşık %80’i kodekstir. Rulo hâlinde kalan metin okunmaz, okunmayan metin de kopyalanmaz.",
-      "In the 5th century the share is 89%; by c. 400 about 80% of books are codices. A text left on a roll is not read, and a text not read is not recopied."
+      "Mısır’daki din dışı edebî metinlerde kodeks oranı 3. yüzyılda %18,5, 4. yüzyılda %62,3, 5. yüzyılda %89’dur. Rulo hâlinde kalan metin okunmaz, okunmayan metin de kopyalanmaz.",
+      "Among non-Christian literary texts from Egypt the codex share is 18.5% in the third century, 62.3% in the fourth and 89% in the fifth. A text left on a roll is not read, and a text not read is not recopied."
      ],
      "link": "context",
-     "src": "https://kiwihellenist.blogspot.com/2020/06/who-preserved-greek-literature-2.html"
+     "src": "https://publications.dainst.org/journals/chiron/article/download/369/4977"
     },
     {
-     "y": 850,
+     "y": 835,
      "t": [
-      "Yunanca için ikinci elek: majüskülden minüsküle geçilir. Aktarım eski bitişik yazıyı hâlâ sökebilen bir el ister; eski uncial nüshaların pek azı korunur.",
-      "A second sieve for Greek: majuscule gives way to minuscule. Transfer needs a hand that can still read the old continuous script; few older uncial copies are kept."
+      "Yunanca için ikinci elek: majüskülden minüsküle geçilir; tarihli en eski minüskül yazma 835’te istinsah edilen Uspenski İncilleri’dir. Aktarım eski bitişik yazıyı hâlâ sökebilen bir el ister; eski uncial nüshaların pek azı korunur.",
+      "A second sieve for Greek: majuscule gives way to minuscule; the oldest dated minuscule manuscript is the Uspensky Gospels, copied in 835. Transfer needs a hand that can still read the old continuous script; few older uncial copies are kept."
      ],
      "link": "tacit",
-     "src": "https://en.wikipedia.org/wiki/Greek_minuscule"
+     "src": "https://spotlight.vatlib.it/greek-paleography/feature/3-old-round-minuscule"
     },
     {
      "y": 1897,
@@ -5899,10 +5898,21 @@
       "P. Gainsford, “Who preserved Greek literature?” (Kiwi Hellenist, 2020)"
      ],
      "m": [
-      "Biçim göçünü kayıpların başlıca eleği olarak konumlandırır ve Casson’a dayanarak y. 100’de %1,5, y. 400’de %80 kodeks oranını verir; hakemli değil, klasik filolog bir akademisyenin blogudur.",
-      "Positions the format migration as the principal sieve of the losses and, following Casson, gives a codex share of 1.5% at c. 100 and 80% at c. 400; not peer-reviewed, but the blog of a credentialed classicist."
+      "Biçim göçünü kayıpların başlıca eleği olarak konumlandırır; hakemli değil, klasik filolog bir akademisyenin blogudur. Buradaki kodeks oranları çalışmada kullanılmadı — kullanılan sayılar Meyer 2007’nin ölçümleridir.",
+      "Positions the format migration as the principal sieve of the losses; not peer-reviewed, but the blog of a credentialed classicist. Its codex percentages are not used in this study — the figures used are Meyer 2007’s measurements."
      ],
      "u": "https://kiwihellenist.blogspot.com/2020/06/who-preserved-greek-literature-2.html"
+    },
+    {
+     "t": [
+      "Vatikan Kütüphanesi, Yunan paleografyası — eski yuvarlak minüskül",
+      "Vatican Library, Greek palaeography — the old round minuscule"
+     ],
+     "m": [
+      "Biblioteca Apostolica Vaticana: tarihli en eski Yunan minüskül yazması 835 tarihli Uspenski İncilleri; Studios manastırı çevresinin yazının erken yayılmasındaki rolü.",
+      "Biblioteca Apostolica Vaticana: the oldest dated Greek minuscule manuscript is the Uspensky Gospels of 835; the role of the Studios monastery circle in the script’s early diffusion."
+     ],
+     "u": "https://spotlight.vatlib.it/greek-paleography/feature/3-old-round-minuscule"
     }
    ],
    "ev": {
@@ -5968,7 +5978,7 @@
       "Vitruvius describes the suspended floor (De architectura V.10). Roman tradition credits the invention to Sergius Orata; that attribution is now contested (Fagan 1996)."
      ],
      "link": "packet",
-     "src": "https://en.wikipedia.org/wiki/Suspensura"
+     "src": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Vitruvius/5*.html"
     },
     {
      "y": 100,
@@ -6000,11 +6010,11 @@
     {
      "y": 1350,
      "t": [
-      "Baltık çevresinde ısı depolamalı hipokaustlar: 1500’e doğru sekiz yüz ile bin arası örnek. Bunlar Roma mirası değil, taş yığınıyla çalışan yeni bir çözümdür.",
-      "Heat-storage hypocausts around the Baltic: eight hundred to a thousand examples by 1500. Not a Roman inheritance but a new solution working off a pile of stones."
+      "Baltık çevresinde ısı depolamalı hipokaustlar: Bingenheimer’in 1998 sayımı Avrupa genelinde 154 örnek veriyordu; sonraki araştırma tek başına Estonya’da yüze yakınını daha belgeledi. Bunlar Roma mirası değil, taş yığınıyla çalışan yeni bir çözümdür.",
+      "Heat-storage hypocausts around the Baltic: Bingenheimer’s 1998 survey listed 154 across Europe; later work documented nearly a hundred more in Estonia alone. Not a Roman inheritance but a new solution working off a pile of stones."
      ],
      "link": "context",
-     "src": "https://solar.lowtechmagazine.com/2017/03/heat-storage-hypocausts-air-heating-in-the-middle-ages/"
+     "src": "https://ojs.utlib.ee/index.php/bjah/article/view/13502/8558"
     },
     {
      "y": 1584,
@@ -6022,7 +6032,7 @@
       "Frank Lloyd Wright builds “gravity heat” into the first Jacobs House with pipe embedded in the slab: underfloor heating returns to the western house, now as pipework."
      ],
      "link": "apparatus",
-     "src": "https://savewright.org/radiant-heating-101/"
+     "src": "https://www.nps.gov/subjects/nationalhistoriclandmarks/upload/Allaback-NHL-Final-Report-508-Compliant.pdf"
     }
    ],
    "links": {
@@ -6185,10 +6195,10 @@
     {
      "y": 1864,
      "link": "maintenance",
-     "src": "https://en.wikipedia.org/wiki/Ubykh_language",
+     "src": "https://journals.linguisticsociety.org/booknotices/?p=2376",
      "t": [
-      "Ubıhlar, Soçi çevresindeki Karadeniz kıyısından Rus ordusu tarafından sürülür ve Osmanlı topraklarına yerleşir; Hacı Osman, Kırkpınar, Maşukiye ve Hacı Yakup köyleri böyle kurulur. Dili her gün yeniden üreten ortam — komşuluk, iş, coğrafya — tek seferde dağılır.",
-      "The Ubykhs are driven from the Black Sea coast around Sochi by the Russian army and settle in Ottoman territory, founding the villages of Hacı Osman, Kırkpınar, Maşukiye and Hacı Yakup. The setting that reproduced the language daily — neighbours, work, geography — is dispersed at a stroke."
+      "Ubıhlar Karadeniz’in kuzey kıyısındaki yurtlarından Osmanlı topraklarına sürülür. Dili her gün yeniden üreten ortam — komşuluk, iş, coğrafya — tek seferde dağılır; dil bu göçten sonra kaybolmaya başlar.",
+      "The Ubykhs are driven from their homeland on the north shore of the Black Sea into Ottoman territory. The setting that reproduced the language daily — neighbours, work, geography — is dispersed at a stroke, and the language begins to disappear after this exodus."
      ]
     },
     {
@@ -6196,32 +6206,32 @@
      "link": "tacit",
      "src": "https://dergipark.org.tr/tr/download/article-file/305216",
      "t": [
-      "Georges Dumézil 1925'ten beri İstanbul'dadır; 1956'dan sonra Ubıhçayı kaydetmesine yardım edebilen tek konuşan Tevfik Esenç kalır. Yazıya geçirilebilen dilbilgisi ve sözlüktür; 84 ünsüzün nasıl boğumlandığı yazılamaz, ancak gösterilebilir.",
-      "Georges Dumézil has been in Istanbul since 1925; after 1956 Tevfik Esenç is the only speaker left who can help him record Ubykh. What can be written down is grammar and lexicon; how 84 consonants are articulated cannot be written, only shown."
+      "Georges Dumézil 1925’ten beri İstanbul’dadır; 1956’dan sonra Ubıhçayı kaydetmesine yardım edebilen tek konuşan Tevfik Esenç kalır. Yazıya geçirilebilen dilbilgisi ve sözlüktür; seksenin üzerindeki ünsüzün nasıl boğumlandığı yazılamaz, ancak gösterilebilir.",
+      "Georges Dumézil has been in Istanbul since 1925; after 1956 Tevfik Esenç is the only speaker left who can help him record Ubykh. What can be written down is grammar and lexicon; how more than eighty consonants are articulated cannot be written, only shown."
      ]
     },
     {
      "y": 1963,
      "link": "packet",
-     "src": "https://en.wikipedia.org/wiki/Ubykh_language",
+     "src": "https://archive.org/details/rosettaproject_uby_contents-1",
      "t": [
-      "Norveçli dilbilimci Hans Vogt Dictionnaire de la langue oubykh'i yayımlar. Ubıhça kendi konuşurları tarafından hiç yazılmamıştı; bu sözlük dahil bütün kayıtlar yabancı bir kulağın transkripsiyonudur.",
-      "The Norwegian linguist Hans Vogt publishes the Dictionnaire de la langue oubykh. Ubykh was never written by its own speech community; every record, this dictionary included, is a foreign ear's transcription."
+      "Norveçli dilbilimci Hans Vogt Dictionnaire de la langue oubykh’i yayımlar. Elimizdeki kayıtların tamamı — bu sözlük dahil — yabancı bir kulağın transkripsiyonudur.",
+      "The Norwegian linguist Hans Vogt publishes the Dictionnaire de la langue oubykh. Every record we have — this dictionary included — is a foreign ear’s transcription."
      ]
     },
     {
      "y": 1974,
      "link": "apparatus",
-     "src": "https://en.wikipedia.org/wiki/Tevfik_Esen%C3%A7",
+     "src": "https://georgehewitt.net/multimedia/recordings/281-george-hewitt-s-recordings-from-turkey-1974",
      "t": [
-      "George Hewitt, Esenç'i İstanbul'da kaydeder; bu kayıtların bir seçkisi bugün Hewitt'in kendi sayfasından yayımlanıyor. <b>Ayrı bir koleksiyon olarak</b>, Esenç'in Ubıhça anlatılarından 55 ses dosyası transkripsiyonlarıyla birlikte CNRS'in Pangloss arşivinde durur. İkisi aynı derlem değildir. Her iki durumda da dil artık, bu arşivlerin bakımı sürdüğü ve biçimlerin okunabilirliği korunduğu sürece var.",
-      "George Hewitt records Esenç in Istanbul; a selection of those recordings is published today on Hewitt's own site. <b>As a separate collection</b>, 55 audio files of Esenç narrating in Ubykh sit, with transcriptions, in the CNRS Pangloss archive. They are not the same corpus. Either way, the language now exists for exactly as long as those archives are maintained and the formats stay readable."
+      "George Hewitt, 1974’te Türkiye’de geçirdiği altı hafta boyunca Esenç’i İstanbul’da ve Hacı Osman Köyü’nde başka yaşlı konuşurları kaydeder; bu kayıtların bir seçkisi bugün Hewitt’in kendi sayfasından yayımlanıyor. <b>Ayrı bir koleksiyon olarak</b>, Esenç’in Ubıhça anlatıları transkripsiyonlarıyla birlikte CNRS’in Pangloss arşivinde durur. İkisi aynı derlem değildir. Her iki durumda da dil artık, bu arşivlerin bakımı sürdüğü ve biçimlerin okunabilirliği korunduğu sürece var.",
+      "In six weeks in Turkey in 1974 George Hewitt records Esenç in Istanbul and other elderly speakers in the village of Hacı Osman; a selection of those recordings is published today on Hewitt’s own site. <b>As a separate collection</b>, Esenç’s Ubykh narratives sit, with transcriptions, in the CNRS Pangloss archive. They are not the same corpus. Either way, the language now exists for exactly as long as those archives are maintained and the formats stay readable."
      ]
     },
     {
      "y": 1975,
      "link": "packet",
-     "src": "https://en.wikipedia.org/wiki/Ubykh_language",
+     "src": "https://aibl.fr/collections/tome-1-le-verbe-oubykh-etudes-descriptives-et-comparatives/",
      "t": [
       "Dumézil Le Verbe Oubykh'i yayımlar. Paket her yıl büyümeye devam eder; konuşan sayısı büyümez.",
       "Dumézil publishes Le Verbe Oubykh. The packet keeps growing year by year; the number of speakers does not."
@@ -6230,7 +6240,7 @@
     {
      "y": 1992,
      "link": "decoder",
-     "src": "https://en.wikipedia.org/wiki/Tevfik_Esen%C3%A7",
+     "src": "https://dergipark.org.tr/tr/download/article-file/305216",
      "t": [
       "7 Ekim: Tevfik Esenç, 88 yaşında ölür. Hacı Osman'da muhtarlık, sonra İstanbul'da memurluk yapmıştı. Üç oğlu Ubıhça sohbet edemiyordu. Çözücü sayısı sıfıra iner; paketin tek satırı bile eksilmez.",
       "7 October: Tevfik Esenç dies at 88. He had been village mayor at Hacı Osman, later a civil servant in Istanbul. His three sons could not hold a conversation in Ubykh. The decoder count reaches zero; not one line of the packet is lost."
@@ -6332,25 +6342,25 @@
     },
     {
      "t": [
-      "Jost Gippert, Evliya Çelebi'de Kafkas dil malzemesi",
-      "Jost Gippert, The Caucasian language material in Evliya Çelebi's Travel Book"
+      "Jost Gippert, Evliya Çelebi’de Kafkas dil malzemesi",
+      "Jost Gippert, The Caucasian language material in Evliya Çelebi’s Travel Book"
      ],
      "m": [
-      "Seyahatname'deki Ubıhça örnekleri ve Bleichsteiner'in uyarısı: ayırt edici işaretler olmadan Arap alfabesi yetmişten fazla fonemli bir dizgeyi güçlükle temsil edebilirdi.",
-      "The Ubykh specimens in the Seyahatname, and Bleichsteiner's warning that without distinguishing marks the Arabic alphabet could scarcely represent a system of over 70 phonemes."
+      "Caucasian Perspectives (haz. G. Hewitt), 1992, 8-62 — yazarın Goethe Üniversitesi TITUS sunucusundaki nüshası: Seyahatname’deki Ubıhça örnekleri ve Bleichsteiner’in uyarısı, ayırt edici işaretler olmadan Arap alfabesinin yetmişten fazla fonemli bir dizgeyi güçlükle temsil edebileceği.",
+      "In Caucasian Perspectives, ed. G. Hewitt, 1992, 8-62 — the author’s own copy on Goethe University’s TITUS server: the Ubykh specimens in the Seyahatname and Bleichsteiner’s warning that without distinguishing marks the Arabic alphabet could scarcely represent a system of over seventy phonemes."
      ],
-     "u": "https://abkhazworld.com/aw/abkhazians/language/950-the-caucasian-language-material-in-evliya-celebis-travel-book"
+     "u": "https://titus.fkidg1.uni-frankfurt.de/personal/jg/pdf/jg1991b.pdf"
     },
     {
      "t": [
-      "Ubıhça — ses dizgesi ve belgeleme",
-      "The Ubykh language — sound system and documentation"
+      "Fenwick, A Grammar of Ubykh — Amerikan Dilbilim Derneği tanıtımı",
+      "Fenwick, A Grammar of Ubykh — Linguistic Society of America book notice"
      ],
      "m": [
-      "Ünsüz sayısını 84 olarak verir (dördü yalnız alıntılarda) ve üç ünlü sayar; Fenwick 2011 ise 85 fonem / 80 yerli sözcük der — sayım kaynağa göre değişir. Ayrıca dilin kendi topluluğu tarafından hiç yazılmadığı kaydı; Vogt 1963 ve Dumézil 1975.",
-      "Gives 84 phonemic consonants (four only in loanwords) and three vowels; Fenwick 2011 instead counts 85 phonemes, 80 of them in native words — the count varies by source. Also the record that the language was never written by its own community; Vogt 1963 and Dumezil 1975."
+      "Language dergisinin kitap tanıtımı: seksen beş fonem, bunların sekseni yerli sözcüklerde — Afrika dışındaki en büyük ünsüz kadrosu sayılabilir; ünlü boğumlanmaları dil yüksekliğine göre üç foneme ayrılıyor. Dilin 1864 sürgününden sonra kaybolmaya başladığı kaydı da burada.",
+      "The Language book notice: eighty-five phonemes, eighty of them in native words — arguably the largest consonant inventory outside Africa; the vowels divide into three phonemes by tongue height. It also records that the language began to disappear after the 1864 exodus."
      ],
-     "u": "https://en.wikipedia.org/wiki/Ubykh_language"
+     "u": "https://journals.linguisticsociety.org/booknotices/?p=2376"
     }
    ],
    "ev": {
@@ -6403,55 +6413,55 @@
     {
      "y": 1799,
      "link": "packet",
-     "src": "https://en.wikipedia.org/wiki/Kilogram",
+     "src": "https://www.nist.gov/si-redefinition/kilogram/kilogram-past",
      "t": [
-      "Kilogramme des Archives Fransız arşivlerine konur: platin bir silindir. Kütle birimi, ilk kez tek bir fiziksel nesneye bağlanır. Paket artık bir tarif değil, bir eşyadır.",
-      "The Kilogramme des Archives is deposited in the French archives: a platinum cylinder. The unit of mass is tied, for the first time, to a single physical object. The packet is no longer a recipe but a thing."
+      "22 Haziran 1799: platinden dövülen Kilogramme des Archives Fransız arşivlerine konur. Kütle birimi, ilk kez tek bir fiziksel nesneye bağlanır. Paket artık bir tarif değil, bir eşyadır.",
+      "22 June 1799: the Kilogramme des Archives, forged from platinum, is deposited in the French archives. The unit of mass is tied, for the first time, to a single physical object. The packet is no longer a recipe but a thing."
      ]
     },
     {
      "y": 1889,
      "link": "apparatus",
-     "src": "https://en.wikipedia.org/wiki/International_Prototype_of_the_Kilogram",
+     "src": "https://www.bipm.org/en/committees/cg/cgpm/1-1889/resolution-1",
      "t": [
-      "1. CGPM, Uluslararası Kilogram Prototipi'ni (IPK) onaylar: platin-iridyum alaşımı bir silindir. Saint-Cloud'daki Pavillon de Breteuil'ün bodrumunda, açılması birbirinden bağımsız üç anahtar gerektiren bir kasada saklanır; kopyaları uluslara dağıtılır.",
-      "The 1st CGPM sanctions the International Prototype of the Kilogram: a platinum-iridium cylinder. It is kept in a basement vault at the Pavillon de Breteuil in Saint-Cloud, which takes three independently controlled keys to open, and copies are distributed to nations."
+      "1. CGPM, Uluslararası Kilogram Prototipi’ni (IPK) onaylar: yaklaşık 39 mm çapında ve boyunda, %90 platin-%10 iridyum bir silindir. Saint-Cloud’daki Pavillon de Breteuil’de, erişimi CIPM’in sıkı denetiminde saklanır; kopyaları uluslara dağıtılır.",
+      "The 1st CGPM sanctions the International Prototype of the Kilogram: a cylinder about 39 mm in diameter and height, 90% platinum and 10% iridium. It is kept at the Pavillon de Breteuil in Saint-Cloud with access under the strict supervision of the CIPM, and copies are distributed to nations."
      ]
     },
     {
      "y": 1948,
      "link": "maintenance",
-     "src": "https://en.wikipedia.org/wiki/International_Prototype_of_the_Kilogram",
+     "src": "https://www.nist.gov/si-redefinition/kilogram/kilogram-present",
      "t": [
-      "İkinci dönemsel doğrulama. Kopyalar Sèvres'e getirilir, öngörülen yöntemle yıkanır ve prototiple karşılaştırılır. Tarih boyunca bu iş yalnızca üç kez yapıldı: 1889, 1948, 1989.",
-      "The second periodic verification. The copies are brought to Sèvres, washed by a prescribed method and compared with the prototype. In its whole history this was done exactly three times: 1889, 1948 and 1989."
+      "İkinci dönemsel doğrulama sürer. Kopyalar Sèvres’e getirilir, öngörülen yöntemle yıkanır ve prototiple karşılaştırılır. Tarih boyunca bu iş yalnızca üç kez yapıldı: 1899-1911, 1939-1953 ve 1988-1992.",
+      "The second periodic verification is under way. The copies are brought to Sèvres, washed by a prescribed method and compared with the prototype. In its whole history this was done exactly three times: 1899-1911, 1939-1953 and 1988-1992."
      ]
     },
     {
      "y": 1989,
      "link": "context",
-     "src": "https://en.wikipedia.org/wiki/Kilogram",
+     "src": "https://www.nist.gov/si-redefinition/kilogram/kilogram-present",
      "t": [
-      "Üçüncü ve son doğrulama: IPK, on dokuzuncu yüzyıl sonundaki üretiminden bu yana kopyalarından yaklaşık 50 mikrogram ayrılmıştır. Referansın kendisi kaymaktadır ve bunu anlamanın tek yolu, kendisi de kayan kopyalarla karşılaştırmaktır.",
-      "The third and last verification: since its manufacture in the late nineteenth century the IPK has diverged from its replicas by about 50 micrograms. The reference itself is moving, and the only way to see it is to compare it against copies that are also moving."
+      "Üçüncü ve son doğrulama: IPK, yüz yıl içinde kopyalarından ortalama 50 mikrogram ayrılmıştır. Referansın kendisi kaymaktadır ve bunu anlamanın tek yolu, kendisi de kayan kopyalarla karşılaştırmaktır.",
+      "The third and last verification: over a hundred years the IPK has diverged from its replicas by around 50 micrograms on average. The reference itself is moving, and the only way to see it is to compare it against copies that are also moving."
      ]
     },
     {
      "y": 2016,
      "link": "tacit",
-     "src": "https://en.wikipedia.org/wiki/Kibble_balance",
+     "src": "https://www.bipm.org/documents/20126/27314082/cc-publication-ID-501.pdf/addd563b-71e6-8e1c-a960-fb37b8fd5e55",
      "t": [
-      "Haziran: metrologlar, watt terazisinin adını Kibble terazisi olarak değiştirir — mucidi Bryan Kibble'ın ölümünden iki ay sonra. Aleti kuran el becerisi ile aletin kendisinin ayrılamadığının sessiz bir kabulü.",
-      "June: metrologists rename the watt balance the Kibble balance, two months after the death of its inventor Bryan Kibble. A quiet acknowledgement that the instrument and the hand skill that built it were not separable."
+      "9 Temmuz: metrologlar watt terazisinin adını Kibble terazisi olarak değiştirir — mucidi Bryan Kibble’ın Nisan 2016’daki ölümünden yaklaşık üç ay sonra. Aleti kuran el becerisi ile aletin kendisinin ayrılamadığının sessiz bir kabulü.",
+      "9 July: metrologists rename the watt balance the Kibble balance, about three months after the death of its inventor Bryan Kibble in April 2016. A quiet acknowledgement that the instrument and the hand skill that built it were not separable."
      ]
     },
     {
      "y": 2018,
      "link": "packet",
-     "src": "https://en.wikipedia.org/wiki/Kilogram",
+     "src": "https://www.bipm.org/en/committees/cg/cgpm/26-2018/resolution-1",
      "t": [
-      "16 Kasım: 26. CGPM yeniden tanımı oylar. Kilogram artık bir nesneden değil, Planck sabitinin sabitlenmiş sayısal değerinden türeyecektir.",
-      "16 November: the 26th CGPM votes for the redefinition. The kilogram will henceforth derive not from an object but from a fixed numerical value of the Planck constant."
+      "26. CGPM yeniden tanımı kabul eder: Planck sabiti tam olarak 6,626 070 15 × 10⁻³⁴ J s’dir ve yeni SI 20 Mayıs 2019’da yürürlüğe girecektir. Kilogram artık bir nesneden değil, sabitlenmiş bir sayıdan türer.",
+      "The 26th CGPM adopts the redefinition: the Planck constant is exactly 6.626 070 15 × 10⁻³⁴ J s, and the new SI takes effect on 20 May 2019. The kilogram henceforth derives not from an object but from a fixed number."
      ]
     },
     {
@@ -6466,10 +6476,10 @@
     {
      "y": 2026,
      "link": "apparatus",
-     "src": "https://en.wikipedia.org/wiki/Kibble_balance",
+     "src": "https://www.nist.gov/noac/technology/mass-force-and-acceleration/tabletop-kibble-balance-gram-level-mass-realization",
      "t": [
-      "Ama gerçekleme hâlâ bir Kibble terazisi ister ve bu aletler büyük ölçüde tek nüshalık, pahalı ve hassas kalmaya devam ediyor; adı geçen laboratuvarlar bir avuç: NRC, NIST, METAS, BIPM, LNE. Her metroloji laboratuvarının kurabileceği standart cihazlar üretme çalışması sürüyor.",
-      "But realisation still requires a Kibble balance, and these remain largely one-of-a-kind, expensive and delicate; the laboratories named are a handful: NRC, NIST, METAS, BIPM, LNE. Work continues on standardised devices any metrology laboratory could afford."
+      "Ama gerçekleme hâlâ bir Kibble terazisi ister: ulusal metroloji enstitülerindeki 1 kg’lık teraziler oda büyüklüğünde, kurulması çok pahalı ve işletmesi uzman isteyen aletlerdir. Her laboratuvarın kurabileceği masaüstü cihaz çalışmaları sürüyor.",
+      "But realisation still requires a Kibble balance: the 1 kg balances at national metrology institutes are the size of a room, extremely expensive to build and need experts to operate. Work continues on a tabletop device any laboratory could run."
      ]
     }
    ],
@@ -6528,36 +6538,36 @@
     },
     {
      "t": [
-      "Uluslararası Kilogram Prototipi",
-      "The International Prototype of the Kilogram"
+      "BIPM — Uluslararası Kilogram Prototipi (IPK)",
+      "BIPM — The International Prototype of the Kilogram"
      ],
      "m": [
-      "Saint-Cloud'daki Pavillon de Breteuil, üç bağımsız anahtarlı kasa, ve tarih boyunca yalnız üç dönemsel doğrulama: 1889, 1948, 1989.",
-      "The Pavillon de Breteuil at Saint-Cloud, the vault requiring three independent keys, and only three periodic verifications ever: 1889, 1948 and 1989."
+      "Kurumun kendi kaydı: yaklaşık 39 mm çap ve boyda, %90 platin-%10 iridyum silindir; IPK’ye ve resmî kopyalarına erişim CIPM’in sıkı denetimindedir. Yaygın “üç bağımsız anahtarlı kasa” ayrıntısı hiçbir resmî kaynakta geçmiyor.",
+      "The institution’s own record: a cylinder about 39 mm in diameter and height, 90% platinum and 10% iridium; access to the IPK and its official copies is under the strict supervision of the CIPM. The widely repeated “vault needing three independent keys” appears in no official source."
      ],
-     "u": "https://en.wikipedia.org/wiki/International_Prototype_of_the_Kilogram"
+     "u": "https://www.bipm.org/en/mass-metrology/ipk"
     },
     {
      "t": [
-      "Kilogram: 1799'dan yeniden tanıma",
-      "The kilogram: from 1799 to the redefinition"
+      "NIST — Kilogram: geçmiş ve bugün",
+      "NIST — The kilogram: past and present"
      ],
      "m": [
-      "Kilogramme des Archives (1799), IPK'nın onaylanması (1889), platin-iridyum bileşimi, ~50 µg ayrışma, 16 Kasım 2018 oylaması ve 20 Mayıs 2019 yürürlüğü.",
-      "The Kilogramme des Archives (1799), the sanctioning of the IPK (1889), the platinum–iridium composition, the ~50 µg divergence, the vote of 16 November 2018 and the entry into force on 20 May 2019."
+      "Ulusal metroloji enstitüsünün kaydı: 22 Haziran 1799’da platinden dövülen “kilogram of the archives”; dönemsel doğrulamalar yalnız üç kez — 1899-1911, 1939-1953 ve 1988-1992; kopyalarla arasındaki ayrışma yüz yılda ortalama 50 mikrogram.",
+      "The national metrology institute’s record: the platinum “kilogram of the archives” of 22 June 1799; only three periodic verifications ever — 1899-1911, 1939-1953 and 1988-1992; a divergence from the copies averaging 50 micrograms over a hundred years."
      ],
-     "u": "https://en.wikipedia.org/wiki/Kilogram"
+     "u": "https://www.nist.gov/si-redefinition/kilogram/kilogram-present"
     },
     {
      "t": [
-      "Kibble terazisi",
-      "The Kibble balance"
+      "BIPM — Kibble terazisi ve CCEM 30. toplantı raporu",
+      "BIPM — The Kibble balance and the report of the 30th CCEM"
      ],
      "m": [
-      "Watt terazisinin Haziran 2016'da Bryan Kibble'ın anısına yeniden adlandırılması; aletlerin tek nüshalık, pahalı ve hassas oluşu; NRC, NIST, METAS, BIPM, LNE.",
-      "The renaming of the watt balance in June 2016 in Bryan Kibble's honour; the instruments being one-of-a-kind, expensive and delicate; NRC, NIST, METAS, BIPM, LNE."
+      "Watt terazisinin adının 9 Temmuz 2016’da Ottawa’daki CPEM toplantısında Bryan Kibble anısına değiştirilmesi (Kibble Nisan 2016’da öldü) ve terazi işleten kurumların listesi.",
+      "The renaming of the watt balance in Bryan Kibble’s honour at the CPEM meeting in Ottawa on 9 July 2016 (Kibble died in April 2016), and the list of institutes operating balances."
      ],
-     "u": "https://en.wikipedia.org/wiki/Kibble_balance"
+     "u": "https://www.bipm.org/documents/20126/27314082/cc-publication-ID-501.pdf/addd563b-71e6-8e1c-a960-fb37b8fd5e55"
     }
    ],
    "ev": {
@@ -6590,7 +6600,7 @@
    }
   }
  ],
- "evidence_strip": [
+ "evidence": [
   {
    "id": "blombos",
    "cat": "threshold",
@@ -6728,92 +6738,6 @@
    "url": "https://www.nature.com/articles/s41562-024-01912-w"
   },
   {
-   "id": "antikythera",
-   "cat": "loss",
-   "loss": "tacit",
-   "year": -150,
-   "start": -205,
-   "end": -60,
-   "type": "direct",
-   "conf": "high",
-   "title": [
-    "Antikythera düzeneği",
-    "The Antikythera mechanism"
-   ],
-   "region": [
-    "Ege · Helenistik dünya",
-    "Aegean · the Hellenistic world"
-   ],
-   "role": [
-    "Kılavuzsuz kalan uygulamalı astronomi",
-    "Applied astronomy left without a manual"
-   ],
-   "survived": [
-    "Tek bir aşınmış bronz düzenek: güneş, ay ve tutulma döngülerini mekanik olarak kodlayan hassas dişli takımı.",
-    "A single corroded bronze device: a precision gear train that mechanically encodes solar, lunar and eclipse cycles."
-   ],
-   "lost": [
-    "Kılavuz yok ve Helenistik dünyadan ikinci bir makine yok. Ama dişli gelenek tümüyle kaybolmadı: ~500 tarihli Bizans taşınabilir dişli takvim-güneş saati parçalar hâlinde durur, el-Bîrûnî ~1000'de bir dişli takvim aletini <b>tarif eder</b> (alet değil, metin kalmıştır) ve 1221/22 tarihli dişli usturlap bütün olarak ayaktadır. Kaybolan şey bu <b>karmaşıklık düzeyi</b> ve onu üreten atölyedir.",
-    "No manual survives, and no second machine from the Hellenistic world. But the geared tradition did not vanish outright: a Byzantine portable geared sundial-calendar of c. 500 survives in fragments, al-Bīrūnī <b>described</b> a geared calendrical instrument c. 1000 (the text survives, not the object), and a complete geared astrolabe of 1221/22 survives. What was lost is this <b>level of complexity</b> and the workshop that produced it."
-   ],
-   "shows": [
-    "Tek bir eser, Helenistik dünyada mekanik hesaplamanın var olduğunu kanıtlar — ama zincirin geri kalanı yoktur.",
-    "A single artifact proves that mechanical computation existed in the Hellenistic world — yet the rest of the chain is absent."
-   ],
-   "limits": [
-    "Dişli hesaplamanın yaygın olduğunu göstermez — ama kesintisiz bir geleneğin <b>yokluğunu</b> da göstermez: uzman literatürü, hayatta kalan sonraki dişli aletleri süregelen bir geleneğin kanıtı sayar. Yapım tarihi (~MÖ 205 mi ~MÖ 150-100 mü), yapımcısı ve atölyesi hâlâ tartışmalıdır. Popüler ön yüz rekonstrüksiyonları gözlem değil, parçalı kanıta uydurulmuş modellerdir.",
-    "It does not show that geared computation was widespread — but neither does it show the <b>absence</b> of a continuing tradition: the specialist literature reads the surviving later geared instruments as evidence of one. Its date (~205 BCE vs ~150-100 BCE), maker and workshop remain disputed. The popular front-dial reconstructions are models fitted to fragmentary evidence, not observations."
-   ],
-   "source": [
-    "Nature · Freeth ve diğerleri, 2006 (düzenek); sonraki dişli gelenek için Field & Wright, Annals of Science, 1985",
-    "Nature · Freeth et al., 2006 (the mechanism); for the later geared tradition, Field & Wright, Annals of Science, 1985"
-   ],
-   "url": "https://www.nature.com/articles/nature05357"
-  },
-  {
-   "id": "roman-concrete",
-   "cat": "loss",
-   "loss": "tacit",
-   "year": 126,
-   "start": -200,
-   "end": 235,
-   "type": "direct",
-   "conf": "medium",
-   "title": [
-    "Roma betonu ve sıcak karışım",
-    "Roman concrete and hot mixing"
-   ],
-   "region": [
-    "Roma İtalyası ve Akdeniz",
-    "Roman Italy and the Mediterranean"
-   ],
-   "role": [
-    "Malzemede okunabilen, metinde olmayan adım",
-    "A step legible in the material but absent from the texts"
-   ],
-   "survived": [
-    "Ayakta duran yapılar ve harcın kendisi: uzun süre özensiz karıştırma sanılan beyaz “kireç topakları”.",
-    "Standing structures and the mortar itself: the white “lime clasts” long taken for careless mixing."
-   ],
-   "lost": [
-    "Yazılı prosedür. Vitruvius ve Plinius Roma karışımlarını anlatır ama bu adımı anlatmaz; tarif malzemede kaldı, metinde kalmadı.",
-    "The written procedure. Vitruvius and Pliny describe Roman mixes but not this step; the recipe survived in the material, not in the text."
-   ],
-   "shows": [
-    "Topaklar, sıcak karışımla üretilen reaktif bir sönmemiş kireç deposudur; bu yolla yapılan laboratuvar kopyaları bilerek açılan çatlakları iki hafta içinde kapattı; sönmemiş kireç içermeyen kontrol örnekleri hiç kapatmadı.",
-    "The clasts are a reactive quicklime reservoir produced by hot mixing; lab replicas made this way sealed deliberately induced cracks within two weeks, while quicklime-free controls never healed."
-   ],
-   "limits": [
-    "Kasıt çıkarımdır, belgelenmiş değildir; bazı araştırmacılar topakları hâlâ eksik pişmiş kalıntı olarak okur. Ayrıca Roma betonu modern betondan “daha güçlü” değildir — deniz suyunda daha dayanıklı ve kendini onarır; Roma yapı bilgisi de tümüyle kaybolmadı, kesintiye uğradı.",
-    "Intentionality is inferred, not documented; some researchers still read the clasts as relict under-burnt lime. Roman concrete is also not “stronger” than modern concrete — it is more durable in seawater and self-repairing; and Roman building knowledge was interrupted, not wholly lost."
-   ],
-   "source": [
-    "Science Advances · Seymour, Maragh, Masic ve diğerleri, 2023",
-    "Science Advances · Seymour, Maragh, Masic et al., 2023"
-   ],
-   "url": "https://news.mit.edu/2023/roman-concrete-durability-lime-casts-0106"
-  },
-  {
    "id": "writing",
    "cat": "threshold",
    "year": -3200,
@@ -6889,6 +6813,267 @@
     "British Museum · The Mycenaean world"
    ],
    "url": "https://www.britishmuseum.org/collection/galleries/greece-minoans-and-mycenaeans"
+  },
+  {
+   "id": "latin-alphabet",
+   "origin": "chain-map",
+   "cat": "threshold",
+   "year": -560,
+   "start": -570,
+   "end": -550,
+   "type": "direct",
+   "conf": "medium",
+   "title": [
+    "Latin alfabesi",
+    "The Latin Alphabet"
+   ],
+   "region": [
+    "Roma Forumu, Lapis Niger alanı; 1899’da Giacomo Boni tarafından yerinde bulundu",
+    "The Roman Forum, the Lapis Niger precinct; found in situ by Giacomo Boni in 1899"
+   ],
+   "role": [
+    "Latin alfabesinin erken kullanımının yerinde bulunmuş, sağlam bağlamlı en eski tanıklarından biri: boustrophedon yazılmış bir cippus",
+    "One of the oldest securely contextualised in-situ witnesses to early use of the Latin alphabet: a cippus inscribed boustrophedon"
+   ],
+   "shows": [
+    "Alfabenin Roma’ya, henüz yazı yönü bile sabitlenmemişken, MÖ altıncı yüzyılın ortasında ulaşmış olduğunu gösterir.",
+    "It shows that the alphabet had reached Rome by the middle of the sixth century BCE, while even the direction of writing was not yet fixed."
+   ],
+   "limits": [
+    "Yazıt kırıktır ve okunuşu tartışmalıdır; tarihi belgeye değil tabakalanmaya ve harf biçimlerine dayanır.",
+    "The inscription is broken and its reading is disputed, and its date rests on stratigraphy and letterforms rather than on any document."
+   ],
+   "source": [
+    "Lapis Niger yazıtı üzerine arkeolojik ve epigrafik literatür; karşılaştırma için Praeneste fibulası tartışması",
+    "Archaeological and epigraphic literature on the Lapis Niger inscription, with the Praeneste fibula debate for comparison"
+   ],
+   "url": "https://en.wikipedia.org/wiki/Lapis_Niger"
+  },
+  {
+   "id": "antikythera",
+   "cat": "loss",
+   "loss": "tacit",
+   "year": -150,
+   "start": -205,
+   "end": -60,
+   "type": "direct",
+   "conf": "high",
+   "title": [
+    "Antikythera düzeneği",
+    "The Antikythera mechanism"
+   ],
+   "region": [
+    "Ege · Helenistik dünya",
+    "Aegean · the Hellenistic world"
+   ],
+   "role": [
+    "Kılavuzsuz kalan uygulamalı astronomi",
+    "Applied astronomy left without a manual"
+   ],
+   "survived": [
+    "Tek bir aşınmış bronz düzenek: güneş, ay ve tutulma döngülerini mekanik olarak kodlayan hassas dişli takımı.",
+    "A single corroded bronze device: a precision gear train that mechanically encodes solar, lunar and eclipse cycles."
+   ],
+   "lost": [
+    "Kılavuz yok ve Helenistik dünyadan ikinci bir makine yok. Ama dişli gelenek tümüyle kaybolmadı: ~500 tarihli Bizans taşınabilir dişli takvim-güneş saati parçalar hâlinde durur, el-Bîrûnî ~1000'de bir dişli takvim aletini <b>tarif eder</b> (alet değil, metin kalmıştır) ve 1221/22 tarihli dişli usturlap bütün olarak ayaktadır. Kaybolan şey bu <b>karmaşıklık düzeyi</b> ve onu üreten atölyedir.",
+    "No manual survives, and no second machine from the Hellenistic world. But the geared tradition did not vanish outright: a Byzantine portable geared sundial-calendar of c. 500 survives in fragments, al-Bīrūnī <b>described</b> a geared calendrical instrument c. 1000 (the text survives, not the object), and a complete geared astrolabe of 1221/22 survives. What was lost is this <b>level of complexity</b> and the workshop that produced it."
+   ],
+   "shows": [
+    "Tek bir eser, Helenistik dünyada mekanik hesaplamanın var olduğunu kanıtlar — ama zincirin geri kalanı yoktur.",
+    "A single artifact proves that mechanical computation existed in the Hellenistic world — yet the rest of the chain is absent."
+   ],
+   "limits": [
+    "Dişli hesaplamanın yaygın olduğunu göstermez — ama kesintisiz bir geleneğin <b>yokluğunu</b> da göstermez: uzman literatürü, hayatta kalan sonraki dişli aletleri süregelen bir geleneğin kanıtı sayar. Yapım tarihi (~MÖ 205 mi ~MÖ 150-100 mü), yapımcısı ve atölyesi hâlâ tartışmalıdır. Popüler ön yüz rekonstrüksiyonları gözlem değil, parçalı kanıta uydurulmuş modellerdir.",
+    "It does not show that geared computation was widespread — but neither does it show the <b>absence</b> of a continuing tradition: the specialist literature reads the surviving later geared instruments as evidence of one. Its date (~205 BCE vs ~150-100 BCE), maker and workshop remain disputed. The popular front-dial reconstructions are models fitted to fragmentary evidence, not observations."
+   ],
+   "source": [
+    "Nature · Freeth ve diğerleri, 2006 (düzenek); sonraki dişli gelenek için Field & Wright, Annals of Science, 1985",
+    "Nature · Freeth et al., 2006 (the mechanism); for the later geared tradition, Field & Wright, Annals of Science, 1985"
+   ],
+   "url": "https://www.nature.com/articles/nature05357"
+  },
+  {
+   "id": "glassblowing",
+   "origin": "chain-map",
+   "cat": "threshold",
+   "year": -50,
+   "start": -60,
+   "end": -40,
+   "type": "direct",
+   "conf": "high",
+   "title": [
+    "Cam üfleme",
+    "Glassblowing"
+   ],
+   "region": [
+    "Kudüs, Yahudi Mahallesi (Roma İudaea eyaleti)",
+    "Jerusalem, Jewish Quarter (Roman province of Judaea)"
+   ],
+   "role": [
+    "Tekniğin bugün yakın biçimde tarihlenebilen en erken maddi izi.",
+    "The earliest closely datable material trace of the technique."
+   ],
+   "shows": [
+    "Bir atölyenin attığı moloz, MÖ 50–40 arasında birinin cam boruların ucunu üfleyerek şişirdiğini doğrudan kanıtlar.",
+    "Refuse thrown out by a workshop proves directly that between 50 and 40 BCE someone was inflating the ends of glass tubes by blowing."
+   ],
+   "limits": [
+    "Buluntu tekniğin nerede icat edildiğini değil nerede erkenden uygulandığını gösterir; Plinius’un sahilde soda külçeleriyle camın bulunuşunu anlatan hikâyesi ise camın kendisiyle ilgilidir, üflemeyle değil, ve icat kanıtı olarak kullanılamaz.",
+    "The find shows where the technique was early in use, not where it was invented; and Pliny’s story of glass being discovered on a beach under blocks of natron concerns glass itself rather than blowing, so it cannot serve as evidence for the invention."
+   ],
+   "source": [
+    "Corning Cam Müzesi, “The Earliest Inflated Glass”",
+    "Corning Museum of Glass, “The Earliest Inflated Glass”"
+   ],
+   "url": "https://renvenetian.cmog.org/chapter/earliest-inflated-glass"
+  },
+  {
+   "id": "aqueducts",
+   "origin": "chain-map",
+   "cat": "loss",
+   "year": 98,
+   "start": 97,
+   "end": 98,
+   "type": "direct",
+   "conf": "high",
+   "title": [
+    "Su kemerleri ve Frontinus’un bakım kılavuzu",
+    "The Aqueducts and Frontinus’s Maintenance Manual"
+   ],
+   "region": [
+    "Roma kenti ve çevresindeki dokuz su kemeri hattı",
+    "The city of Rome and its nine aqueduct lines"
+   ],
+   "role": [
+    "Roma’da bir kamu hizmetinin işletmesine dair elimizdeki en ayrıntılı idarî belge; kadroyu, ölçüyü ve suistimali sayılarla verir",
+    "The most detailed administrative document we have on the running of a Roman public utility, giving staffing, measurement and abuse in numbers"
+   ],
+   "shows": [
+    "Romalıların bakımı bir erdem olarak değil, sayılabilir bir kadro ve ölçü rejimi olarak kavradığını doğrudan gösterir.",
+    "It shows directly that the Romans conceived maintenance not as a virtue but as a countable regime of staffing and measurement."
+   ],
+   "limits": [
+    "Metin tek bir ortaçağ nüshasından gelir ve sayıları yer yer bozuktur; ayrıca Frontinus kendi yönetimini savunan taraflı bir tanıktır.",
+    "The text descends from a single medieval copy whose figures are corrupt in places, and Frontinus is a partisan witness defending his own administration."
+   ],
+   "source": [
+    "Frontinus, De aquaeductu; R. H. Rodgers’ın Cambridge edisyonu ve LacusCurtius yazma dosyası",
+    "Frontinus, De aquaeductu; R. H. Rodgers’s Cambridge edition and the LacusCurtius manuscript file"
+   ],
+   "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Frontinus/manuscripts*.html"
+  },
+  {
+   "id": "roman-concrete",
+   "cat": "loss",
+   "loss": "tacit",
+   "year": 126,
+   "start": -200,
+   "end": 235,
+   "type": "direct",
+   "conf": "medium",
+   "title": [
+    "Roma betonu ve sıcak karışım",
+    "Roman concrete and hot mixing"
+   ],
+   "region": [
+    "Roma İtalyası ve Akdeniz",
+    "Roman Italy and the Mediterranean"
+   ],
+   "role": [
+    "Malzemede okunabilen, metinde olmayan adım",
+    "A step legible in the material but absent from the texts"
+   ],
+   "survived": [
+    "Ayakta duran yapılar ve harcın kendisi: uzun süre özensiz karıştırma sanılan beyaz “kireç topakları”.",
+    "Standing structures and the mortar itself: the white “lime clasts” long taken for careless mixing."
+   ],
+   "lost": [
+    "Yazılı prosedür. Vitruvius ve Plinius Roma karışımlarını anlatır ama bu adımı anlatmaz; tarif malzemede kaldı, metinde kalmadı.",
+    "The written procedure. Vitruvius and Pliny describe Roman mixes but not this step; the recipe survived in the material, not in the text."
+   ],
+   "shows": [
+    "Topaklar, sıcak karışımla üretilen reaktif bir sönmemiş kireç deposudur; bu yolla yapılan laboratuvar kopyaları bilerek açılan çatlakları iki hafta içinde kapattı; sönmemiş kireç içermeyen kontrol örnekleri hiç kapatmadı.",
+    "The clasts are a reactive quicklime reservoir produced by hot mixing; lab replicas made this way sealed deliberately induced cracks within two weeks, while quicklime-free controls never healed."
+   ],
+   "limits": [
+    "Kasıt çıkarımdır, belgelenmiş değildir; bazı araştırmacılar topakları hâlâ eksik pişmiş kalıntı olarak okur. Ayrıca Roma betonu modern betondan “daha güçlü” değildir — deniz suyunda daha dayanıklı ve kendini onarır; Roma yapı bilgisi de tümüyle kaybolmadı, kesintiye uğradı.",
+    "Intentionality is inferred, not documented; some researchers still read the clasts as relict under-burnt lime. Roman concrete is also not “stronger” than modern concrete — it is more durable in seawater and self-repairing; and Roman building knowledge was interrupted, not wholly lost."
+   ],
+   "source": [
+    "Science Advances · Seymour, Maragh, Masic ve diğerleri, 2023",
+    "Science Advances · Seymour, Maragh, Masic et al., 2023"
+   ],
+   "url": "https://news.mit.edu/2023/roman-concrete-durability-lime-casts-0106"
+  },
+  {
+   "id": "codex",
+   "origin": "chain-map",
+   "cat": "threshold",
+   "year": 300,
+   "start": 200,
+   "end": 400,
+   "type": "proxy",
+   "conf": "high",
+   "title": [
+    "Kodeks",
+    "The codex"
+   ],
+   "region": [
+    "Oksirinkhos ve genel olarak Mısır (Roma Aegyptus eyaleti)",
+    "Oxyrhynchus and Egypt generally (Roman province of Aegyptus)"
+   ],
+   "role": [
+    "Biçim göçünün hızını ve yönünü ölçen tek nicel kaynak.",
+    "The only quantitative source that measures the speed and direction of the format migration."
+   ],
+   "shows": [
+    "Tarihlenebilen edebî papirüslerde kodeksin payı 1.–2. yüzyılda %1,43 iken 3. yüzyılda %18,5’e ve 4. yüzyılda %62,34’e çıkar; geçiş 3. ve 4. yüzyıllar boyunca tamamlanır.",
+    "Among datable literary papyri the codex share rises from 1.43% in the 1st–2nd centuries to 18.5% in the 3rd and 62.34% in the 4th; the transition completes across the 3rd and 4th centuries."
+   ],
+   "limits": [
+    "Örneklem Mısır’ın kuru ikliminin koruduğu ve büyük ölçüde tek bir taşra kasabasının çöplüğünden çıkan malzemedir; Roberts ile Skeat bu oranların antik dünyanın geneline yansıtılamayacağını kendileri uyarır. “Kodeks Hıristiyanların icadıdır” yollu yaygın iddia da yanlıştır: Martialis biçimi Hıristiyan kullanımından önce tanıtır, Hıristiyanlar onu icat etmedi, benimseyip yaygınlaştırdı.",
+    "The sample is material preserved by Egypt’s dry climate and drawn largely from one provincial town’s rubbish; Roberts and Skeat themselves warn that these proportions cannot be projected onto the ancient world at large. The common claim that “the codex was a Christian invention” is also wrong: Martial advertises the format before Christian use — Christians did not invent it, they adopted and generalised it."
+   ],
+   "source": [
+    "E. A. Meyer, Chiron 37 (2007), Roberts ve Skeat’in sayılarını aktararak",
+    "E. A. Meyer, Chiron 37 (2007), reporting Roberts and Skeat’s figures"
+   ],
+   "url": "https://publications.dainst.org/journals/chiron/article/download/369/4977"
+  },
+  {
+   "id": "roman-law",
+   "origin": "chain-map",
+   "cat": "threshold",
+   "year": 533,
+   "start": 533,
+   "end": 600,
+   "type": "direct",
+   "conf": "high",
+   "title": [
+    "Roma hukuku ve Corpus Iuris Civilis",
+    "Roman Law and the Corpus Juris Civilis"
+   ],
+   "region": [
+    "Konstantinopolis’te yazıldı, Floransa’da korunuyor",
+    "Written in Constantinople, preserved in Florence"
+   ],
+   "role": [
+    "Iustinianus Digesta’sının geç antik dönemden gelen, tam sayılabilecek tek yazma tanığı: 907 yapraklık parşömen kodeks",
+    "The one near-complete late-antique manuscript witness to Justinian’s Digest: a 907-leaf parchment codex"
+   ],
+   "shows": [
+    "Bin yıllık bir hukuk geleneğinin metinsel aktarımının, tek bir fiziksel nesnenin sağ kalmasına indirgenebildiğini gösterir.",
+    "It shows that the textual transmission of a thousand-year legal tradition could be reduced to the survival of one physical object."
+   ],
+   "limits": [
+    "Yazmanın altıncı ya da erken yedinci yüzyıla tarihlenmesi ve Konstantinopolis’te üretildiği paleografik çıkarımdır, belgeye dayanmaz; Amalfi anlatısı ise doğrulanamamıştır.",
+    "Its sixth- or early-seventh-century date and Constantinopolitan origin are palaeographic inferences rather than documented facts, and the Amalfi episode remains unverified."
+   ],
+   "source": [
+    "Max Planck Avrupa Özel Hukuku Ansiklopedisi ile Laurenziana ve History of Information kayıtları",
+    "Max Planck Encyclopedia of European Private Law, with Laurenziana and History of Information records"
+   ],
+   "url": "https://www.historyofinformation.com/detail.php?id=165"
   },
   {
    "id": "nalanda",
@@ -7045,6 +7230,76 @@
    "url": "https://www.nature.com/articles/s41598-024-53063-7"
   },
   {
+   "id": "sinan",
+   "origin": "chain-map",
+   "cat": "loss",
+   "year": 1557,
+   "start": 1550,
+   "end": 1559,
+   "type": "direct",
+   "conf": "high",
+   "title": [
+    "Süleymaniye ve Sinan'ın yapı bilgisi",
+    "The Süleymaniye and Sinan's structural knowledge"
+   ],
+   "region": [
+    "İstanbul — Haliç'e bakan üçüncü tepe",
+    "Istanbul — the third hill above the Golden Horn"
+   ],
+   "role": [
+    "Yöntemi hiç yazılmamış bir yapı bilgisinin tam ölçekli ve hâlâ ayakta duran tek kaydı.",
+    "The only record — full-scale and still standing — of a structural knowledge whose method was never written."
+   ],
+   "shows": [
+    "Çalışan bir yapı teknolojisi, onu üreten akıl yürütme hiç kaydedilmeden beş yüzyıl boyunca bina biçiminde aktarılabilir.",
+    "A working structural technology can be transmitted for five centuries in the form of a building while the reasoning that produced it goes entirely unrecorded."
+   ],
+   "limits": [
+    "Binanın ayakta kalması Sinan'ın yönteminin sismik üstünlüğünü kanıtlamaz: aynı 1766 depremi bu kubbenin bir bölümünü çökertmiş, Sinan'ın Edirnekapı Mihrimah kubbesini ise tamamen yıkmıştır.",
+    "The building's survival does not prove the seismic superiority of Sinan's method: the same 1766 earthquake collapsed part of this dome and brought down Sinan's Edirnekapı Mihrimah dome completely."
+   ],
+   "source": [
+    "Süleymaniye Camii kitâbesi ve inşaat muhasebe defterleri (Ö. L. Barkan neşri, 1550–1557)",
+    "The Süleymaniye foundation inscription and the construction account books (ed. Ö. L. Barkan, 1550–1557)"
+   ],
+   "url": "https://en.wikipedia.org/wiki/S%C3%BCleymaniye_Mosque"
+  },
+  {
+   "id": "ottoman-vakif",
+   "origin": "chain-map",
+   "cat": "threshold",
+   "year": 1557,
+   "start": 1557,
+   "end": 1702,
+   "type": "direct",
+   "conf": "high",
+   "title": [
+    "Vakıf Sistemi ve Süleymaniye Vakfiyesi",
+    "The Waqf System and the Süleymaniye Endowment Deed"
+   ],
+   "region": [
+    "İstanbul — Süleymaniye Külliyesi",
+    "Istanbul — the Süleymaniye complex"
+   ],
+   "role": [
+    "Yazılı bakım şartnamesi ve onun yüz kırk beş yıl sonraki uygulama kaydı",
+    "A written maintenance specification and the record of its enforcement 145 years later"
+   ],
+   "shows": [
+    "6 Mayıs 1557 tarihli vakfiye ile 1113/1702 tarihli vazife yoklama defterinin birlikte okunması, yazılı bir bakım şartnamesinin kadroları ve ücretleri bir buçuk asır boyunca fiilen ayakta tutabildiğini gösterir.",
+    "Read together, the deed of 6 May 1557 and the duty roll of 1113/1702 show that a written maintenance specification actually sustained posts and wages for a century and a half."
+   ],
+   "limits": [
+    "Bu iki belge vakıf sisteminin bir bütün olarak başarılı olduğunu göstermez — Süleymaniye imparatorluğun en zengin ve en görünür vakıflarından biridir, dolayısıyla küçük ve taşra vakıflarının kaderi hakkında temsilî değildir — ayrıca ücretlerin akçe cinsinden sabitliğinin tağşiş karşısında ne kadar değer yitirdiğini de tek başına ölçmez.",
+    "The two documents do not show that the waqf system succeeded as a whole — Süleymaniye was among the empire’s richest and most visible endowments, so it is not representative of small or provincial waqfs — nor do they by themselves measure how much the akçe-denominated wages lost to debasement."
+   ],
+   "source": [
+    "Marmara Üniversitesi İktisadi ve İdari Bilimler Dergisi (2022)",
+    "Marmara University Journal of Economics and Administrative Sciences (2022)"
+   ],
+   "url": "https://ikf.marmara.edu.tr/dosya/ikf/iib-dergi/2022-2/VAZ%C4%B0FE%20YOKLAMA%20DEFTER%C4%B0NE%20G%C3%96RE%20S%C3%9CLEYMAN%C4%B0YE%20VAKFI%20%C3%87ALI%C5%9EANLARI.pdf"
+  },
+  {
    "id": "maya-codices",
    "cat": "loss",
    "loss": "carrier",
@@ -7088,6 +7343,111 @@
    "url": "https://www.slub-dresden.de/en/explore/manuscripts/the-dresden-maya-codex"
   },
   {
+   "id": "hypocaust",
+   "origin": "chain-map",
+   "cat": "threshold",
+   "year": 1584,
+   "start": 1580,
+   "end": 1590,
+   "type": "direct",
+   "conf": "high",
+   "title": [
+    "Hipokaust",
+    "The hypocaust"
+   ],
+   "region": [
+    "İstanbul, Çemberlitaş",
+    "Istanbul, Çemberlitaş"
+   ],
+   "role": [
+    "Alttan ısıtma ilkesinin, Batı’daki kesintiden bağımsız olarak sürdüğünün yaşayan kanıtı.",
+    "Living evidence that the underfloor heating principle continued independently of the break in the West."
+   ],
+   "shows": [
+    "1584’te yapılan bir hamam, döşemenin altındaki cehennemlik ve duvarlardaki tüteklikler yoluyla bir Roma caldarium’uyla aynı ilkeye göre ısınır ve hâlâ çalışır durumdadır.",
+    "A bath built in 1584 is heated on the same principle as a Roman caldarium, through a cehennemlik beneath the floor and tüteklik flues in the walls, and remains in operation."
+   ],
+   "limits": [
+    "Isıtma ilkesinin sürekliliği yapı tipinin sürekliliği demek değildir; Osmanlı hamamının planı, kubbesi ve kazanlı su ısıtma düzeni Roma hamamından belirgin biçimde farklıdır ve mimari hat Roma’dan İstanbul’a tek adımda değil, geç antik ve Bizans hamamları ile Emevî yapıları üzerinden geçer.",
+    "Continuity of the heating principle is not continuity of the building type; the Ottoman hamam’s plan, dome and cauldron water heating differ markedly from the Roman bath, and the architectural line runs not in one step from Rome to Istanbul but through late antique and Byzantine baths and Umayyad buildings."
+   ],
+   "source": [
+    "E. Kanetaki, ODTÜ Mimarlık Fakültesi Dergisi (2004); Semavi Eyice, “Hamam”, TDV İslâm Ansiklopedisi (1997)",
+    "E. Kanetaki, METU Journal of the Faculty of Architecture (2004); Semavi Eyice, “Hamam”, TDV Encyclopaedia of Islam (1997)"
+   ],
+   "url": "https://jfa.arch.metu.edu.tr/uploads/docs/sayilar/sayi-21-1-2/81-110.pdf"
+  },
+  {
+   "id": "ebru",
+   "origin": "chain-map",
+   "cat": "threshold",
+   "year": 1608,
+   "start": 1540,
+   "end": 2014,
+   "type": "direct",
+   "conf": "medium",
+   "title": [
+    "Ebru",
+    "Ebru — Turkish marbling"
+   ],
+   "region": [
+    "İstanbul ve Üsküdar",
+    "Istanbul and Üsküdar"
+   ],
+   "role": [
+    "Bir zanaatın dört yüz yıllık tarihindeki tek erken yazılı kaydı; paket halkasının ne kadar ince olabileceğinin ölçüsü.",
+    "The single early written record in four hundred years of a craft — a measure of how thin the packet link can get."
+   ],
+   "shows": [
+    "Yazılı kaydı tek bir risaleye inen bir teknik, kesintisiz bir usta-çırak zinciriyle dört yüzyıl taşınabilmiştir.",
+    "A technique whose written record shrinks to a single treatise was nonetheless carried four hundred years by an unbroken master-apprentice chain."
+   ],
+   "limits": [
+    "Risalenin 1608 tarihi doğrudan bir ferağ kaydından değil içeriğe dayanan atıftan gelir, ayrıca en eski ebru örneğinin tarihi kaynaklarda 1447 ile 1554 arasında değişir.",
+    "The 1608 date rests on attribution from content rather than a direct colophon, and the date of the earliest surviving ebru varies between 1447 and 1554 across sources."
+   ],
+   "source": [
+    "Hicabi Gülgen, Uludağ Ü. İlahiyat Fakültesi Dergisi 25/1 (2016)",
+    "Hicabi Gülgen, Uludağ University Faculty of Theology Journal 25/1 (2016)"
+   ],
+   "url": "https://isamveri.org/pdfdrg/D00193/2016_1/2016_1_GULGENH2.pdf"
+  },
+  {
+   "id": "iznik",
+   "origin": "chain-map",
+   "cat": "loss",
+   "year": 1648,
+   "start": 1480,
+   "end": 1700,
+   "type": "proxy",
+   "conf": "medium",
+   "title": [
+    "İznik çinisi",
+    "Iznik ceramics"
+   ],
+   "region": [
+    "İznik, Bursa — Kuzeybatı Anadolu",
+    "Iznik, Bursa province — northwest Anatolia"
+   ],
+   "role": [
+    "Bir zanaat zincirinin çöküşünü tarihleyen, döneme en yakın sayısal tanıklık.",
+    "The closest near-contemporary numerical witness dating the collapse of a craft chain."
+   ],
+   "shows": [
+    "Bir üretim zinciri, ürünü hâlâ hayranlık uyandırırken elli yıl içinde atölye sayısı ölçeğinde çökebilir.",
+    "A production chain can collapse at workshop-count scale within fifty years while its output is still admired."
+   ],
+   "limits": [
+    "Evliya Çelebi'nin sayıları gezi anlatısına özgü abartıya açıktır ve ne üç yüz ne de dokuz rakamı bağımsız bir kayıtla doğrulanmıştır.",
+    "Evliya Çelebi's figures carry the exaggeration typical of travel narrative, and neither the three hundred nor the nine is confirmed by an independent record."
+   ],
+   "source": [
+    "Ashmolean Museum, Islamic Ceramics — İznik: 17. yüzyıl gerilemesi",
+    "Ashmolean Museum, Islamic Ceramics — Iznik: C17th Decline"
+   ],
+   "url": "https://islamicceramics.ashmolean.org/Iznik/c17th.htm"
+  },
+  {
    "id": "journal",
    "cat": "threshold",
    "year": 1665,
@@ -7120,6 +7480,41 @@
     "Historical Journal · Moxham & Fyfe, 2018"
    ],
    "url": "https://www.cambridge.org/core/journals/historical-journal/article/royal-society-and-the-prehistory-of-peer-review-16651965/93B903FD4D6561AA7224C62EE57B0C18"
+  },
+  {
+   "id": "ottoman-print",
+   "origin": "chain-map",
+   "cat": "threshold",
+   "year": 1729,
+   "start": 1727,
+   "end": 1742,
+   "type": "direct",
+   "conf": "high",
+   "title": [
+    "İbrahim Müteferrika Matbaası, 1729",
+    "The Müteferrika Press, 1729"
+   ],
+   "region": [
+    "İstanbul — Dârü’t-tıbâati’l-âmire",
+    "Istanbul — the Dârü’t-tıbâati’l-âmire"
+   ],
+   "role": [
+    "Eşiğin aşıldığını kanıtlayan tarihli, fiziksel ve sayılabilir çıktı",
+    "Dated, physical, countable output proving the threshold was crossed"
+   ],
+   "shows": [
+    "1729’da basılan Vankulu Lügati ve onu izleyen on altı eser, Arap harfli Türkçe baskının teknik ve hukukî olarak mümkün olduğunu, sorunun teknolojinin yokluğu olmadığını doğrudan kanıtlar.",
+    "The Vankulu dictionary of 1729 and the sixteen works that followed prove directly that Arabic-script Turkish printing was technically and legally possible, and that the problem was not the absence of the technology."
+   ],
+   "limits": [
+    "Bu çıktı, matbaanın neden 1729’dan önce kurulmadığını açıklamaz ve “yasak vardı” ya da “hattatlar engelledi” iddialarından hiçbirini kanıtlamaz; yalnızca izin verildiğinde işin yürüdüğünü ve sürdürülemediğini gösterir.",
+    "The output does not explain why the press was not founded before 1729, and it proves neither the claim that a ban existed nor the claim that calligraphers blocked it; it shows only that once permitted the work ran, and that it was not sustained."
+   ],
+   "source": [
+    "TDV İslâm Ansiklopedisi, “Müteferrika Matbaası”",
+    "TDV Encyclopaedia of Islam, “Müteferrika Matbaası”"
+   ],
+   "url": "https://islamansiklopedisi.org.tr/muteferrika-matbaasi"
   },
   {
    "id": "wootz",
@@ -7199,6 +7594,76 @@
    "url": "https://ourworldindata.org/literacy"
   },
   {
+   "id": "ottoman-script",
+   "origin": "chain-map",
+   "cat": "loss",
+   "year": 1928,
+   "start": 1928,
+   "end": 1929,
+   "type": "direct",
+   "conf": "high",
+   "title": [
+    "Osmanlı Türkçesi ve 1928 Harf İnkılâbı",
+    "Ottoman Turkish and the 1928 Alphabet Reform"
+   ],
+   "region": [
+    "Türkiye Cumhuriyeti — Ankara, Resmî Gazete",
+    "Republic of Turkey — Ankara, Official Gazette"
+   ],
+   "role": [
+    "Bir kod çözücünün kanunla ve tarihli son günlerle değiştirilmesinin birincil kaydı",
+    "Primary record of a decoder replaced by statute with dated deadlines"
+   ],
+   "shows": [
+    "1353 sayılı kanun ve 1 Ocak 1929 son tarihi, ulusal ölçekli bir okuma standardının üç ay içinde değiştirilebildiğini tarihli ve resmî bir belgeyle kanıtlar.",
+    "Law no. 1353 and the deadline of 1 January 1929 prove, in a dated official document, that a national-scale reading standard can be replaced within three months."
+   ],
+   "limits": [
+    "Bu belge harf inkılâbının bilgiyi yok ettiğini göstermez — arşivler yerinde, tasnifli ve uzman kadroyla açıktır — inkılâbın kaçınılmaz ya da kaçınılabilir olduğunu da göstermez; gösterdiği tek şey, bir kod çözücünün bir arşivin göçürülebileceğinden çok daha hızlı değiştirilebildiğidir.",
+    "The document does not show that the reform destroyed knowledge — the archives survive, catalogued, open and professionally staffed — nor does it show that the reform was avoidable or unavoidable; what it shows is that a decoder can be replaced far faster than an archive can be migrated."
+   ],
+   "source": [
+    "T.C. Cumhurbaşkanlığı Mevzuat Bilgi Sistemi, Kanun no. 1353",
+    "Legislation Information System of the Presidency of Türkiye, Law no. 1353"
+   ],
+   "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.3.1353.pdf"
+  },
+  {
+   "id": "hat",
+   "origin": "chain-map",
+   "cat": "threshold",
+   "year": 1975,
+   "start": 1485,
+   "end": 2025,
+   "type": "direct",
+   "conf": "high",
+   "title": [
+    "Hat sanatı ve icâzet",
+    "Ottoman calligraphy and the ijāza"
+   ],
+   "region": [
+    "İstanbul",
+    "Istanbul"
+   ],
+   "role": [
+    "Kurumsal kopuşun ardından aktarım zincirinin fiilen işlediğini kanıtlayan tarihli belge.",
+    "A dated document proving the transmission chain was still actually working after the institutional break."
+   ],
+   "shows": [
+    "Adlandırılmış bir yetki belgesi zinciri, onu doğuran yazı sistemi gündelik kullanımdan çıktıktan yarım yüzyıl sonra bile bilgiyi taşıyabilir.",
+    "A named credential chain can still carry knowledge half a century after the writing system that produced it left daily use."
+   ],
+   "limits": [
+    "Tek bir icâzetnâme aktarılan becerinin düzeyini ölçmez; yalnızca ustanın onayını ve soyu kaydeder.",
+    "A single icâzetnâme measures nothing about the level of skill transmitted; it records only the master's approval and the lineage."
+   ],
+   "source": [
+    "Türkiye'nin Ustaları — Hattat Hasan Çelebi dosyası",
+    "Türkiye'nin Ustaları — the Hasan Çelebi file"
+   ],
+   "url": "https://www.turkiyeninustalari.org/tr/ustalar/hat-sanati/hasan-celebi"
+  },
+  {
    "id": "domesday",
    "cat": "digital",
    "loss": "apparatus",
@@ -7240,6 +7705,41 @@
     "The National Archives (UK) · catalogue record PRO 30/100"
    ],
    "url": "https://beta.nationalarchives.gov.uk/catalogue/id/C16160"
+  },
+  {
+   "id": "ubykh",
+   "origin": "chain-map",
+   "cat": "loss",
+   "year": 1992,
+   "start": 1864,
+   "end": 2011,
+   "type": "direct",
+   "conf": "high",
+   "title": [
+    "Ubıhça ve son konuşan",
+    "Ubykh and its last speaker"
+   ],
+   "region": [
+    "Hacı Osman, Manyas — Balıkesir; ve İstanbul",
+    "Hacı Osman, Manyas — Balıkesir province; and Istanbul"
+   ],
+   "role": [
+    "Belgeleme en yüksek düzeydeyken çözücü sayısının sıfıra indiği, tarihlenebilir kayıt.",
+    "The datable record of a decoder count reaching zero while documentation stood at its highest level."
+   ],
+   "shows": [
+    "Sözlüğü, grameri ve ses kayıtları elde dururken bir dilin tek bir ölümle yeniden üretilemez hâle gelebileceğini gösterir.",
+    "Shows that a language can become unreproducible with a single death while its dictionary, grammar and recordings remain in our hands."
+   ],
+   "limits": [
+    "Bir dilin ölümü tarihlenebilir bir an değildir; 7 Ekim 1992 son akıcı konuşanın ölüm tarihidir, gündelik kullanımdan çekilme kuşaklar önce başlamıştı. “Son konuşan” ölçütü de kesin değildir: kısmi bilgiye sahip kişiler tanımın dışında kalır.",
+    "A language's death is not a datable moment; 7 October 1992 is the date the last fluent speaker died, while withdrawal from daily use had begun generations earlier. Nor is “last speaker” a precise criterion: people with partial knowledge fall outside the definition."
+   ],
+   "source": [
+    "Tehlikedeki Diller Dergisi · Ö. S. Durhan, 2014",
+    "Journal of Endangered Languages · Ö. S. Durhan, 2014"
+   ],
+   "url": "https://dergipark.org.tr/tr/download/article-file/305216"
   },
   {
    "id": "web",
@@ -7351,6 +7851,41 @@
     "AAAS 2015 Annual Meeting · V. G. Cerf, “Digital Vellum”"
    ],
    "url": "https://aaas.confex.com/aaas/2015/webprogram/Paper14064.html"
+  },
+  {
+   "id": "kilogram",
+   "origin": "chain-map",
+   "cat": "threshold",
+   "year": 2019,
+   "start": 1889,
+   "end": 2019,
+   "type": "direct",
+   "conf": "high",
+   "title": [
+    "Kilogram ve 2019 yeniden tanımı",
+    "The kilogram and the 2019 redefinition"
+   ],
+   "region": [
+    "Sèvres / Saint-Cloud, Fransa; ve küresel",
+    "Sèvres / Saint-Cloud, France; and global"
+   ],
+   "role": [
+    "Bir aktarım zincirinin bilerek yeniden tasarlandığı, tarihlenmiş ve belgeli tek kayıt.",
+    "The one dated, documented record of a transmission chain being deliberately re-engineered."
+   ],
+   "shows": [
+    "Bir zincirin en ince halkasının teşhis edilip değiştirilebileceğini — ve bu değişimin kırılganlığı yok etmek yerine seçilmiş bir yere taşıdığını gösterir.",
+    "Shows that a chain's thinnest link can be diagnosed and replaced — and that the replacement relocates the fragility to a chosen place rather than eliminating it."
+   ],
+   "limits": [
+    "Bunun genel olarak mümkün olduğunu göstermez: yöntem işe yaradı çünkü kütle bir doğa sabitine bağlanabiliyordu. Ayrıca 50 mikrogramlık rakam mutlak bir ölçüm değil, prototipler arasındaki ayrışmadır; IPK tanım gereği tam olarak bir kilogramdı.",
+    "It does not show that this is generally possible: the method worked because mass could be tied to a constant of nature. Nor is the 50-microgram figure an absolute measurement; it is divergence among the prototypes, since the IPK was by definition exactly one kilogram."
+   ],
+   "source": [
+    "BIPM · SI temel birimleri: kilogram",
+    "BIPM · SI base units: the kilogram"
+   ],
+   "url": "https://www.bipm.org/en/si-base-units/kilogram"
   },
   {
    "id": "link-rot",

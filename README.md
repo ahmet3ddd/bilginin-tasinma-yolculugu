@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://doi.org/10.5281/zenodo.22093227"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.22093227.svg" alt="DOI" /></a>
-  <img src="https://img.shields.io/badge/Sürüm-v5.3-315cf4" alt="Sürüm v5.3" />
+  <img src="https://img.shields.io/badge/Sürüm-v5.4-315cf4" alt="Sürüm v5.4" />
   <img src="https://img.shields.io/badge/Durum-yayında-1a7f4f" alt="Durum: yayında" />
   <img src="https://img.shields.io/badge/Dış%20istek-yok-1a7f4f" alt="Dış istek yok" />
   <img src="https://img.shields.io/badge/Metin%20ve%20veri-CC%20BY%204.0-a2542e" alt="Metin ve veri: CC BY 4.0" />
@@ -39,7 +39,7 @@
 ## Künye / Credits
 
 **Yazar:** Ahmet Çandöken · ORCID [0009-0001-5197-7888](https://orcid.org/0009-0001-5197-7888) (`ahmetoff` · [github.com/ahmet3ddd](https://github.com/ahmet3ddd))
-**Sürüm:** v5.3 · **Veri kesim tarihi:** 23 Ağustos 2026
+**Sürüm:** v5.4 · **Veri kesim tarihi:** 28 Ağustos 2026
 **Lisans:** metin ve veri [CC BY 4.0](LICENSE-CC-BY-4.0.txt) · kod [MIT](LICENSE)
 
 **Yazar bu alanların hiçbirinde akademik uzman değildir.** Bu çalışma bir araştırma katkısı
@@ -157,6 +157,41 @@ bu çalışmanın 8. kuralına göre saklanamaz.
    bakım vakalarını olduğundan sağlıklı gösterdiği bulundu ve kural kaldırıldı — gerekçesi
    düzeltme günlüğünde sayılarıyla yazılıdır.
 
+## v5.4 · Kaynak politikası ve zincir haritalarının yeniden kaynaklandırılması
+
+Zincir haritalarındaki her olay kaynaklıydı, ama veri kaynağın **ne tür** bir kaynak
+olduğunu gizliyordu: `source_type` alanının tek torba değeri `web`, 255 olayın 163'ünü
+içine alıyordu. Bir kanun metni, imzalı maddeleri olan bir ansiklopedi maddesi ve bir
+gazete yazısı, dosyayı süzen biri için aynı görünüyordu — ve bu örtünün altında tarihsel
+iddialar haber sitelerine, kişisel bloglara, şirketlerin kendi tanıtım sayfalarına ve
+Wikipedia'ya dayanıyordu.
+
+- **`source_type` on bir kategoriye bölündü** (resmî-hukukî, patent, hakemli, üniversite
+  ya da enstitü, müze-arşiv-kütüphane, başvuru eseri, meslek kuruluşu, ilgili taraf,
+  haber, hakemsiz kişisel derleme, Wikipedia) ve karışım hem kod kitapçığında hem
+  Zincir Haritaları sekmesinin girişinde yayımlanıyor.
+- **Kod kitapçığına kaynak politikası yazıldı:** kaynağın türünü iddianın türü belirler.
+  Hukukî olgu kanuna, istatistik onu üreten kuruma, tarihsel yorum hakemli çalışmaya,
+  nesne koleksiyon kaydına, standart standardın kendisine bağlanır. Güncel bir olayda
+  çağdaş gazetecilik meşrudur; hakkında akademik literatür bulunan tarihsel bir iddiada
+  değildir. Resmî kaynak da kendiliğinden üstün sayılmaz.
+- **255 olay atfının 80'i değiştirildi.** Gelen kaynaklar arasında TDV İslâm
+  Ansiklopedisi, DergiPark, Türk Tarih Kurumu, Vakıflar Genel Müdürlüğü restorasyon
+  raporları, MEB şûra kararları, TBMM Kanunlar Dergisi, BIPM ve CGPM karar metinleri,
+  NIST, ISO katalog kaydı, patent kayıtları, Ashmolean, V&A, MoMA, Smithsonian, Vatikan
+  Kütüphanesi ve Computer History Museum kayıtları var. **Wikipedia atıfları kırktan üçe
+  indi.**
+- **İş biçimsel kalmadı: üst kaynaklar iddiaları da değiştirdi.** 63 olay iddiası
+  doğrulanabilir kaynağın söylediğine göre yeniden yazıldı, dört olayın yılı düzeltildi ve
+  doğrulanamayan sayılar çıkarıldı — kilogram prototipinin dönemsel doğrulama yılları
+  (1889/1948/1989 → 1899-1911, 1939-1953, 1988-1992), 1931 Osmanlı evrak satışının tonajı
+  (27 ton → 30-50 ton), Süleymaniye'nin kubbe ölçüleri (26,5 m / 53 m → 27,40 m / 50
+  metreyi biraz aşan), Glossa Ordinaria'daki gloss sayısı (96.940 → yaklaşık 96.000),
+  Valens kanal ağının uzunluğu ve Hasan Çelebi'nin icâzet yılı (1975 → 1391/1971) dahil.
+- **Veri artık yeniden üretilebilir:** `tools/export-data.py`, beş CSV ile `corpus.json`
+  dosyasını `index.html`'den üretir. CSV'ler BOM'lu UTF-8 yazılır — v5.3 arşivindeki
+  BOM'suz dosyaların Excel ve WPS'te Türkçe metni bozması bu sürümde giderildi.
+
 ## v5.3 · Ad, lisans, kullanım koşulları ve modelin işaret düzeltmesi
 
 - **Yazar adı, lisans ayrımı ve kullanım koşulları** eklendi; "uzman incelemesi" ifadesi
@@ -186,7 +221,7 @@ bu çalışmanın 8. kuralına göre saklanamaz.
 - Grafikler elle üretilen SVG'dir; ipucu, erişilebilir veri tablosu ve SVG/PNG indirme destekler.
 - Karanlık/açık tema, `prefers-color-scheme` ve `prefers-reduced-motion` desteği, yazdırma düzeni.
 - Hash yönlendirme (`#/görünüm`), `<iframe sandbox>` içinde de çalışır.
-- Dosya boyutu: ~880 KB.
+- Dosya boyutu: ~900 KB.
 
 ### Yerelde çalıştırma
 
@@ -208,7 +243,7 @@ Otomatikleştirmek isterseniz `pages.yml` içindeki `push:` bloğunun yorumunu k
 
 Makine okunur künye `CITATION.cff` dosyasındadır.
 
-> Çandöken, Ahmet (2026). *Aktarım Zinciri / The Transmission Chain* (Sürüm 5.3)
+> Çandöken, Ahmet (2026). *Aktarım Zinciri / The Transmission Chain* (Sürüm 5.4)
 > [Yazılım]. Zenodo. https://doi.org/10.5281/zenodo.22093227 — CC BY 4.0
 
 **DOI:** `10.5281/zenodo.22093227` — *concept DOI*; her zaman en son sürüme gider, atıflarda bunu kullanın.
@@ -228,6 +263,7 @@ Aşağıdaki belgelerin tamamı **yapay zekâ modelleriyle yürütülen çekişm
 | [`docs/03-revizyon-gunlugu.md`](docs/03-revizyon-gunlugu.md) | Sürüm sürüm ne değişti |
 | [`docs/04-revizyon-felsefesi.md`](docs/04-revizyon-felsefesi.md) | Düzeltme kararlarının ölçütü |
 | [`docs/05-onculler-ve-oncelik.md`](docs/05-onculler-ve-oncelik.md) | **Öncüller taraması:** yedi literatür, zorunlu atıf listesi, özgünlük haritası |
+| [`docs/06-kaynak-denetimi-v5.4.md`](docs/06-kaynak-denetimi-v5.4.md) | **Kaynak denetimi:** kaynak politikası, değişen 80 atıfın tam listesi, düzeltilen sayılar, değiştirilemeyenler |
 
 ## Lisans / License
 
