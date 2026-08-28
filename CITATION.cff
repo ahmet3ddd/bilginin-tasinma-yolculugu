@@ -21,7 +21,7 @@ identifiers:
     value: "10.5281/zenodo.22093227"
     description: "Concept DOI (all versions)"
   - type: doi
-    value: "10.5281/zenodo.22093228"
+    value: "10.5281/zenodo.22147594"
     description: "Version DOI (v5.4)"
   - type: url
     value: "https://ahmet3ddd.github.io/bilginin-tasinma-yolculugu/"
