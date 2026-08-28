@@ -247,7 +247,7 @@ Makine okunur künye `CITATION.cff` dosyasındadır.
 > [Yazılım]. Zenodo. https://doi.org/10.5281/zenodo.22093227 — CC BY 4.0
 
 **DOI:** `10.5281/zenodo.22093227` — *concept DOI*; her zaman en son sürüme gider, atıflarda bunu kullanın.
-Yalnız bu sürümü işaret etmek isterseniz: `10.5281/zenodo.22093228`
+Yalnız bu sürümü işaret etmek isterseniz: `10.5281/zenodo.22147594` (v5.4)
 
 Kayıt ayrıca **Software Heritage**'ta arşivlendi ve **OpenAIRE**'de indekslendi.
 
